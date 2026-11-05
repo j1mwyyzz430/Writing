@@ -1,0 +1,14 @@
+{
+  "name": "g6-reflection-writing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Student bilingual reflection writing mind map; static GitHub Pages site",
+  "scripts": {
+    "build": "tailwindcss -i assets/tailwind.input.css -o assets/tailwind.css --minify && node scripts/stage-site.cjs",
+    "test": "node --test tests/stories.test.cjs",
+    "start": "python3 -m http.server 8000 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
