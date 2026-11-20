@@ -3,44 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>九龍靈光小學｜四年級《貪吃之過》三語互動寫作腦圖（繁中・泰文・日文）</title>
+  <title>九龍靈光小學｜四年級《貪吃之過》零打字蝴蝶效應寫作遊戲（繁中・泰文・日文）</title>
   <link rel="icon" href="data:," />
   <!-- 載入 Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- 載入繁體中文、泰文、日文清晰字體 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     body {
       font-family: 'Noto Sans TC', 'Noto Sans Thai', 'Noto Sans JP', sans-serif;
-      background-color: #f3f7fa;
+      background-color: #f0f5fa;
       color: #1e3a5f;
     }
 
     /* 教育卡片質感 */
     .edu-card {
       background: #ffffff;
-      border-radius: 16px;
-      border: 1px solid #dce6f1;
-      box-shadow: 0 3px 12px rgba(30, 58, 95, 0.06);
+      border-radius: 18px;
+      border: 1.5px solid #dbe5f0;
+      box-shadow: 0 4px 14px rgba(30, 58, 95, 0.06);
     }
 
-    /* 選項卡片互動樣式 */
+    /* 遊戲選擇卡片互動樣式 */
     .choice-card {
-      transition: all 0.18s ease;
+      transition: all 0.18s cubic-bezier(0.22, 1, 0.36, 1);
       cursor: pointer;
+      user-select: none;
     }
     .choice-card:hover {
       transform: translateY(-2px);
       border-color: #0d9488;
       background-color: #f0fdfa;
+      box-shadow: 0 6px 16px rgba(13, 148, 136, 0.12);
     }
     .choice-selected {
       border-color: #0f766e !important;
       background-color: #ccfbf1 !important;
-      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.22);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.28);
     }
 
     /* 語言輔助切換控制 */
@@ -51,48 +53,58 @@
     .skills-on .hl-desc {
       background-color: #fee2e2;
       color: #991b1b;
-      padding: 1px 4px;
-      border-radius: 4px;
+      padding: 1px 5px;
+      border-radius: 5px;
       border-bottom: 2px solid #ef4444;
     }
     .skills-on .hl-emotion {
       background-color: #dcfce7;
       color: #166534;
-      padding: 1px 4px;
-      border-radius: 4px;
+      padding: 1px 5px;
+      border-radius: 5px;
       border-bottom: 2px solid #22c55e;
     }
     .skills-on .hl-action {
       background-color: #cffafe;
       color: #155e75;
-      padding: 1px 4px;
-      border-radius: 4px;
+      padding: 1px 5px;
+      border-radius: 5px;
       border-bottom: 2px solid #06b6d4;
     }
     .skills-on .hl-face {
       background-color: #fef9c3;
       color: #854d0e;
-      padding: 1px 4px;
-      border-radius: 4px;
+      padding: 1px 5px;
+      border-radius: 5px;
       border-bottom: 2px solid #eab308;
     }
     .skills-on .hl-thought {
       background-color: #fae8ff;
       color: #86198f;
-      padding: 1px 4px;
-      border-radius: 4px;
+      padding: 1px 5px;
+      border-radius: 5px;
       border-bottom: 2px solid #d946ef;
     }
     .skills-on .hl-moral {
       background-color: #ffedd5;
       color: #9a3412;
-      padding: 1px 4px;
-      border-radius: 4px;
+      padding: 1px 5px;
+      border-radius: 5px;
       border-bottom: 2px solid #f97316;
       font-weight: 700;
     }
 
-    /* 列印專用樣式：A4 橫向或直向清晰輸出腦圖 */
+    /* 蝴蝶效應連鎖徽章動畫 */
+    @keyframes popBadge {
+      0% { transform: scale(0.95); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    .chain-pill {
+      animation: popBadge 0.25s ease;
+    }
+
+    /* 列印專用樣式 */
     @media print {
       .no-print { display: none !important; }
       body { background: #ffffff !important; padding: 0 !important; }
@@ -103,21 +115,20 @@
 </head>
 <body class="min-h-screen pb-14">
 
-  <!-- ==================== 頂部導航列（繁中・泰文・日文三語） ==================== -->
-  <header class="bg-gradient-to-r from-[#134e4a] via-[#1e3a5f] to-[#1d4ed8] text-white shadow-lg sticky top-0 z-40 no-print">
+  <!-- ==================== 頂部導航列（繁中・泰文・日文三語，零英文） ==================== -->
+  <header class="bg-gradient-to-r from-[#115e59] via-[#1e3a5f] to-[#1d4ed8] text-white shadow-lg sticky top-0 z-40 no-print">
     <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      <!-- 校名與主題 -->
       <div class="flex items-center gap-3">
         <div class="w-11 h-11 rounded-2xl bg-white/15 flex items-center justify-center text-2xl shadow-inner">
-          🍜
+          🦋
         </div>
         <div>
           <div class="text-base sm:text-lg font-black tracking-wide">
-            九龍靈光小學｜四年級中文寫作《貪吃之過》
+            九龍靈光小學｜四年級《貪吃之過》蝴蝶效應寫作遊戲
           </div>
           <div class="text-xs text-teal-100 flex flex-wrap gap-x-2">
-            <span class="lang-th">🇹🇭 โรงเรียนประถมเกาลูนเอ็มมานูเอล｜การเขียนภาษาจีน ป.4 เรื่อง "ผลเสียของการตะกละ"</span>
-            <span class="lang-ja">🇯🇵 九龍霊光小学校｜小4中国語作文『食べ過ぎの過ち』マインドマップ</span>
+            <span class="lang-th">🇹🇭 เกมเลือกเส้นเรื่อง "ผลเสียของการตะกละ" (ไม่ต้องพิมพ์)</span>
+            <span class="lang-ja">🇯🇵 小4作文『食べ過ぎの過ち』分岐選択ゲーム（入力不要）</span>
           </div>
         </div>
       </div>
@@ -125,15 +136,15 @@
       <!-- 三大頁面切換按鈕 -->
       <div class="flex flex-wrap items-center gap-2">
         <button id="navTabForm" onclick="switchMainTab('form')"
-          class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-[#1e3a5f] shadow transition">
-          1️⃣ 蝴蝶效應表單
+          class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black bg-white text-[#1e3a5f] shadow transition">
+          1️⃣ 劇情選擇關卡
           <span class="block text-[10px] font-normal">
-            <span class="lang-th">แบบฟอร์ม</span> <span class="lang-ja">選択フォーム</span>
+            <span class="lang-th">เลือกเนื้อเรื่อง</span> <span class="lang-ja">ストーリー選択</span>
           </span>
         </button>
 
         <button id="navTabMap" onclick="switchMainTab('map')"
-          class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white transition">
+          class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black bg-white/15 hover:bg-white/25 text-white transition">
           2️⃣ 專屬寫作腦圖
           <span class="block text-[10px] font-normal text-teal-100">
             <span class="lang-th">แผนผังความคิด</span> <span class="lang-ja">構成マップ</span>
@@ -141,58 +152,41 @@
         </button>
 
         <button id="navTabEssay" onclick="switchMainTab('essay')"
-          class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white transition">
+          class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black bg-white/15 hover:bg-white/25 text-white transition">
           3️⃣ 五段佳作與技巧
           <span class="block text-[10px] font-normal text-teal-100">
-            <span class="lang-th">ตัวอย่างเรียงความ</span> <span class="lang-ja">模範作文・技法</span>
+            <span class="lang-th">เรียงความ 5 ย่อหน้า</span> <span class="lang-ja">模範作文・技法</span>
           </span>
         </button>
       </div>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 mt-5 space-y-5">
+  <main class="max-w-6xl mx-auto px-4 mt-4 space-y-4">
 
-    <!-- ==================== 頂部控制列：學生資料 ＋ 語言顯示切換 ==================== -->
-    <section class="edu-card p-4 sm:p-5 no-print">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-        <!-- 學生快速點選名單（4N 班課堂學生） -->
-        <div class="lg:col-span-7 space-y-2">
+    <!-- ==================== 頂部控制列：零打字點名 ＋ 三語切換 ＋ 蝴蝶效應連鎖追蹤條 ==================== -->
+    <section class="edu-card p-4 space-y-3.5 no-print">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-3.5 items-center">
+        <!-- 零打字點選學生姓名（4N 班學生＋更多同學選項） -->
+        <div class="lg:col-span-7 space-y-1.5">
           <div class="flex flex-wrap items-center justify-between gap-2">
-            <label class="text-xs sm:text-sm font-bold text-[#1e3a5f]">
-              🧑‍🎓 4N班學生快捷點名 / 輸入姓名
-              <span class="lang-th text-teal-700 font-normal">｜เลือกชื่อนักเรียน</span>
-              <span class="lang-ja text-indigo-700 font-normal">｜生徒名を選択</span>
-            </label>
+            <span class="text-xs sm:text-sm font-black text-[#1e3a5f]">
+              🧑‍🎓 第一步點選你的名字（零打字一鍵點名）
+              <span class="lang-th text-teal-700 font-normal">｜กดเลือกชื่อของเธอ</span>
+              <span class="lang-ja text-indigo-700 font-normal">｜自分の名前をタップ</span>
+            </span>
             <span class="text-xs font-bold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full">
               班別：4N（不少於200字）
             </span>
           </div>
 
-          <div class="flex flex-wrap items-center gap-2">
-            <button onclick="selectStudent('湯雅智')" class="student-pill px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 bg-slate-50 hover:bg-teal-50 hover:border-teal-500 transition">
-              湯雅智
-            </button>
-            <button onclick="selectStudent('平野孝多')" class="student-pill px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 bg-slate-50 hover:bg-teal-50 hover:border-teal-500 transition">
-              平野孝多
-            </button>
-            <button onclick="selectStudent('陳詠思')" class="student-pill px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 bg-slate-50 hover:bg-teal-50 hover:border-teal-500 transition">
-              陳詠思
-            </button>
-            <button onclick="selectStudent('詹美珠')" class="student-pill px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 bg-slate-50 hover:bg-teal-50 hover:border-teal-500 transition">
-              詹美珠
-            </button>
-            <input id="inputStudentName" type="text" placeholder="或直接輸入姓名..." oninput="updateStudentInfo()"
-              class="flex-1 min-w-[140px] px-3 py-1.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-teal-600" />
-            <input id="inputStudentClass" type="text" value="4N" oninput="updateStudentInfo()"
-              class="w-16 px-2.5 py-1.5 rounded-lg border border-slate-300 text-sm text-center font-bold focus:outline-none focus:border-teal-600" />
-          </div>
+          <div id="studentButtonsRow" class="flex flex-wrap items-center gap-1.5"></div>
         </div>
 
-        <!-- 三語顯示模式切換器（絕無英文） -->
+        <!-- 三語顯示模式切換器（完全不含英文） -->
         <div class="lg:col-span-5 bg-slate-50 p-3 rounded-xl border border-slate-200">
           <div class="text-xs font-bold text-slate-700 mb-1.5">
-            🌐 語言輔助顯示切換
+            🌐 輔助語言顯示模式
             <span class="lang-th text-teal-700 font-normal">｜เลือกภาษาช่วยเหลือ</span>
             <span class="lang-ja text-indigo-700 font-normal">｜補助言語表示</span>
           </div>
@@ -212,38 +206,43 @@
           </div>
         </div>
       </div>
+
+      <!-- 🦋 蝴蝶效應連鎖追蹤條（即時顯示前後因果連動） -->
+      <div class="pt-2.5 border-t border-slate-100">
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="font-black text-teal-900 bg-teal-100 px-2.5 py-1 rounded-lg flex items-center gap-1">
+            🦋 蝴蝶效應連鎖鎖定
+            <span class="lang-th font-normal">（เชื่อมโยงเนื้อเรื่อง）</span>
+            <span class="lang-ja font-normal">（物語連動）</span>：
+          </span>
+          <div id="butterflyChainTracker" class="flex flex-wrap items-center gap-1.5"></div>
+        </div>
+      </div>
     </section>
 
-    <!-- ==================== 分頁 1：六步蝴蝶效應互動寫作表單 ==================== -->
+    <!-- ==================== 分頁 1：六關卡純點擊蝴蝶效應選擇遊戲 ==================== -->
     <section id="viewForm" class="space-y-4">
-      <!-- 審題橫幅與進度條 -->
+      <!-- 審題提示與六關卡導航 -->
       <div class="edu-card p-4 sm:p-5 border-l-8 border-l-teal-600">
         <div class="flex flex-wrap items-start justify-between gap-3">
           <div>
             <span class="inline-block text-xs font-bold bg-teal-100 text-teal-900 px-2.5 py-0.5 rounded-md mb-1">
-              📝 審題要求（記敘文・記事）
+              📝 題目：你因為貪吃而生病。請你寫一篇文章，記述那一次的經歷和感受。（純點擊選擇・無需打字）
             </span>
-            <h1 class="text-lg sm:text-xl font-black text-[#1e3a5f]">
-              題目：你因為貪吃而生病。請你寫一篇文章，記述那一次的經歷和感受。
-            </h1>
-            <p class="text-xs text-teal-800 mt-1 lang-th">
-              🇹🇭 หัวข้อ: เธอป่วยเพราะความตะกละ จงเขียนเรียงความเล่าประสบการณ์และความรู้สึกในครั้งนั้น (ไม่ต่ำกว่า 200 ตัวอักษร)
+            <p class="text-xs text-teal-800 lang-th">
+              🇹🇭 กติกา: กดเลือกการ์ดคำตอบในแต่ละด่าน ตัวเลือกในด่านถัดไปจะเปลี่ยนตามสิ่งที่เธอเลือกโดยอัตโนมัติ!
             </p>
-            <p class="text-xs text-indigo-800 mt-0.5 lang-ja">
-              🇯🇵 題目：あなたは食べ過ぎ（食い意地）が原因で病気になりました。その時の経験と感想を作文に書きましょう（200字以上）。
+            <p class="text-xs text-indigo-800 lang-ja">
+              🇯🇵 ルール：各ステージのカードをタップして選ぶだけ！前の選択に合わせて次の選択肢が自動的に変化します！
             </p>
-          </div>
-
-          <div id="currentStoryBadge" class="bg-amber-50 border border-amber-300 px-3.5 py-2 rounded-xl text-xs font-bold text-amber-950">
-            🦋 已選故事：深夜廚房煮麵被爸爸發現
           </div>
         </div>
 
-        <!-- 6 步驟導航按鈕 -->
-        <div class="mt-4 pt-3 border-t border-slate-100">
+        <!-- 進度條與 6 關卡按鈕 -->
+        <div class="mt-3 pt-3 border-t border-slate-100">
           <div class="flex items-center justify-between text-xs font-bold text-slate-600 mb-1.5">
-            <span id="progressStepText">第 1 步 / 共 6 步：選擇故事分支</span>
-            <span id="progressPercentText">完成度 17%</span>
+            <span id="progressStepText">第 1 關 / 共 6 關：選擇貪吃故事主線</span>
+            <span id="progressPercentText">進度 17%</span>
           </div>
           <div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
             <div id="progressBarFill" class="h-full bg-gradient-to-r from-teal-500 to-blue-600 transition-all duration-300" style="width: 17%;"></div>
@@ -251,33 +250,33 @@
 
           <div class="grid grid-cols-2 sm:grid-cols-6 gap-1.5 mt-3">
             <button onclick="goStep(1)" id="stepBtn1" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
-              <div>1. 選故事</div>
+              <div>1. 選故事主線</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">เลือกเรื่อง</span> <span class="lang-ja">物語選択</span>
+                <span class="lang-th">เลือกเรื่องหลัก</span> <span class="lang-ja">主線選択</span>
               </div>
             </button>
             <button onclick="goStep(2)" id="stepBtn2" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
               <div>2. 四素背景</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">ฉากหลัง</span> <span class="lang-ja">背景・原因</span>
+                <span class="lang-th">ฉากหลัง 4 อย่าง</span> <span class="lang-ja">時・人・地・事</span>
               </div>
             </button>
             <button onclick="goStep(3)" id="stepBtn3" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
               <div>3. 片段一(先喜)</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">ตอนกินอย่างอร่อย</span> <span class="lang-ja">前半(喜・貪食)</span>
+                <span class="lang-th">ตอนแอบกิน</span> <span class="lang-ja">前半(喜・貪食)</span>
               </div>
             </button>
             <button onclick="goStep(4)" id="stepBtn4" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
               <div>4. 片段二(後悲)</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">ตอนปวดท้องป่วย</span> <span class="lang-ja">後半(悲・発病)</span>
+                <span class="lang-th">ตอนปวดท้อง</span> <span class="lang-ja">後半(悲・発病)</span>
               </div>
             </button>
             <button onclick="goStep(5)" id="stepBtn5" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
               <div>5. 總結反思</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">ข้อคิดที่ได้</span> <span class="lang-ja">まとめ・反省</span>
+                <span class="lang-th">ข้อคิดที่ได้</span> <span class="lang-ja">まとめ・教訓</span>
               </div>
             </button>
             <button onclick="goStep(6)" id="stepBtn6" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
@@ -290,14 +289,14 @@
         </div>
       </div>
 
-      <!-- 動態步驟內容區 -->
-      <div id="stepBodyContainer"></div>
+      <!-- 動態關卡選項卡片區 -->
+      <div id="stepBodyContainer" class="space-y-4"></div>
 
-      <!-- 底部上下步導航 -->
+      <!-- 底部上下關卡導航 -->
       <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
         <button id="btnPrevStep" onclick="changeStep(-1)"
           class="px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-sm font-bold text-slate-700 shadow-sm transition">
-          ← 上一步
+          ← 上一關
           <span class="lang-th text-xs font-normal text-teal-700">ย้อนกลับ</span>
           <span class="lang-ja text-xs font-normal text-indigo-700">前へ</span>
         </button>
@@ -305,13 +304,14 @@
         <div class="flex flex-wrap items-center gap-2.5">
           <button onclick="switchMainTab('map')"
             class="px-4 py-2.5 rounded-xl border-2 border-teal-600 bg-teal-50 hover:bg-teal-100 text-sm font-bold text-teal-900 transition">
-            🗺️ 查看寫作腦圖
+            🗺️ 預覽寫作腦圖
             <span class="lang-th text-xs font-normal">ดูแผนผัง</span>
+            <span class="lang-ja text-xs font-normal">マップを見る</span>
           </button>
           <button id="btnNextStep" onclick="changeStep(1)"
             class="px-6 py-2.5 rounded-xl bg-[#1e3a5f] hover:bg-[#152a45] text-white text-sm font-bold shadow-md transition">
-            下一步 →
-            <span class="lang-th text-xs font-normal text-teal-200">ถัดไป</span>
+            下一關 →
+            <span class="lang-th text-xs font-normal text-teal-200">ด่านถัดไป</span>
             <span class="lang-ja text-xs font-normal text-indigo-200">次へ</span>
           </button>
         </div>
@@ -320,33 +320,31 @@
 
     <!-- ==================== 分頁 2：視覺化《貪吃之過》寫作腦圖 ==================== -->
     <section id="viewMap" class="hidden space-y-4">
-      <!-- 操作工具列 -->
       <div class="edu-card p-4 bg-gradient-to-r from-teal-900 to-[#1e3a5f] text-white flex flex-wrap items-center justify-between gap-3 no-print">
         <div>
           <h2 class="text-base sm:text-lg font-black">
-            🗺️ 你的專屬《貪吃之過》寫作腦圖已生成！
+            🗺️ 你的專屬《貪吃之過》三語寫作腦圖已自動生成！
           </h2>
           <p class="text-xs text-teal-100">
-            <span class="lang-th">🇹🇭 แผนผังความคิดการเขียนเรื่อง "ผลเสียของการตะกละ" พร้อมใช้งาน</span>
-            <span class="lang-ja ml-2">🇯🇵 『食べ過ぎの過ち』作文マインドマップ完成</span>
+            <span class="lang-th">🇹🇭 แผนผังความคิดเชื่อมโยงสอดคล้องกันทั้ง 5 ย่อหน้า</span>
+            <span class="lang-ja ml-2">🇯🇵 全5段落が前後矛盾なく連動した作文マップ</span>
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-2">
           <button onclick="switchMainTab('form')" class="px-3.5 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-bold">
-            ← 返回修改選項
+            ← 返回重選劇情
           </button>
           <button onclick="switchMainTab('essay')" class="px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 text-xs font-bold shadow">
             ✍️ 查看五段佳作範文 →
           </button>
           <button onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-white text-[#1e3a5f] hover:bg-teal-50 text-xs font-bold shadow">
-            🖨️ 列印 / 存為 PDF
+            🖨️ 列印 / 存為文件
           </button>
         </div>
       </div>
 
-      <!-- 還原九龍靈光小學《四年級〈貪吃之過〉寫作腦圖》結構 -->
+      <!-- 還原九龍靈光小學《四年級〈貪吃之過〉寫作腦圖》雙欄工作紙版面 -->
       <div class="edu-card p-5 sm:p-6 border-2 border-[#1e3a5f]">
-        <!-- 腦圖頁首 -->
         <div class="flex flex-wrap items-center justify-between border-b-2 border-[#1e3a5f] pb-3 mb-5 gap-2">
           <div>
             <div class="text-xs font-bold text-teal-800">
@@ -360,15 +358,14 @@
           </div>
           <div class="flex flex-wrap items-center gap-4 text-sm font-bold text-slate-800 bg-slate-100 px-4 py-2 rounded-xl">
             <span>班別：<u id="mapClassText" class="px-1.5 text-teal-800">4N</u></span>
-            <span>姓名：<u id="mapNameText" class="px-2 text-teal-800">＿＿＿＿</u></span>
+            <span>姓名：<u id="mapNameText" class="px-2 text-teal-800">湯雅智</u></span>
           </div>
         </div>
 
-        <!-- 腦圖雙欄主體 -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
           <!-- 左側：1.引子 + 中心題目 + 5.總結段 -->
           <div class="lg:col-span-5 flex flex-col justify-between gap-4">
-            <!-- 1. 引子（物 → 事 → 情） -->
+            <!-- 1. 引子（倒敍法：物 → 事 → 情） -->
             <div class="rounded-2xl border-2 border-emerald-600 bg-emerald-50/60 p-4">
               <div class="flex items-center justify-between mb-2.5">
                 <span class="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-black">
@@ -520,21 +517,20 @@
         <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200">
           <div>
             <h2 class="text-lg sm:text-xl font-black text-[#1e3a5f]">
-              ✍️ 《貪吃之過》五段式完整範文（三語對照）
+              ✍️ 《貪吃之過》五段式完整佳作（三語對照）
             </h2>
             <p class="text-xs text-slate-600 mt-0.5">
-              自動結合你的選擇生成通順文章，附泰文及日文逐段翻譯。
-              <span class="lang-th text-teal-700">｜บทความตัวอย่าง 5 ย่อหน้า</span>
+              自動串連你的所有劇情分支，確保人物、地點、食物與後果首尾呼應！
+              <span class="lang-th text-teal-700">｜เรียงความสมบูรณ์ 5 ย่อหน้า</span>
               <span class="lang-ja text-indigo-700">｜5段落模範作文</span>
             </p>
           </div>
 
           <div class="flex flex-wrap items-center gap-2">
             <span id="essayWordCount" class="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs font-black">
-              字數：約 320 字（符合不少於 200 字要求 ✅）
+              字數：約 330 字（超過 200 字要求 ✅）
             </span>
 
-            <!-- 寫作技巧彩色標記開關 -->
             <button id="toggleSkillsBtn" onclick="toggleSkillsHighlight()"
               class="px-3.5 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 border border-amber-400 text-amber-950 text-xs font-bold transition">
               🎨 寫作技巧彩色標記：開啟
@@ -542,17 +538,16 @@
 
             <button onclick="copyFullEssay()"
               class="px-3.5 py-1.5 rounded-xl bg-[#1e3a5f] hover:bg-[#152a45] text-white text-xs font-bold shadow transition">
-              📋 複製全文與腦圖
+              📋 一鍵複製腦圖與佳作
             </button>
           </div>
         </div>
 
-        <!-- 複製成功提示 -->
         <div id="copyAlertBox" class="hidden mt-3 p-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold text-center">
-          ✅ 已成功複製《貪吃之過》三語腦圖與五段範文！
+          ✅ 已成功複製《貪吃之過》三語寫作腦圖與五段佳作！
         </div>
 
-        <!-- 課堂寫作技巧圖例（對應簡報第8頁：描述、情感、動作、五官、心理獨白、道理反思） -->
+        <!-- 課堂寫作技巧圖例 -->
         <div id="skillsLegendBar" class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center gap-2 text-xs">
           <span class="font-bold text-slate-700 mr-1">📚 寫作技巧圖例：</span>
           <span class="px-2 py-0.5 rounded bg-red-100 text-red-900 border-b-2 border-red-500 font-bold">描述</span>
@@ -570,653 +565,873 @@
 
   </main>
 
-  <!-- ==================== 完整資料與互動邏輯（全單一檔案內建） ==================== -->
+  <!-- ==================== 零打字・真蝴蝶效應連鎖分支引擎（全單一檔案內建） ==================== -->
   <script>
     // =========================================================================
-    // 1. 六大課堂真實故事資料庫（繁體中文 ＋ 泰文 ＋ 日文，完全不含英文）
+    // 1. 學生名單預設按鈕（零打字點名）
     // =========================================================================
-    const STORIES_DATA = [
+    const STUDENTS_LIST = [
+      { name: '湯雅智', cls: '4N' },
+      { name: '平野孝多', cls: '4N' },
+      { name: '陳詠思', cls: '4N' },
+      { name: '詹美珠', cls: '4N' },
+      { name: '林子軒', cls: '4N' },
+      { name: '黃悅晴', cls: '4N' }
+    ];
+
+    // =========================================================================
+    // 2. 六大課堂真實故事主線（第 1 關選項，共 6 個）
+    //    每個故事設定初始「蝴蝶變數」：食物、關鍵物件、場景類型、預設陪伴/發現者
+    // =========================================================================
+    const STORY_BRANCHES = [
       {
-        id: 'kitchen_noodles',
+        id: 'cup_noodle_bathroom',
         icon: '🍜',
+        tag: '深夜熱水壺・杯麵香氛',
         title: {
-          zh: '深夜廚房煮麵被爸爸發現',
-          th: 'แอบต้มบะหมี่กลางดึกในครัวจนพ่อจับได้',
-          ja: '深夜のキッチンで麺を煮てお父さんにバレた話'
+          zh: '故事 A：深夜偷煮杯麵與鎖門煲水',
+          th: 'เรื่อง A: แอบต้มบะหมี่ถ้วยกลางดึกและล็อกประตูต้มน้ำ',
+          ja: '物語A：深夜のカップ麺隠れ食いとトイレ湯沸かし'
         },
-        subtitle: {
-          zh: '半夜和妹妹在上下格床睡覺，肚子餓下床煮麵，聽到開門聲假裝睡覺卻被香味出賣！',
-          th: 'นอนเตียงสองชั้นกับน้องสาว หิวกลางดึกเลยแอบไปต้มบะหมี่ ได้ยินเสียงเปิดประตูรีบแกล้งหลับแต่กลิ่นหอมฟ้อง!',
-          ja: '二段ベッドで妹と寝ていた夜中、お腹が空いて麺を煮たが、ドアの音で寝たふりをしても匂いでバレた！'
+        desc: {
+          zh: '半夜在上下格床睡覺肚子餓，偷偷把電熱水壺搬進洗手間鎖門煲水泡杯麵，還噴香水掩蓋味道！',
+          th: 'นอนเตียงสองชั้นแล้วหิวกลางดึก แอบยกกาต้มน้ำไปต้มบะหมี่ในห้องน้ำ ล็อกประตูและฉีดน้ำหอมกลบกลิ่น!',
+          ja: '二段ベッドで寝ていてお腹が空き、ケトルをトイレに持ち込んで鍵をかけ、香水で匂いを消して食べた！'
         },
-        defaults: {
-          time: {
-            zh: '上星期五深夜一兩點',
-            th: 'คืนวันศุกร์ที่แล้วตอนตีหนึ่งตีสอง',
-            ja: '先週の金曜日の深夜1時か2時ごろ'
-          },
-          who: {
-            zh: '我和妹妹（後來還有起床上廁所的爸爸）',
-            th: 'ฉันกับน้องสาว (และคุณพ่อที่ตื่นมาเข้าห้องน้ำ)',
-            ja: '私と妹（あとでトイレに起きたお父さん）'
-          },
-          place: {
-            zh: '家裡的睡房和廚房',
-            th: 'ห้องนอนและห้องครัวที่บ้าน',
-            ja: '家の寝室とキッチン'
-          },
-          cause: {
-            zh: '晚飯吃得太少，半夜在上下格床睡覺時肚子餓得咕咕叫，忍不住想偷煮公仔麵吃',
-            th: 'มื้อเย็นกินน้อยเกินไป นอนเตียงสองชั้นแล้วท้องร้องจ๊อกๆ เลยแอบลงมาต้มบะหมี่กึ่งสำเร็จรูป',
-            ja: '夕飯が少なくて二段ベッドでお腹がグーグー鳴り、我慢できずインスタント麺を煮ようと思った'
-          },
-          p1Action: {
-            zh: '躡手躡腳爬下床溜進廚房，開火煮了兩大包公仔麵，趁熱狼吞虎嚥地吃個精光',
-            th: 'ย่องลงจากเตียงเข้าครัว ต้มบะหมี่สองห่อใหญ่ แล้วรีบกินอย่างเอร็ดอร่อยจนหมดเกลี้ยง',
-            ja: 'そっとベッドを降りてキッチンへ行き、袋麺を2袋も煮て熱々のうちにガツガツ平らげた'
-          },
-          p1Warn: {
-            zh: '突然聽到爸爸開門去廁所的腳步聲，嚇得我趕緊關火躲回床上蓋好被子假裝睡覺，卻忘了滿屋子都是濃濃的麵香味',
-            th: 'จู่ๆ ได้ยินเสียงพ่อเปิดประตูไปห้องน้ำ รีบปิดไฟวิ่งกลับขึ้นเตียงแกล้งหลับ แต่ลืมไปว่ากลิ่นบะหมี่หอมฟุ้งไปทั่วบ้าน',
-            ja: '突然お父さんがトイレに行くドアの音がして、慌ててベッドに戻り寝たふりをしたが、部屋中が麺の匂いだらけだった'
-          },
-          p1Thought: {
-            zh: '「幸好我動作夠快，只要閉緊眼睛假裝睡着，爸爸一定不會發現我半夜偷吃麵！」',
-            th: '“โชคดีที่เรารีบกลับมาแกล้งหลับทัน ถ้าหลับตาแน่นๆ พ่อต้องไม่รู้แน่ว่าเราแอบกินบะหมี่!”',
-            ja: '「間に合ってよかった！目を閉じて寝たふりをしていれば、夜中に麺を食べたなんてお父さんにバレないはずだ！」'
-          },
-          p2Symptom: {
-            zh: '半夜吃得太急又太油膩，加上剛吃完就躺下，沒多久胃部劇烈絞痛、反胃想吐',
-            th: 'กินเร็วและมันเกินไป แถมกินเสร็จแล้วนอนทันที ไม่นานก็ปวดท้องบิดอย่างรุนแรงและคลื่นไส้',
-            ja: '夜中に急いで脂っこい麺を食べてすぐ横になったせいで、まもなく胃が激しく痛み吐き気がした'
-          },
-          p2Reaction: {
-            zh: '我痛苦得眉頭緊皺、臉色發白，雙手緊緊捂着肚子在床上翻來覆去，額頭冒出冷汗',
-            th: 'ฉันขมวดคิ้วแน่น หน้าซีดเผือด เอามือกุมท้องนอนพลิกไปมาด้วยความทรมาน เหงื่อเย็นไหลซึมหน้าผาก',
-            ja: '私は苦しくて眉をひそめ顔面蒼白になり、両手でお腹を押さえてベッドで転げ回り、額に冷や汗をかいた'
-          },
-          p2Result: {
-            zh: '爸爸一聞到麵味又聽到我的呻吟聲，立刻揭穿我並帶我去看醫生，結果我只能喝苦澀的藥水',
-            th: 'พ่อได้กลิ่นบะหมี่และได้ยินเสียงร้องคราง จึงจับได้ทันทีและพาไปหาหมอ สุดท้ายต้องกินยาขมๆ',
-            ja: 'お父さんは麺の匂いと私のうめき声ですぐに見抜き、病院へ連れて行かれ、苦い薬を飲む羽目になった'
-          },
-          moral: {
-            zh: '飲食必須有節制，深夜暴飲暴食不但不誠實，更會嚴重傷害腸胃健康',
-            th: 'การกินต้องรู้จักประมาณตน การแอบกินจุกลางดึกไม่เพียงแต่ไม่ซื่อสัตย์ แต่ยังทำร้ายกระเพาะอาหารอย่างรุนแรง',
-            ja: '食事は節度を守ることが大切であり、深夜の暴飲暴食は胃腸をひどく傷つけると悟った'
-          },
-          future: {
-            zh: '以後晚上按時吃飽晚飯、準時睡覺，再也不在半夜偷偷煮麵吃，做到誠實自律',
-            th: 'ต่อไปจะกินข้าวเย็นให้อิ่มตรงเวลาและเข้านอน ไม่แอบต้มบะหมี่กินกลางดึกอีก จะซื่อสัตย์และมีวินัย',
-            ja: 'これからは夕飯をきちんと食べて時間通りに寝て、夜中にこっそり麺を煮て食べることは二度としない'
-          },
-          introObj: {
-            zh: '廚櫃裡那包公仔麵',
-            th: 'บะหมี่กึ่งสำเร็จรูปห่อนั้นในตู้ครัว',
-            ja: '戸棚にあるあのインスタント麺'
-          },
-          introEvent: {
-            zh: '上星期五深夜偷煮麵吃結果肚子痛生病',
-            th: 'คืนวันศุกร์ที่แอบต้มบะหมี่กินจนปวดท้องป่วย',
-            ja: '先週の金曜の深夜にこっそり麺を煮て食べて腹痛で病気になったこと'
-          },
-          introFeeling: {
-            zh: '感到十分後悔與羞愧',
-            th: 'รู้สึกเสียใจและละอายใจอย่างยิ่ง',
-            ja: '今でも大変後悔し、恥ずかしく思う'
-          }
-        }
+        env: 'home_night',
+        food: { zh: '香辣海鮮杯麵', th: 'บะหมี่ถ้วยรสต้มยำทะเล', ja: 'ピリ辛海鮮カップ麺' },
+        obj: { zh: '客廳桌上那個電熱水壺', th: 'กาต้มน้ำไฟฟ้าบนโต๊ะในห้องนั่งเล่น', ja: 'リビングのテーブルにある電気ケトル' },
+        defaultWhoKey: 'dad_sister'
       },
-
       {
-        id: 'bathroom_kettle',
-        icon: '🚽',
+        id: 'pack_noodle_stove',
+        icon: '🍲',
+        tag: '凌晨一時・開火煮包麵',
         title: {
-          zh: '躲進廁所煲水偷吃泡麵',
-          th: 'แอบยกกาต้มน้ำไปต้มบะหมี่ในห้องน้ำ',
-          ja: 'トイレに電気ケトルを持ち込んでカップ麺を隠れ食い'
+          zh: '故事 B：半夜起床開火偷煮包麵',
+          th: 'เรื่อง B: ตื่นกลางดึกแอบจุดเตาต้มบะหมี่ซอง',
+          ja: '物語B：夜中に起きてコンロで袋麺をこっそり煮た話'
         },
-        subtitle: {
-          zh: '怕客廳電熱水煲太吵，偷偷搬進廁所裝水鎖門煲水吃麵，還噴香水蓋味，結果腸胃不適！',
-          th: 'กลัวเสียงกาต้มน้ำในห้องนั่งเล่นดัง เลยแอบยกไปต้มในห้องน้ำ ล็อกประตูแล้วฉีดน้ำหอมกลบกลิ่น สุดท้ายท้องเสีย!',
-          ja: 'リビングのケトルの音がうるさいのでトイレに持ち込んで鍵をかけ、香水まで振って食べた結果、お腹を壊した！'
+        desc: {
+          zh: '凌晨一時起床嘴饞，躡手躡腳溜進廚房開火煮兩包公仔麵，聽到開門聲假裝睡覺卻被香味出賣！',
+          th: 'ตื่นตอนตีหนึ่งแล้วหิว ย่องเข้าครัวจุดเตาต้มบะหมี่สองซอง ได้ยินเสียงเปิดประตูรีบแกล้งหลับแต่กลิ่นฟ้อง!',
+          ja: '午前1時に起きてキッチンで袋麺を2袋煮て、ドアの音で寝たふりをしたが匂いでバレてしまった！'
         },
-        defaults: {
-          time: {
-            zh: '上星期六凌晨一點多',
-            th: 'คืนวันเสาร์ที่แล้วเวลาตีหนึ่งกว่า',
-            ja: '先週の土曜日の午前1時過ぎ'
-          },
-          who: {
-            zh: '我和正在睡覺的家人',
-            th: 'ฉันกับคนในครอบครัวที่กำลังหลับอยู่',
-            ja: '私と眠っている家族'
-          },
-          place: {
-            zh: '家裡的廁所',
-            th: 'ห้องน้ำในบ้าน',
-            ja: '家のトイレの中'
-          },
-          cause: {
-            zh: '半夜嘴饞想吃泡麵，但怕客廳的電熱水煲燒水聲音太吵會吵醒家人，竟異想天開把水煲搬進廁所',
-            th: 'หิวบะหมี่กลางดึก แต่กลัวเสียงกาต้มน้ำในห้องนั่งเล่นจะปลุกทุกคน เลยแอบยกกาต้มน้ำเข้าไปในห้องน้ำ',
-            ja: '夜中にカップ麺が食べたくなったが、リビングのケトルの沸騰音で家族が起きるのを恐れ、トイレにケトルを持ち込んだ'
-          },
-          p1Action: {
-            zh: '在廁所裝好水、鎖上門煲水泡麵，還在空氣中噴了幾下香水蓋住麵味，躲在裡面津津有味地大口吃麵',
-            th: 'เติมน้ำในห้องน้ำ ล็อกประตูต้มน้ำชงบะหมี่ แถมฉีดน้ำหอมกลบกลิ่น แล้วนั่งกินบะหมี่อย่างเอร็ดอร่อย',
-            ja: 'トイレで水を入れて鍵をかけお湯を沸かし、匂い消しに香水まで振って、中で美味しそうに麺を頬張った'
-          },
-          p1Warn: {
-            zh: '雖然門關得緊緊的，家人完全沒聽見聲音，但廁所空間狹小悶熱，香水味混着油膩的泡麵味十分刺鼻',
-            th: 'แม้ประตูล็อกสนิทจนไม่มีใครได้ยินเสียง แต่ห้องน้ำแคบและอับ กลิ่นน้ำหอมผสมกลิ่นบะหมี่ฉุนกึก',
-            ja: 'ドアを閉め切って音は漏れなかったが、狭いトイレに香水と油っぽい麺の匂いが混ざって充満していた'
-          },
-          p1Thought: {
-            zh: '「我真是太聰明了！把水煲搬進廁所鎖門吃麵，又香又安靜，神不知鬼不覺！」',
-            th: '“เราฉลาดจริงๆ! ยกกาต้มน้ำเข้าห้องน้ำล็อกประตูแบบนี้ ทั้งหอมทั้งเงียบ ไม่มีใครรู้แน่นอน!”',
-            ja: '「僕って天才だ！トイレにケトルを持ち込んで鍵をかければ、静かでいい匂いで誰にも気づかれない！」'
-          },
-          p2Symptom: {
-            zh: '在悶熱不透風的環境下吸入過多香水味，加上深夜連吃兩碗重口味泡麵，很快便頭暈作嘔、腹痛難當',
-            th: 'สูดกลิ่นน้ำหอมในที่อับอากาศ แถมกินบะหมี่รสจัดถึงสองถ้วยกลางดึก ไม่นานก็เวียนหัวคลื่นไส้และปวดท้องอย่างหนัก',
-            ja: '換気の悪い場所で香水の匂いを吸い込み、深夜に味の濃い麺を2杯も食べたため、すぐにめまいと吐き気、激しい腹痛に襲われた'
-          },
-          p2Reaction: {
-            zh: '我難受得直冒冷汗，捂着嘴巴衝回馬桶邊嘔吐，整個人虛弱無力、面如土色',
-            th: 'ฉันทรมานจนเหงื่อแตกพลั่ก เอามือปิดปากวิ่งไปอาเจียนที่โถส้วม ร่างกายอ่อนแรงหน้าซีดเผือด',
-            ja: '私は苦しくて冷や汗が吹き出し、口を押さえてトイレに駆け込んで吐き、顔面蒼白でぐったりしてしまった'
-          },
-          p2Result: {
-            zh: '嘔吐聲驚醒了媽媽，媽媽推門看見廁所裡的電熱水煲和泡麵碗又氣又心疼，連夜帶我去看急診',
-            th: 'เสียงอาเจียนปลุกแม่ตื่น แม่เปิดประตูมาเห็นกาต้มน้ำกับถ้วยบะหมี่ในห้องน้ำทั้งโกรธทั้งสงสาร รีบพาไปหาหมอทันที',
-            ja: '吐く音でお母さんが目を覚まし、トイレのケトルと麺の容器を見て呆れつつ心配し、夜中に病院へ連れて行ってくれた'
-          },
-          moral: {
-            zh: '凡事要遵守安全與飲食規矩，切勿為了貪吃而在不衛生的地方暴飲暴食，否則只會自討苦吃',
-            th: 'ต้องรักษากฎระเบียบและความปลอดภัย ไม่ควรแอบกินจุในที่ที่ไม่ถูกสุขลักษณะ มิฉะนั้นจะได้รับผลเสียเอง',
-            ja: '安全と食事のマナーを守り、不衛生な場所で隠れて暴飲暴食をすると結局自分が苦しむことになると学んだ'
-          },
-          future: {
-            zh: '以後不在廁所吃東西，也不再深夜偷吃泡麵，乖乖愛護自己的身體',
-            th: 'ต่อไปจะไม่กินอาหารในห้องน้ำ และไม่แอบกินบะหมี่กลางดึกอีก จะดูแลร่างกายตัวเองให้ดี',
-            ja: 'これからはトイレで食事をしたり、深夜にカップ麺を隠れ食いしたりせず、自分の体を大切にする'
-          },
-          introObj: {
-            zh: '客廳桌上那個電熱水煲',
-            th: 'กาต้มน้ำไฟฟ้าบนโต๊ะในห้องนั่งเล่น',
-            ja: 'リビングのテーブルにあるあの電気ケトル'
-          },
-          introEvent: {
-            zh: '把水煲搬進廁所鎖門偷吃泡麵卻吃壞肚子',
-            th: 'การยกกาต้มน้ำเข้าห้องน้ำล็อกประตูแอบกินบะหมี่จนป่วย',
-            ja: 'ケトルをトイレに持ち込んで鍵をかけ、カップ麺を隠れ食いして体調を崩したこと'
-          },
-          introFeeling: {
-            zh: '至今仍覺得又好笑又後悔不已',
-            th: 'จนถึงวันนี้ยังรู้สึกทั้งขำไม่ออกและเสียใจไม่หาย',
-            ja: '今でも思い出すたびに大変後悔している'
-          }
-        }
+        env: 'home_night',
+        food: { zh: '兩大包麻油公仔麵', th: 'บะหมี่ซองรสงาหอมสองห่อใหญ่', ja: 'ごま油香る袋麺2袋' },
+        obj: { zh: '廚櫃裡那包公仔麵', th: 'บะหมี่ซองห่อนั้นในตู้ครัว', ja: '戸棚にあるあのインスタント袋麺' },
+        defaultWhoKey: 'dad_only'
       },
-
       {
         id: 'cola_shower',
         icon: '🥤',
+        tag: '浴室水聲・慢開冰可樂',
         title: {
-          zh: '媽媽洗澡時偷喝兩罐冰可樂',
-          th: 'แอบดื่มโค้กเย็นสองกระป๋องตอนแม่กำลังอาบน้ำ',
-          ja: 'お母さんがシャワー中に冷たいコーラを2缶こっそり飲んだ話'
+          zh: '故事 C：趁媽媽洗澡偷喝兩罐冰可樂',
+          th: 'เรื่อง C: แอบดื่มโค้กเย็นสองกระป๋องตอนแม่อาบน้ำ',
+          ja: '物語C：お母さんがシャワー中に冷たいコーラ2缶を隠れ飲み'
         },
-        subtitle: {
-          zh: '趁媽媽進浴室洗澡，小心翼翼慢慢拉開易拉罐怕發出聲音，連喝兩罐冰可樂後喉嚨痛兼肚子絞痛！',
-          th: 'ฉวยโอกาสตอนแม่อาบน้ำ ค่อยๆ เปิดกระป๋องโค้กเบาๆ กลัวมีเสียง ดื่มรวดเดียวสองกระป๋องจนเจ็บคอและปวดท้องบิด!',
-          ja: 'お母さんがお風呂に入った隙に、音が鳴らないようそっと缶を開け、冷たいコーラを2缶一気飲みして腹痛と喉の痛みに！'
+        desc: {
+          zh: '媽媽不准睡前喝汽水，趁媽媽進浴室洗澡水聲嘩啦啦響時，小心翼翼慢慢拉開罐環不發出聲音！',
+          th: 'แม่ห้ามดื่มน้ำอัดลมก่อนนอน ฉวยโอกาสตอนแม่อาบน้ำ ค่อยๆ เปิดกระป๋องเบาๆ ไม่ให้มีเสียง!',
+          ja: '寝る前の炭酸禁止なのに、お母さんのシャワーの音に紛れて缶をそっと開け、2缶一気飲み！'
         },
-        defaults: {
-          time: {
-            zh: '上星期日晚上十點多',
-            th: 'คืนวันอาทิตย์ที่แล้วเวลาสี่ทุ่มกว่า',
-            ja: '先週の日曜日の夜10時過ぎ'
-          },
-          who: {
-            zh: '我和正在浴室洗澡的媽媽',
-            th: 'ฉันกับคุณแม่ที่กำลังอาบน้ำอยู่ในห้องน้ำ',
-            ja: '私とお風呂に入っていたお母さん'
-          },
-          place: {
-            zh: '家裡的客廳冰箱旁',
-            th: 'ข้างตู้เย็นในห้องนั่งเล่นที่บ้าน',
-            ja: '家のリビングの冷蔵庫の前'
-          },
-          cause: {
-            zh: '媽媽平日不准我睡前喝冰凍汽水，我趁媽媽進浴室洗澡、水聲嘩啦啦響時，忍不住打開冰箱拿可樂',
-            th: 'ปกติแม่ห้ามดื่มน้ำอัดลมเย็นๆ ก่อนนอน ฉันเลยฉวยโอกาสตอนแม่เข้าห้องน้ำเปิดฝักบัว รีบเปิดตู้เย็นหยิบโค้กออกมา',
-            ja: '普段お母さんから寝る前の冷たい炭酸飲料を禁止されていたが、シャワーの音が響く隙に冷蔵庫からコーラを取り出した'
-          },
-          p1Action: {
-            zh: '屏住呼吸、用手指一點一點慢慢推開拉環，生怕發出「嘶——」的開罐聲，然後一口氣連喝了兩罐冰可樂',
-            th: 'กลั้นหายใจ ค่อยๆ ใช้นิ้วดันห่วงเปิดกระป๋องทีละนิดกลัวมีเสียง “ซ่า—” แล้วดื่มโค้กเย็นรวดเดียวสองกระป๋อง',
-            ja: '息を潜めて「プシュッ」という音が出ないよう少しずつタブを開け、冷たいコーラを2缶も一気飲みした'
-          },
-          p1Warn: {
-            zh: '冰涼氣泡衝進喉嚨又刺又爽，我把空罐藏在垃圾桶最底層，以為做得天衣無縫，媽媽完全不知道',
-            th: 'ความเย็นซ่าไหลลงคออย่างสะใจ ฉันซ่อนกระป๋องเปล่าไว้ก้นถังขยะ คิดว่าแนบเนียนจนแม่ไม่รู้ตัว',
-            ja: '冷たい炭酸が喉を通って最高に爽快で、空き缶をゴミ箱の底に隠し、お母さんには絶対バレないと思った'
-          },
-          p1Thought: {
-            zh: '「幸好我開罐的技巧這麼高超，一點聲音都沒有！冰可樂實在太好喝了，喝兩罐也沒關係吧！」',
-            th: '“โชคดีที่เราเปิดกระป๋องเก่งมาก ไม่มีเสียงเลยสักนิด! โค้กเย็นอร่อยสุดๆ ดื่มสองกระป๋องคงไม่เป็นไรหรอก!”',
-            ja: '「音を立てずに開けるなんて完璧だ！冷たいコーラは最高に美味しいし、2缶くらい飲んでも平気だろう！」'
-          },
-          p2Symptom: {
-            zh: '不到半小時，兩罐冰可樂讓腸胃受寒痙攣，肚子一陣陣絞痛，喉嚨也變得又乾又痛、不停咳嗽',
-            th: 'ไม่ถึงครึ่งชั่วโมง ความเย็นจัดทำให้กระเพาะหดเกร็ง ปวดท้องบิดเป็นพักๆ แถมเจ็บคอและไอไม่หยุด',
-            ja: '30分もしないうちに冷たい飲み物で胃腸が冷えて痙攣し、お腹がキリキリ痛み、喉も痛くなって咳が止まらなくなった'
-          },
-          p2Reaction: {
-            zh: '我痛苦得抱緊肚子蜷縮在被窩裡，臉色蒼白、牙齒打顫，難受得眼淚都掉了下來',
-            th: 'ฉันกอดท้องขดตัวอยู่ในผ้าห่มด้วยความเจ็บปวด หน้าซีดตัวสั่น น้ำตาไหลออกมาเพราะทรมาน',
-            ja: '私はお腹を抱えて布団の中で丸くなり、顔面蒼白で歯をガタガタ震わせ、苦しくて涙がこぼれた'
-          },
-          p2Result: {
-            zh: '媽媽聽見我的咳嗽聲進房查看，很快在垃圾桶發現了兩罐空可樂，無奈地帶我去看醫生吃藥',
-            th: 'แม่ได้ยินเสียงไอจึงเดินเข้ามาดู และเจอกระป๋องโค้กเปล่าสองใบในถังขยะ จึงพาไปหาหมอและกินยา',
-            ja: '咳の声を聞いたお母さんが部屋に来てゴミ箱の空き缶を2つ見つけ、呆れながらも病院へ連れて行ってくれた'
-          },
-          moral: {
-            zh: '大人的叮嚀都是為了我們的健康着想，貪一時口腹之欲、暗中違規最終受苦的還是自己',
-            th: 'คำเตือนของผู้ใหญ่ล้วนหวังดีต่อสุขภาพของเรา การตามใจปากและแอบทำผิดกฎ สุดท้ายคนที่ทรมานก็คือตัวเราเอง',
-            ja: '大人の注意は健康を思ってのことだと分かり、目先の欲に負けてルールを破れば結局自分が苦しむと悟った'
-          },
-          future: {
-            zh: '以後聽從媽媽的勸告，睡前不喝冰冷飲品，做個誠實乖巧的好孩子',
-            th: 'ต่อไปจะเชื่อฟังคำเตือนของแม่ ไม่ดื่มน้ำเย็นจัดก่อนนอน และเป็นเด็กดีที่ซื่อสัตย์',
-            ja: 'これからはお母さんの言いつけを守り、寝る前に冷たい飲み物を飲まず、正直で良い子になる'
-          },
-          introObj: {
-            zh: '冰箱裡那罐冰凍可樂',
-            th: 'กระป๋องโค้กเย็นเจี๊ยบในตู้เย็น',
-            ja: '冷蔵庫の中の冷たいコーラの缶'
-          },
-          introEvent: {
-            zh: '趁媽媽洗澡時偷喝兩罐冰可樂結果生病',
-            th: 'การแอบดื่มโค้กเย็นสองกระป๋องตอนแม่อาบน้ำจนป่วย',
-            ja: 'お母さんがお風呂の間に冷たいコーラを2缶こっそり飲んで病気になったこと'
-          },
-          introFeeling: {
-            zh: '心裡仍感到懊悔萬分',
-            th: 'ในใจยังคงรู้สึกเสียใจอย่างสุดซึ้ง',
-            ja: '今でも心から後悔している'
-          }
-        }
+        env: 'home_evening',
+        food: { zh: '兩罐冰凍可樂', th: 'โค้กเย็นเจี๊ยบสองกระป๋อง', ja: 'キンキンに冷えたコーラ2缶' },
+        obj: { zh: '冰箱裡那罐冰凍可樂', th: 'กระป๋องโค้กเย็นในตู้เย็น', ja: '冷蔵庫の中の冷たいコーラの缶' },
+        defaultWhoKey: 'mom_shower'
       },
-
       {
         id: 'sushi_icecream',
         icon: '🍨',
+        tag: '壽司加雪糕・冷熱交加',
         title: {
-          zh: '吃飽壽司回家再偷吃雪糕',
-          th: 'กินซูชิจนอิ่มแล้วแอบกินไอศกรีมต่อที่บ้าน',
-          ja: 'お寿司でお腹いっぱいなのに帰宅後アイスを隠れ食い'
+          zh: '故事 D：吃飽壽司回家再偷吃雪糕',
+          th: 'เรื่อง D: กินซูชิจนอิ่มแล้วแอบกินไอศกรีมต่อ',
+          ja: '物語D：お寿司でお腹いっぱいなのに帰宅後アイスを暴食'
         },
-        subtitle: {
-          zh: '已經吃了好多壽司其實很飽，回家趁媽媽不注意又「靜雞雞」偷吃雪糕，冷熱交加結果腹瀉發燒！',
-          th: 'กินซูชิไปเยอะจนอิ่มมากแล้ว แต่พอกลับบ้านยังแอบกินไอศกรีมเงียบๆ จนท้องเสียและเป็นไข้!',
-          ja: 'お寿司をたくさん食べて満腹だったのに、帰宅後にお母さんに隠れてアイスを食べ、下痢と発熱でダウン！'
+        desc: {
+          zh: '晚上已經吃了十多碟壽司，回家趁十二點家人睡覺又「靜雞雞」偷吃幾杯雪糕，冷熱交加出事！',
+          th: 'กินซูชิไปสิบกว่าจานจนอิ่มแล้ว พอกลับบ้านตอนเที่ยงคืนยังแอบกินไอศกรีมอีกหลายถ้วย!',
+          ja: '夜にお寿司を十数皿も食べたのに、帰宅後12時にこっそりカップアイスを何個も食べてお腹を壊した！'
         },
-        defaults: {
-          time: {
-            zh: '昨天晚上八點多',
-            th: 'เมื่อวานนี้ตอนสองทุ่มกว่า',
-            ja: '昨日の夜8時過ぎ'
-          },
-          who: {
-            zh: '我和媽媽',
-            th: 'ฉันกับคุณแม่',
-            ja: '私とお母さん'
-          },
-          place: {
-            zh: '壽司店和家裡的冰格前',
-            th: 'ร้านซูชิและหน้าช่องแช่แข็งที่บ้าน',
-            ja: 'お寿司屋さんと家の冷凍庫の前'
-          },
-          cause: {
-            zh: '晚飯時我已經吃了十多碟壽司，肚子撐得圓滾滾的，回家後看見冰格裡的朱古力雪糕卻又嘴饞起來',
-            th: 'มื้อเย็นกินซูชิไปสิบกว่าจานจนพุงกางแล้ว แต่พอกลับถึงบ้านเห็นไอศกรีมช็อกโกแลตในช่องแช่แข็งก็เกิดอยากกินขึ้นมาอีก',
-            ja: '夕飯にお寿司を十数皿も食べてお腹がパンパンだったのに、帰宅後冷凍庫のチョコアイスを見てまた食べたくなった'
-          },
-          p1Action: {
-            zh: '趁媽媽在房間整理衣服不注意時，我躡手躡腳打開冰格，拿出兩大杯雪糕「靜雞雞」地狼吞虎嚥吃光',
-            th: 'ฉวยโอกาสตอนแม่จัดเสื้อผ้าอยู่ในห้อง ฉันย่องเปิดช่องแช่แข็งหยิบไอศกรีมสองถ้วยใหญ่มาแอบกินเงียบๆ จนหมด',
-            ja: 'お母さんが部屋で服を片付けている隙に、そっと冷凍庫を開けて大きなカップアイスを2つもこっそり平らげた'
-          },
-          p1Warn: {
-            zh: '媽媽早些時候才提醒過我：「你已經吃太飽了，今晚千萬不能再吃雪糕！」我卻把媽媽的話當耳邊風',
-            th: 'ก่อนหน้านี้แม่เพิ่งเตือนว่า “ลูกกินอิ่มมากแล้ว คืนนี้ห้ามกินไอศกรีมอีกนะ!” แต่ฉันกลับไม่ฟังคำเตือนของแม่',
-            ja: 'さっきお母さんから「もう食べ過ぎだから今夜は絶対にアイスを食べちゃダメよ！」と注意されたのに聞き流してしまった'
-          },
-          p1Thought: {
-            zh: '「反正肚子還有點空位，偷偷吃兩杯雪糕涼快一下，媽媽不會發現的！」',
-            th: '“ท้องยังพอมีที่ว่างอยู่ แอบกินไอศกรีมสองถ้วยให้ชื่นใจ แม่ไม่รู้หรอก!”',
-            ja: '「まだお腹に少し隙間があるし、こっそりアイスを2つ食べて涼しくなろう、お母さんにはバレないはず！」'
-          },
-          p2Symptom: {
-            zh: '生冷壽司加上大量冰凍雪糕，腸胃完全受不了刺激，半夜我開始劇烈腹痛、上吐下瀉，甚至發起低燒',
-            th: 'ซูชิของดิบเย็นบวกกับไอศกรีมเย็นจัด กระเพาะรับไม่ไหว กลางดึกจึงปวดท้องอย่างรุนแรง อาเจียน ท้องเสีย และมีไข้ต่ำๆ',
-            ja: '冷たいお寿司に大量のアイスが重なり胃腸が限界を迎え、夜中に激しい腹痛と嘔吐・下痢、さらには微熱まで出た'
-          },
-          p2Reaction: {
-            zh: '我跑了五六趟廁所，雙腿發軟、面無血色，捂着咕嚕作響的肚子躺在床上呻吟',
-            th: 'ฉันวิ่งเข้าห้องน้ำห้าหกรอบจนขาอ่อนแรง หน้าซีดไร้สีเลือด นอนเอามือกุมท้องที่ร้องโครกครากครวญครางอยู่บนเตียง',
-            ja: '私はトイレに5、6回も駆け込んで足がふらふらになり、血の気を失ってお腹を押さえながらベッドでうめいた'
-          },
-          p2Result: {
-            zh: '媽媽整晚沒睡照顧我、幫我量體溫，第二天還帶我去看醫生，害我連最喜歡的課外活動也去不了',
-            th: 'แม่ไม่ได้นอนทั้งคืนเพื่อคอยดูแลและวัดไข้ให้ฉัน วันรุ่งขึ้นยังพาไปหาหมอ ทำให้ฉันอดไปกิจกรรมพิเศษที่ชอบ',
-            ja: 'お母さんは一晩中寝ずに看病して熱を測ってくれ、翌日病院へ連れて行かれ、楽しみにしていた課外活動にも行けなかった'
-          },
-          moral: {
-            zh: '「病從口入」，吃東西要懂得適可而止，不聽勸告貪吃生冷食物只會令自己生病、連累家人擔心',
-            th: '“โรคภัยเข้าทางปาก” การกินต้องรู้จักพอดี การไม่เชื่อฟังคำเตือนและกินของเย็นจัดเกินขนาดมีแต่จะทำให้ป่วยและลำบากพ่อแม่',
-            ja: '「病は口より入る」と言う通り、食事は腹八分目にすべきで、忠告を無視して冷たい物を食べ過ぎると家族にも心配をかけると悟った'
-          },
-          future: {
-            zh: '以後吃飯吃到八分飽就停口，乖乖聽從爸媽的健康提醒，不再貪吃生冷零食',
-            th: 'ต่อไปจะกินอาหารแค่พออิ่ม เชื่อฟังคำเตือนเรื่องสุขภาพของพ่อแม่ และไม่ตะกละกินของเย็นจัดอีก',
-            ja: 'これからは食事を腹八分目で止め、両親の健康へのアドバイスを素直に聞いて冷たい物を食べ過ぎない'
-          },
-          introObj: {
-            zh: '冰箱冰格裡的雪糕盒',
-            th: 'กล่องไอศกรีมในช่องแช่แข็ง',
-            ja: '冷凍庫の中のアイスクリームの箱'
-          },
-          introEvent: {
-            zh: '吃飽壽司回家後又偷吃雪糕結果上吐下瀉生病',
-            th: 'การกินซูชิจนอิ่มแล้วแอบกินไอศกรีมต่อจนท้องเสียอาเจียน',
-            ja: 'お寿司でお腹いっぱいなのに帰宅後アイスを隠れ食いして嘔吐下痢になったこと'
-          },
-          introFeeling: {
-            zh: '直到今天仍感到十分愧疚與後悔',
-            th: 'จนถึงวันนี้ยังรู้สึกผิดและเสียใจอย่างมาก',
-            ja: '今日までずっと申し訳なさと後悔でいっぱいだ'
-          }
-        }
+        env: 'home_night',
+        food: { zh: '幾大杯朱古力雪糕', th: 'ไอศกรีมช็อกโกแลตถ้วยใหญ่หลายถ้วย', ja: '大きなチョコアイス数個' },
+        obj: { zh: '冰箱冰格裡的雪糕盒', th: 'กล่องไอศกรีมในช่องแช่แข็ง', ja: '冷凍庫の中のアイスの箱' },
+        defaultWhoKey: 'mom_dad'
       },
-
       {
-        id: 'midnight_bread_candy',
+        id: 'bread_candy_room',
         icon: '🍞',
+        tag: '甜麵包糖果・偷藏猛吃',
         title: {
-          zh: '凌晨一點起床偷吃麵包與糖果',
-          th: 'ตื่นตีหนึ่งแอบกินขนมปังและลูกอมจนป่วย',
-          ja: '午前1時に起きてパンと飴をこっそり食べ過ぎた話'
+          zh: '故事 E：偷藏麵包與糖果在房間猛吃',
+          th: 'เรื่อง E: แอบซ่อนขนมปังและลูกอมไว้กินในห้อง',
+          ja: '物語E：パンと飴を部屋に隠して一気に食べ過ぎた話'
         },
-        subtitle: {
-          zh: '半夜一點醒來嘴饞，摸黑吃掉好幾個麵包和一大把糖果，結果胃脹氣、反胃又牙痛！',
-          th: 'ตื่นขึ้นมาตอนตีหนึ่งแล้วปากว่าง เลยแอบกินขนมปังหลายชิ้นกับลูกอมกำใหญ่ สุดท้ายท้องอืด คลื่นไส้ และปวดฟัน!',
-          ja: '夜中の1時に目が覚めて口寂しくなり、パンを何個も食べて飴も大量に舐めた結果、胃もたれと吐き気・歯痛に！'
+        desc: {
+          zh: '星期五買回來的忌廉麵包和一大罐水果糖，偷偷藏在書包帶回房間猛吃，吃完沒刷牙直接睡覺！',
+          th: 'ขนมปังครีมและกระปุกลูกอมที่ซื้อมาวันศุกร์ แอบซ่อนในกระเป๋าแล้วเอามากินรวดเดียวในห้อง!',
+          ja: '金曜日に買ったクリームパンとフルーツ飴の缶を部屋に持ち込み、歯も磨かず一気に食べ過ぎた！'
         },
-        defaults: {
-          time: {
-            zh: '上星期四凌晨一點多',
-            th: 'คืนวันพฤหัสบดีที่แล้วเวลาตีหนึ่งกว่า',
-            ja: '先週の木曜日の午前1時過ぎ'
-          },
-          who: {
-            zh: '我和正在熟睡的家人',
-            th: 'ฉันกับคนในครอบครัวที่กำลังหลับสนิท',
-            ja: '私とぐっすり眠っていた家族'
-          },
-          place: {
-            zh: '家裡的飯廳餐桌旁',
-            th: 'ข้างโต๊ะอาหารในบ้าน',
-            ja: '家のダイニングテーブルのそば'
-          },
-          cause: {
-            zh: '半夜一點醒來睡不着，走到飯廳看見桌上放着剛買的忌廉麵包和一罐水果糖，頓時饞蟲大動',
-            th: 'ตื่นขึ้นมาตอนตีหนึ่งแล้วนอนไม่หลับ เดินออกมาเห็นขนมปังครีมกับกระปุกทอฟฟี่บนโต๊ะ เลยเกิดความอยากกินขึ้นมาทันที',
-            ja: '夜中の1時に目が覚めて眠れず、テーブルの上のクリームパンとフルーツ飴の缶を見て急に食べたくなった'
-          },
-          p1Action: {
-            zh: '借着微弱的月光，我一口氣塞進三個忌廉麵包，接着又抓了一大把甜滋滋的糖果放進嘴裡嚼個不停',
-            th: 'อาศัยแสงจันทร์สลัวๆ ฉันยัดขนมปังครีมเข้าไปรวดเดียวสามชิ้น แล้วหยิบลูกอมหวานเจี๊ยบอีกกำใหญ่มาเคี้ยวไม่หยุด',
-            ja: '薄暗い月明かりの中でクリームパンを3個も一気に頬張り、さらに甘い飴をひと握りも口に入れて噛み続けた'
-          },
-          p1Warn: {
-            zh: '吃完後我連牙也沒刷、水也沒喝，拍拍圓鼓鼓的肚皮便直接爬回床上倒頭大睡',
-            th: 'พอกินเสร็จฉันก็ไม่แปรงฟันและไม่ดื่มน้ำ ลูบพุงป่องๆ แล้วปีนกลับขึ้นเตียงนอนหลับต่อทันที',
-            ja: '食べ終わったあと歯も磨かず水も飲まず、パンパンのお腹をさすってそのままベッドに戻り寝てしまった'
-          },
-          p1Thought: {
-            zh: '「半夜吃甜食真是太幸福了！只要不發出聲音，明天早上誰也不會發現少了好幾個麵包！」',
-            th: '“การกินของหวานกลางดึกช่างมีความสุขจริงๆ! ขอแค่ไม่มีเสียง พรุ่งนี้เช้าก็ไม่มีใครรู้ว่าขนมปังหายไปหลายชิ้น!”',
-            ja: '「夜中に甘いものを食べるなんて最高に幸せだ！音さえ立てなければ、明日の朝パンが減っていても誰も気づかない！」'
-          },
-          p2Symptom: {
-            zh: '過多甜食在胃裡發酵脹氣，凌晨四點我被一陣劇烈的胃痛和反酸驚醒，牙齒也隱隱作痛',
-            th: 'ของหวานจำนวนมากหมักหมมจนท้องอืด ตอนตีสี่ฉันสะดุ้งตื่นเพราะปวดท้องอย่างรุนแรง กรดไหลย้อน แถมปวดฟันตุบๆ',
-            ja: '大量の甘いものが胃の中で膨らみ、朝4時に激しい胃痛と胸焼けで目が覚め、歯までズキズキ痛み出した'
-          },
-          p2Reaction: {
-            zh: '我胃裡翻江倒海，衝進洗手間乾嘔不止，額頭冷汗直流，嘴巴又苦又酸，難受極了',
-            th: 'ท้องไส้ปั่นป่วน วิ่งเข้าห้องน้ำอาเจียนไม่หยุด เหงื่อเย็นไหลท่วมหน้าผาก ปากขมและเปรี้ยว ทรมานสุดๆ',
-            ja: '胃の中がひっくり返るようでトイレに駆け込んで吐き続け、冷や汗が流れ、口の中が苦くて酸っぱく最悪の気分だった'
-          },
-          p2Result: {
-            zh: '早上媽媽看見餐桌上空空的麵包袋和臉色蠟黃的我，立刻帶我去看醫生，那天我整天只能吃白粥',
-            th: 'ตอนเช้าแม่เห็นถุงขนมปังเปล่าบนโต๊ะและหน้าตาซีดเซียวของฉัน จึงรีบพาไปหาหมอ วันนั้นทั้งวันฉันกินได้แค่ข้าวต้มเปล่า',
-            ja: '朝、テーブルの空のパン袋と真っ青な顔の私を見たお母さんに病院へ連れて行かれ、その日は一日中白がゆしか食べられなかった'
-          },
-          moral: {
-            zh: '半夜暴食甜食既傷腸胃又蛀牙，健康作息與飲食節制比一時的口腹之樂重要得多',
-            th: 'การกินของหวานมากเกินไปกลางดึกทำร้ายทั้งกระเพาะและฟัน การพักผ่อนและการกินอย่างพอดีสำคัญกว่าความอร่อยชั่วคราว',
-            ja: '深夜の甘いものの食べ過ぎは胃腸も歯も傷つけるため、規則正しい生活と節度ある食事が何より大切だと学んだ'
-          },
-          future: {
-            zh: '以後養成早睡早起的好習慣，半夜不再起床偷吃零食，吃完甜食一定記得刷牙漱口',
-            th: 'ต่อไปจะฝึกนิสัยเข้านอนแต่หัวค่ำ ไม่ตื่นมาแอบกินขนมกลางดึกอีก และจะแปรงฟันทุกครั้งหลังกินของหวาน',
-            ja: 'これからは早寝早起きの習慣をつけ、夜中に起きてお菓子を食べず、甘い物を食べたら必ず歯を磨く'
-          },
-          introObj: {
-            zh: '餐桌上那個五顏六色的糖果罐',
-            th: 'กระปุกลูกอมหลากสีสันบนโต๊ะอาหาร',
-            ja: 'テーブルの上にあるカラフルな飴の缶'
-          },
-          introEvent: {
-            zh: '凌晨一點起床偷吃麵包和糖果結果胃痛生病',
-            th: 'การตื่นตีหนึ่งแอบกินขนมปังกับลูกอมจนปวดท้องป่วย',
-            ja: '午前1時に起きてパンと飴をこっそり食べ過ぎて胃痛で病気になったこと'
-          },
-          introFeeling: {
-            zh: '至今仍讓我感到既難受又後悔',
-            th: 'จนถึงวันนี้ยังทำให้ฉันรู้สึกทั้งทรมานและเสียใจ',
-            ja: '今でも思い出すと苦しくて後悔の念が湧いてくる'
-          }
-        }
+        env: 'home_evening',
+        food: { zh: '三個忌廉麵包和一大把糖果', th: 'ขนมปังครีมสามชิ้นกับลูกอมกำใหญ่', ja: 'クリームパン3個と大量のフルーツ飴' },
+        obj: { zh: '餐桌上那個五顏六色的糖果罐', th: 'กระปุกลูกอมหลากสีสันบนโต๊ะอาหาร', ja: 'テーブルの上のカラフルな飴の缶' },
+        defaultWhoKey: 'mom_only'
       },
-
       {
-        id: 'gaming_snacks',
+        id: 'sister_quilt_snacks',
         icon: '🎮',
+        tag: '被窩偷吃・靜音打機',
         title: {
-          zh: '邊打遊戲到凌晨邊狂吃零食',
-          th: 'เล่นเกมโต้รุ่งถึงตีห้าพร้อมกินขนมไม่หยุดจนป่วย',
-          ja: '朝5時までゲームをしながらお菓子を暴食して体調不良に'
+          zh: '故事 F：和妹妹躲在被窩偷吃零食打機',
+          th: 'เรื่อง F: แอบกินขนมและเล่นเกมใต้ผ้าห่มกับน้องสาว',
+          ja: '物語F：妹と布団に隠れてお菓子を暴食＆夜更かしゲーム'
         },
-        subtitle: {
-          zh: '躲在房間靜音打遊戲到凌晨五點，一邊打機一邊狂吃薯片和汽水，作息大亂加上暴食結果頭暈嘔吐！',
-          th: 'แอบปิดเสียงเล่นเกมในห้องถึงตีห้า กินมันฝรั่งทอดกับน้ำอัดลมไม่หยุด นอนดึกและกินเกินขนาดจนเวียนหัวอาเจียน!',
-          ja: '部屋で消音にして朝5時までゲームをし、ポテチと炭酸を暴食した結果、生活リズムが崩れてめまいと嘔吐でダウン！'
+        desc: {
+          zh: '深夜拉着妹妹一起躲在被窩裡，把遊戲機調成靜音模式，一邊玩到凌晨一邊狂吃薯片和汽水！',
+          th: 'ชวนน้องสาวมุดใต้ผ้าห่มกลางดึก ปิดเสียงเกมแล้วกินมันฝรั่งทอดกับน้ำอัดลมจนถึงเช้า!',
+          ja: '深夜に妹と布団に潜り込み、ゲームを消音にして朝方までポテチと炭酸を暴食した！'
         },
-        defaults: {
-          time: {
-            zh: '上星期五深夜到星期六凌晨五點',
-            th: 'คืนวันศุกร์ยาวไปจนถึงตีห้าของเช้าวันเสาร์',
-            ja: '先週の金曜の深夜から土曜の朝5時まで'
-          },
-          who: {
-            zh: '我自己一個人在房間裡',
-            th: 'ฉันคนเดียวในห้องนอน',
-            ja: '私一人で自分の部屋の中で'
-          },
-          place: {
-            zh: '關緊房門的睡房書桌前',
-            th: 'หน้าโต๊ะเขียนหนังสือในห้องนอนที่ปิดประตูสนิท',
-            ja: 'ドアを閉め切った寝室の机の前'
-          },
-          cause: {
-            zh: '週末放假我偷偷把遊戲機調成靜音模式玩通宵，為了提神還在書桌旁堆滿了薯片、蝦條和汽水',
-            th: 'วันหยุดสุดสัปดาห์ฉันแอบปิดเสียงเครื่องเล่นเกมเพื่อเล่นโต้รุ่ง และเตรียมมันฝรั่งทอด ข้าวเกรียบ กับน้ำอัดลมไว้เต็มโต๊ะ',
-            ja: '週末の休みにゲーム機を消音モードにして徹夜で遊び、眠気覚ましに机の横にポテチやスナック菓子、炭酸飲料を山積みにした'
-          },
-          p1Action: {
-            zh: '我眼睛緊盯着發光的螢幕，手指飛快按鍵，嘴巴也沒有停過，不知不覺把兩大包薯片和三罐汽水全掃光',
-            th: 'ตาจ้องหน้าจอสว่างจ้า นิ้วกดปุ่มรัวๆ ปากก็เคี้ยวไม่หยุด เผลอแป๊บเดียวกินมันฝรั่งทอดสองห่อใหญ่กับน้ำอัดลมสามกระป๋องจนหมด',
-            ja: '光る画面をじっと見つめて指を動かし続け、口も休まず動かし、気づけば大きなポテチ2袋と炭酸3缶を全部平らげた'
-          },
-          p1Warn: {
-            zh: '因為開了靜音模式，爸媽在隔壁房間完全沒察覺，我一直玩到凌晨五點才迷迷糊糊爬上床睡覺',
-            th: 'เพราะเปิดโหมดปิดเสียง พ่อแม่ในห้องข้างๆ จึงไม่รู้เรื่อง ฉันเล่นจนถึงตีห้าถึงได้งัวเงียปีนขึ้นเตียงนอน',
-            ja: '消音モードにしていたため隣の部屋の両親は全く気づかず、朝5時まで遊び続けてからフラフラとベッドに入った'
-          },
-          p1Thought: {
-            zh: '「開了靜音打遊戲又沒人管，還有這麼多零食陪着我，通宵玩樂實在太痛快了！」',
-            th: '“ปิดเสียงเล่นเกมแบบนี้ไม่มีใครว่า แถมมีขนมอร่อยๆ เต็มโต๊ะ เล่นโต้รุ่งช่างสะใจจริงๆ!”',
-            ja: '「消音でゲームをすれば誰にも怒られないし、お菓子もたくさんあって徹夜で遊ぶのは最高に楽しい！」'
-          },
-          p2Symptom: {
-            zh: '直到下午一點才醒來，我頓時感到天旋地轉、胃部火燒般劇痛，連站也站不穩，隨即劇烈嘔吐起來',
-            th: 'ตื่นอีกทีตอนบ่ายโมง ฉันรู้สึกบ้านหมุนติ้ว ปวดแสบท้องอย่างรุนแรง ยืนแทบไม่อยู่ แล้วก็อาเจียนออกมาอย่างหนัก',
-            ja: '昼の1時に目を覚ますと、目が回るほどのめまいと胃が焼けるような激痛に襲われ、立っていられず激しく嘔吐した'
-          },
-          p2Reaction: {
-            zh: '我雙眼布滿血絲、面色青白，捂着翻騰的胃部蹲在地上痛苦呻吟，全身冷汗淋漓',
-            th: 'ตาแดงก่ำ หน้าซีดเขียว นั่งยองๆ กุมท้องที่ปั่นป่วนครวญครางด้วยความเจ็บปวด เหงื่อเย็นท่วมตัว',
-            ja: '目は真っ赤に充血し顔面蒼白で、うねる胃を押さえて床にしゃがみ込み、冷や汗を流しながら苦しそうにうめいた'
-          },
-          p2Result: {
-            zh: '媽媽發現我房裡滿地零食包裝袋又上吐下瀉，既生氣又擔心地送我去診所打針吃藥，我足足躺了兩天才康復',
-            th: 'แม่เห็นซองขนมเกลื่อนห้องและเห็นฉันอาเจียนท้องเสีย ทั้งโกรธทั้งเป็นห่วงรีบพาไปคลินิกฉีดยาและกินยา นอนซมไปสองวันเต็ม',
-            ja: '部屋中に散らかったお菓子の袋と嘔吐下痢の私を見たお母さんに病院へ連れて行かれ、点滴と薬で2日間も寝込む羽目になった'
-          },
-          moral: {
-            zh: '熬夜打遊戲加上暴飲暴食是健康的頭號殺手，自律生活、愛惜身體才是真正的快樂',
-            th: 'การนอนดึกเล่นเกมควบคู่กับการกินขนมเกินขนาดทำลายสุขภาพอย่างร้ายแรง การมีวินัยและดูแลร่างกายคือความสุขที่แท้จริง',
-            ja: '夜更かしゲームと暴飲暴食は健康の最大の敵であり、規則正しく自分を律する生活こそが本当の楽しさだと悟った'
-          },
-          future: {
-            zh: '以後嚴格控制打遊戲的時間，絕不熬夜，更不再一邊玩樂一邊無節制地狂吃零食',
-            th: 'ต่อไปจะจำกัดเวลาเล่นเกมอย่างเคร่งครัด ไม่นอนดึก และไม่กินขนมจุบจิบอย่างขาดสติระหว่างเล่นเกมอีก',
-            ja: 'これからはゲームの時間を厳しく守り、絶対に徹夜せず、遊びながら無節制にお菓子を暴食することは二度としない'
-          },
-          introObj: {
-            zh: '書桌抽屜裡那台遊戲機',
-            th: 'เครื่องเล่นเกมในลิ้นชักโต๊ะเขียนหนังสือ',
-            ja: '勉強机の引き出しにあるあのゲーム機'
-          },
-          introEvent: {
-            zh: '躲在房間打遊戲到凌晨五點並狂吃零食結果生病',
-            th: 'การแอบเล่นเกมถึงตีห้าและกินขนมไม่หยุดจนป่วยหนัก',
-            ja: '部屋で朝5時までゲームをしながらお菓子を暴食して病気になったこと'
-          },
-          introFeeling: {
-            zh: '至今仍讓我深感懊悔與自責',
-            th: 'จนถึงวันนี้ยังทำให้ฉันรู้สึกเสียใจและโทษตัวเองไม่หาย',
-            ja: '今でも深い後悔と自責の念に駆られる'
-          }
-        }
+        env: 'home_night',
+        food: { zh: '兩大包薯片和冰汽水', th: 'มันฝรั่งทอดสองห่อใหญ่กับน้ำอัดลมเย็น', ja: '大きなポテチ2袋と冷たい炭酸飲料' },
+        obj: { zh: '書桌抽屜裡那台遊戲機', th: 'เครื่องเล่นเกมในลิ้นชักโต๊ะเขียนหนังสือ', ja: '勉強机の引き出しにあるあのゲーム機' },
+        defaultWhoKey: 'sister_dad'
       }
     ];
 
     // =========================================================================
-    // 2. 應用程式狀態管理
+    // 3. 應用程式全局蝴蝶效應狀態（每一步的選擇都會更新此狀態並連動後面關卡）
     // =========================================================================
-    let appState = {
-      studentName: '',
+    let gameState = {
+      studentName: '湯雅智',
       studentClass: '4N',
       langMode: 'all', // 'all' | 'th' | 'ja' | 'zh'
       currentStep: 1,
       activeTab: 'form',
       skillsHighlight: true,
-      selectedStoryId: 'kitchen_noodles',
-      fields: {} // 儲存目前的各欄位三語資料
+
+      // 第 1 關狀態
+      storyId: 'cup_noodle_bathroom',
+
+      // 第 2 關狀態（四素：時、人、地、事）— 關鍵「人 (whoRole)」會直接決定第3、4關的發現者！
+      timeIdx: 0,
+      whoRole: 'dad_sister', // 'dad_only' | 'mom_only' | 'dad_sister' | 'mom_shower' | 'sister_dad' | 'alone_parents'
+      placeIdx: 0,
+      causeIdx: 0,
+
+      // 第 3 關狀態（片段一：先喜）
+      p1ActionIdx: 0,
+      p1WarnIdx: 0,
+      p1ThoughtIdx: 0,
+
+      // 第 4 關狀態（片段二：後悲）
+      p2SymptomIdx: 0,
+      p2ReactionIdx: 0,
+      p2ResultIdx: 0,
+
+      // 第 5 關狀態（總結段）
+      moralIdx: 0,
+      futureIdx: 0,
+
+      // 第 6 關狀態（引子段：物 → 事 → 情）
+      introObjIdx: 0,
+      introEventIdx: 0,
+      introFeelingIdx: 0
     };
 
-    // 初始化載入預設故事資料
-    function loadStoryDefaults(storyId) {
-      const story = STORIES_DATA.find(s => s.id === storyId) || STORIES_DATA[0];
-      appState.selectedStoryId = story.id;
-      // 深拷貝預設值，讓學生可以自由修改中文而不破壞原始範本
-      appState.fields = JSON.parse(JSON.stringify(story.defaults));
-      updateStoryBadges();
+    // 取得目前主線物件
+    function getCurrentStory() {
+      return STORY_BRANCHES.find(s => s.id === gameState.storyId) || STORY_BRANCHES[0];
     }
 
     // =========================================================================
-    // 3. 語言顯示切換與學生姓名設定
+    // 4. 動態蝴蝶效應選項生成器（根據前面關卡的選擇，即時生成每題 4~5 個選項）
+    //    確保：前後人物 100% 一致、地點與動作嚴密呼應、每題至少 4 個選項！
+    // =========================================================================
+
+    // --- 第 2 關選項庫（四素：時、人、地、事） ---
+    function getStep2Options() {
+      const s = getCurrentStory();
+      const isNight = (s.env === 'home_night');
+
+      // 2-1 時間（4個選項，根據深夜或晚上自動調整）
+      const timeOptions = isNight ? [
+        {
+          tag: '時間點描寫',
+          zh: '上星期五深夜一兩點',
+          th: 'คืนวันศุกร์ที่แล้วตอนตีหนึ่งตีสอง',
+          ja: '先週の金曜日の深夜1時か2時ごろ'
+        },
+        {
+          tag: '氛圍烘托',
+          zh: '上星期六凌晨一點多，萬籟俱寂的時候',
+          th: 'คืนวันเสาร์ที่แล้วเวลาตีหนึ่งกว่า ตอนที่ทุกอย่างเงียบสงัด',
+          ja: '先週の土曜日の午前1時過ぎ、辺りが静まり返ったころ'
+        },
+        {
+          tag: '鐘聲點題',
+          zh: '昨天晚上十二點剛過，全家人都入睡後',
+          th: 'เมื่อคืนนี้ตอนเที่ยงคืนกว่า หลังจากทุกคนหลับกันหมดแล้ว',
+          ja: '昨夜の12時を過ぎ、家族全員が寝静まったあと'
+        },
+        {
+          tag: '週末深夜',
+          zh: '上個週末的深宵時分',
+          th: 'ช่วงดึกสงัดของวันหยุดสุดสัปดาห์ที่แล้ว',
+          ja: '先週末の夜更けのこと'
+        }
+      ] : [
+        {
+          tag: '晚飯後時段',
+          zh: '上星期日晚上九點多',
+          th: 'คืนวันอาทิตย์ที่แล้วเวลาสามทุ่มกว่า',
+          ja: '先週の日曜日の夜9時過ぎ'
+        },
+        {
+          tag: '睡前時段',
+          zh: '昨天晚上十點半，快要上床睡覺前',
+          th: 'เมื่อคืนนี้ตอนสี่ทุ่มครึ่ง ก่อนจะเข้านอน',
+          ja: '昨夜の10時半ごろ、ちょうど寝る前の時間'
+        },
+        {
+          tag: '放學回家',
+          zh: '上星期五傍晚放學回家後',
+          th: 'เย็นวันศุกร์ที่แล้วหลังจากกลับจากโรงเรียน',
+          ja: '先週の金曜日の夕方、学校から帰宅したあと'
+        },
+        {
+          tag: '週末晚上',
+          zh: '上星期六晚飯過後不久',
+          th: 'คืนวันเสาร์ที่แล้วหลังกินข้าวเย็นเสร็จไม่นาน',
+          ja: '先週の土曜日の夕食後まもなく'
+        }
+      ];
+
+      // 2-2 人物（5個明確角色分支！這個選擇會成為「蝴蝶核心」，改寫第3、4關的所有人物！）
+      const whoOptions = [
+        {
+          role: 'dad_only',
+          tag: '角色線：爸爸',
+          zh: '我和在隔壁房間睡覺的爸爸',
+          th: 'ฉันกับคุณพ่อที่นอนอยู่ในห้องข้างๆ',
+          ja: '私と隣の部屋で寝ていたお父さん'
+        },
+        {
+          role: 'mom_only',
+          tag: '角色線：媽媽',
+          zh: '我和正在家裡休息的媽媽',
+          th: 'ฉันกับคุณแม่ที่กำลังพักผ่อนอยู่ในบ้าน',
+          ja: '私と家で休んでいたお母さん'
+        },
+        {
+          role: 'dad_sister',
+          tag: '角色線：妹妹＋爸爸',
+          zh: '我和睡在下格床的妹妹（還有爸爸）',
+          th: 'ฉันกับน้องสาวที่นอนเตียงล่าง (และคุณพ่อ)',
+          ja: '私と二段ベッドの下で寝ていた妹（とお父さん）'
+        },
+        {
+          role: 'mom_shower',
+          tag: '角色線：洗澡的媽媽',
+          zh: '我和正在浴室洗澡的媽媽',
+          th: 'ฉันกับคุณแม่ที่กำลังอาบน้ำอยู่ในห้องน้ำ',
+          ja: '私とお風呂でシャワーを浴びていたお母さん'
+        },
+        {
+          role: 'sister_dad',
+          tag: '角色線：共犯妹妹＋爸爸',
+          zh: '我和貪吃的妹妹（後來還有爸爸）',
+          th: 'ฉันกับน้องสาวจอมตะกละ (และคุณพ่อในตอนท้าย)',
+          ja: '私と食いしん坊の妹（あとでお父さん）'
+        }
+      ];
+
+      // 2-3 地點（4個選項，根據故事主線動態提供最貼切的地點）
+      const placeByStory = {
+        cup_noodle_bathroom: [
+          { tag: '課堂真實情節', zh: '家裡的洗手間和客廳', th: 'ห้องน้ำและห้องนั่งเล่นที่บ้าน', ja: '家のトイレとリビング' },
+          { tag: '上下格床睡房', zh: '家裡的上下格床睡房和洗手間', th: 'ห้องนอนเตียงสองชั้นและห้องน้ำที่บ้าน', ja: '二段ベッドの寝室とトイレ' },
+          { tag: '鎖門秘境', zh: '關緊門的洗手間裡', th: 'ในห้องน้ำที่ล็อกประตูสนิท', ja: '鍵を閉めた家のトイレの中' },
+          { tag: '飯廳角落', zh: '家裡的飯廳和洗手間', th: 'ห้องอาหารและห้องน้ำที่บ้าน', ja: '家のダイニングとトイレ' }
+        ],
+        pack_noodle_stove: [
+          { tag: '廚房爐頭', zh: '家裡的睡房和廚房', th: 'ห้องนอนและห้องครัวที่บ้าน', ja: '家の寝室とキッチン' },
+          { tag: '餐桌旁', zh: '家裡的廚房和飯廳餐桌旁', th: 'ห้องครัวและข้างโต๊ะอาหารที่บ้าน', ja: '家のキッチンとダイニングテーブル' },
+          { tag: '上下格床', zh: '上下格床睡房和廚房爐灶前', th: 'ห้องนอนเตียงสองชั้นและหน้าเตาในครัว', ja: '二段ベッドの寝室とキッチンのコンロ前' },
+          { tag: '客廳沙發', zh: '家裡的廚房和客廳', th: 'ห้องครัวและห้องนั่งเล่นที่บ้าน', ja: '家のキッチンとリビング' }
+        ],
+        cola_shower: [
+          { tag: '冰箱前', zh: '家裡的客廳冰箱旁', th: 'ข้างตู้เย็นในห้องนั่งเล่นที่บ้าน', ja: '家のリビングの冷蔵庫の前' },
+          { tag: '浴室門外', zh: '浴室門外的客廳沙發上', th: 'บนโซฟาในห้องนั่งเล่นหน้าประตูห้องน้ำ', ja: 'お風呂のドアの外のリビングのソファ' },
+          { tag: '飯廳角落', zh: '家裡的飯廳和冰箱前', th: 'ห้องอาหารและหน้าตู้เย็นที่บ้าน', ja: '家のダイニングと冷蔵庫の前' },
+          { tag: '自己睡房', zh: '客廳冰箱旁和自己的睡房', th: 'ข้างตู้เย็นในห้องนั่งเล่นและห้องนอนของฉัน', ja: 'リビングの冷蔵庫前と自分の寝室' }
+        ],
+        sushi_icecream: [
+          { tag: '壽司店＋冰格', zh: '壽司店和家裡的冰箱冰格前', th: 'ร้านซูชิและหน้าช่องแช่แข็งที่บ้าน', ja: 'お寿司屋さんと家の冷凍庫の前' },
+          { tag: '回家飯廳', zh: '家裡的飯廳和冰箱旁', th: 'ห้องอาหารและข้างตู้เย็นที่บ้าน', ja: '家のダイニングと冷蔵庫のそば' },
+          { tag: '客廳電視前', zh: '家裡的客廳沙發上', th: 'บนโซฟาในห้องนั่งเล่นที่บ้าน', ja: '家のリビングのソファの上' },
+          { tag: '睡房被窩', zh: '家裡的冰箱旁和睡房裡', th: 'ข้างตู้เย็นและในห้องนอนที่บ้าน', ja: '家の冷蔵庫のそばと寝室の中' }
+        ],
+        bread_candy_room: [
+          { tag: '自己睡房', zh: '家裡的飯廳餐桌旁和睡房裡', th: 'ข้างโต๊ะอาหารและในห้องนอนที่บ้าน', ja: '家のダイニングテーブルと自分の寝室' },
+          { tag: '書桌抽屜', zh: '睡房的書桌前', th: 'หน้าโต๊ะเขียนหนังสือในห้องนอน', ja: '寝室の勉強机の前' },
+          { tag: '上下格床', zh: '家裡的睡房床上', th: 'บนเตียงในห้องนอนที่บ้าน', ja: '家の寝室のベッドの上' },
+          { tag: '客廳角落', zh: '家裡的客廳角落', th: 'มุมห้องนั่งเล่นที่บ้าน', ja: '家のリビングの隅' }
+        ],
+        sister_quilt_snacks: [
+          { tag: '溫暖被窩', zh: '家裡睡房的被窩裡', th: 'ใต้ผ้าห่มในห้องนอนที่บ้าน', ja: '家の寝室の布団の中' },
+          { tag: '上下格床', zh: '上下格床的下格床被窩裡', th: 'ใต้ผ้าห่มบนเตียงนอนชั้นล่าง', ja: '二段ベッドの下の段の布団の中' },
+          { tag: '關門睡房', zh: '關緊房門的睡房裡', th: 'ในห้องนอนที่ปิดประตูสนิท', ja: 'ドアを閉め切った寝室の中' },
+          { tag: '客廳地毯', zh: '家裡客廳的角落裡', th: 'มุมหนึ่งในห้องนั่งเล่นที่บ้าน', ja: '家のリビングの隅っこ' }
+        ]
+      };
+
+      // 2-4 起因（4個選項，結合食物與飢餓/嘴饞原因）
+      const causeOptions = [
+        {
+          tag: '半夜肚餓',
+          zh: `晚飯吃得太少，肚子餓得咕咕叫，忍不住想偷吃${s.food.zh}`,
+          th: `มื้อเย็นกินน้อยเกินไป ท้องร้องจ๊อกๆ เลยอดใจไม่ไหวอยากแอบกิน${s.food.th}`,
+          ja: `夕飯が少なくてお腹がグーグー鳴り、我慢できず${s.food.ja}をこっそり食べたくなった`
+        },
+        {
+          tag: '嘴饞難耐',
+          zh: `看見家裡放着誘人的${s.food.zh}，頓時饞蟲大動，心癢難耐`,
+          th: `เห็น${s.food.th}วางอยู่เลยเกิดความอยากกินขึ้นมาทันทีจนอดใจไม่ไหว`,
+          ja: `美味しそうな${s.food.ja}を見て急に食い意地が張り、我慢できなくなった`
+        },
+        {
+          tag: '違反禁令',
+          zh: `家人平日不准我多吃${s.food.zh}，我卻趁大家不注意偷偷解饞`,
+          th: `ปกติคนที่บ้านห้ามกิน${s.food.th}เยอะ แต่ฉันฉวยโอกาสตอนไม่มีใครเห็นแอบกิน`,
+          ja: `普段は家族から${s.food.ja}を禁止されていたのに、誰も見ていない隙にこっそり食べようと思った`
+        },
+        {
+          tag: '貪心吃不夠',
+          zh: `本來已經吃過晚飯，卻覺得還不夠飽，又偷偷去拿${s.food.zh}`,
+          th: `ความจริงกินข้าวเย็นไปแล้ว แต่ยังรู้สึกไม่อิ่ม เลยแอบไปหยิบ${s.food.th}มากินเพิ่ม`,
+          ja: `もう夕飯は食べたのにまだ物足りなく感じて、さらに${s.food.ja}をこっそり持ち出した`
+        }
+      ];
+
+      return {
+        timeOptions,
+        whoOptions,
+        placeOptions: placeByStory[s.id] || placeByStory.cup_noodle_bathroom,
+        causeOptions
+      };
+    }
+
+    // --- 輔助：根據第 2 關選的 whoRole，回傳精準稱謂（絕不前後矛盾！） ---
+    function getRoleNames() {
+      const role = gameState.whoRole;
+      if (role === 'dad_only') {
+        return {
+          targetZh: '爸爸', targetTh: 'คุณพ่อ', targetJa: 'お父さん',
+          partnerZh: '', partnerTh: '', partnerJa: '',
+          hasSister: false
+        };
+      }
+      if (role === 'mom_only' || role === 'mom_shower') {
+        return {
+          targetZh: '媽媽', targetTh: 'คุณแม่', targetJa: 'お母さん',
+          partnerZh: '', partnerTh: '', partnerJa: '',
+          hasSister: false
+        };
+      }
+      if (role === 'dad_sister' || role === 'sister_dad') {
+        return {
+          targetZh: '爸爸', targetTh: 'คุณพ่อ', targetJa: 'お父さん',
+          partnerZh: '和妹妹', partnerTh: 'กับน้องสาว', partnerJa: 'と妹',
+          hasSister: true
+        };
+      }
+      return {
+        targetZh: '爸爸', targetTh: 'คุณพ่อ', targetJa: 'お父さん',
+        partnerZh: '', partnerTh: '', partnerJa: '',
+        hasSister: false
+      };
+    }
+
+    // --- 第 3 關選項庫（片段一：先喜 — 根據故事食物與第 2 關人物動態生成！） ---
+    function getStep3Options() {
+      const s = getCurrentStory();
+      const r = getRoleNames();
+      const place = getStep2Options().placeOptions[gameState.placeIdx]?.zh || '家裡';
+
+      // 3-1 貪吃動作（4個選項，呼應故事食物與是否有妹妹）
+      const p1ActionOptions = [
+        {
+          tag: '動作描寫＋四字詞',
+          zh: `我${r.partnerZh}躡手躡腳溜進${place}，迫不及待地拿出${s.food.zh}，狼吞虎嚥地大吃起來`,
+          th: `ฉัน${r.partnerTh}ย่องเข้าไปใน${place} รีบหยิบ${s.food.th}ออกมากินอย่างเอร็ดอร่อย`,
+          ja: `私${r.partnerJa}はそっと${place}に忍び込み、待ちきれずに${s.food.ja}を取り出してガツガツと食べ始めた`
+        },
+        {
+          tag: '課堂獨家細節',
+          zh: s.id === 'cup_noodle_bathroom'
+            ? `我${r.partnerZh}把電熱水壺搬進洗手間鎖上門煲水，還噴了香水蓋住味道，津津有味地吃着${s.food.zh}`
+            : s.id === 'cola_shower'
+            ? `我屏住呼吸，用手指一點一點慢慢拉開罐環，生怕發出聲響，一口氣喝光了${s.food.zh}`
+            : `我${r.partnerZh}小心翼翼躲在角落，眨眼間就把${s.food.zh}吃得一乾二淨`,
+          th: s.id === 'cup_noodle_bathroom'
+            ? `ฉัน${r.partnerTh}ยกกาต้มน้ำเข้าห้องน้ำล็อกประตูต้มน้ำ แถมฉีดน้ำหอมกลบกลิ่น แล้วกิน${s.food.th}อย่างอร่อย`
+            : s.id === 'cola_shower'
+            ? `ฉันกลั้นหายใจ ค่อยๆ ใช้นิ้วเปิดกระป๋องทีละนิดกลัวมีเสียง แล้วดื่ม${s.food.th}รวดเดียวจนหมด`
+            : `ฉัน${r.partnerTh}แอบหลบอยู่มุมห้อง แป๊บเดียวก็กิน${s.food.th}จนหมดเกลี้ยง`,
+          ja: s.id === 'cup_noodle_bathroom'
+            ? `私${r.partnerJa}はケトルをトイレに持ち込んで鍵をかけて湯を沸かし、香水で匂いを消して${s.food.ja}を味わった`
+            : s.id === 'cola_shower'
+            ? `私は息を潜め、音が鳴らないよう指で少しずつ缶を開け、${s.food.ja}を一気に飲み干した`
+            : `私${r.partnerJa}は隅にこっそり隠れ、あっという間に${s.food.ja}をペロリと平らげた`
+        },
+        {
+          tag: '感官美味描寫',
+          zh: `看着香噴噴的${s.food.zh}，我口水直流，一口接一口塞進嘴裡，吃得滿嘴都是`,
+          th: `เห็น${s.food.th}หอมกรุ่นจนน้ำลายไหล ฉันตักเข้าปากคำแล้วคำเล่าอย่างเอร็ดอร่อย`,
+          ja: `美味しそうな${s.food.ja}を見てよだれが垂れそうになり、次から次へと口に頬張った`
+        },
+        {
+          tag: '貪多不知足',
+          zh: `本來只想嘗一口，誰知越吃越上癮，結果我${r.partnerZh}把全部${s.food.zh}都掃光了`,
+          th: `ตอนแรกว่าจะชิมแค่คำเดียว แต่ยิ่งกินยิ่งอร่อย สุดท้ายฉัน${r.partnerTh}ก็กิน${s.food.th}จนหมดเรียบ`,
+          ja: `最初は一口だけのつもりが食べるほど止まらなくなり、結局私${r.partnerJa}で${s.food.ja}を全部平らげてしまった`
+        }
+      ];
+
+      // 3-2 躲避誰的視線／勸告細節（4個選項，精準使用第 2 關選的 targetZh：爸爸 或 媽媽！）
+      const p1WarnOptions = [
+        {
+          tag: `防備${r.targetZh}發現`,
+          zh: `為了不吵醒正在休息的${r.targetZh}，我連吞嚥和呼吸都放得極輕，生怕發出一點聲音`,
+          th: `เพื่อไม่ให้ปลุก${r.targetTh}ที่กำลังพักผ่อน ฉันทั้งกลืนและหายใจเบาที่สุดกลัวมีเสียงดัง`,
+          ja: `休んでいる${r.targetJa}を起こさないよう、飲み込む音も呼吸も極力小さくして物音を立てないようにした`
+        },
+        {
+          tag: `忘記${r.targetZh}叮嚀`,
+          zh: `其實${r.targetZh}早些時候才叮嚀過我「晚上千萬別貪吃」，我卻把${r.targetZh}的話當耳邊風`,
+          th: `ความจริงก่อนหน้านี้${r.targetTh}เพิ่งเตือนว่า “ตอนกลางคืนห้ามกินจุนะ” แต่ฉันกลับไม่ฟังคำเตือนของ${r.targetTh}`,
+          ja: `実はさっき${r.targetJa}から「夜は絶対に食べ過ぎちゃダメよ」と注意されたばかりなのに、聞き流してしまった`
+        },
+        {
+          tag: `假裝睡覺躲${r.targetZh}`,
+          zh: `中途突然聽到${r.targetZh}走動的聲音，嚇得我趕緊躲起來閉眼假裝睡覺，等${r.targetZh}離開又繼續偷吃`,
+          th: `ระหว่างนั้นได้ยินเสียง${r.targetTh}เดินผ่าน รีบซ่อนตัวหลับตาแกล้งหลับ พอ${r.targetTh}เดินไปก็แอบกินต่อ`,
+          ja: `途中で突然${r.targetJa}の足音が聞こえ、慌てて隠れて寝たふりをし、${r.targetJa}が去るとまた食べ続けた`
+        },
+        {
+          tag: `妹妹勸阻／共犯`,
+          zh: r.hasSister
+            ? `妹妹小聲提醒我：「別吃太多，小心被${r.targetZh}發現！」我卻擺擺手說沒關係`
+            : `我把包裝袋藏在最隱蔽的角落，以為做得天衣無縫，${r.targetZh}絕對不會察覺`,
+          th: r.hasSister
+            ? `น้องสาวกระซิบเตือนว่า “อย่ากินเยอะ เดี๋ยว${r.targetTh}จับได้!” แต่ฉันโบกมือบอกว่าไม่เป็นไร`
+            : `ฉันซ่อนห่อขนมไว้ในมุมที่มิดชิดที่สุด คิดว่าแนบเนียนจน${r.targetTh}ไม่มีทางรู้`,
+          ja: r.hasSister
+            ? `妹が小声で「食べ過ぎると${r.targetJa}にバレるよ！」と注意したが、私は平気だと手を振った`
+            : `私はゴミや袋を一番目立たない隅に隠し、これなら${r.targetJa}に絶対気づかれないと思った`
+        }
+      ];
+
+      // 3-3 得意心理獨白（4個選項，同樣精準呼應 targetZh！）
+      const p1ThoughtOptions = [
+        {
+          tag: '僥倖心理獨白',
+          zh: `「哈哈！我的動作這麼輕巧，${r.targetZh}一定不會發現我偷吃了${s.food.zh}！」`,
+          th: `“ฮ่าๆ! เราทำเงียบขนาดนี้ ${r.targetTh}ไม่มีทางรู้แน่ว่าเราแอบกิน${s.food.th}!”`,
+          ja: `「ははっ！こんなに静かに食べているんだから、${r.targetJa}に${s.food.ja}を隠れ食いしたなんてバレるはずがない！」`
+        },
+        {
+          tag: '滿足得意獨白',
+          zh: `「${s.food.zh}實在太美味了！趁現在沒人管，多吃一點也沒關係吧！」`,
+          th: `“${s.food.th}อร่อยสุดๆ ไปเลย! ตอนนี้ไม่มีใครห้าม กินเยอะอีกหน่อยคงไม่เป็นไรหรอก!”`,
+          ja: `「${s.food.ja}は最高に美味しい！今なら誰にも怒られないし、もう少し食べても平気だろう！」`
+        },
+        {
+          tag: '自以為聰明獨白',
+          zh: `「我真是太機靈了，神不知鬼不覺就享受了一頓大餐，真痛快！」`,
+          th: `“เราฉลาดจริงๆ แอบกินมื้อใหญ่ได้โดยไม่มีใครรู้ สะใจสุดๆ!”`,
+          ja: `「僕って本当に頭がいいな、誰にも気づかれずに豪華な夜食を楽しめるなんて最高だ！」`
+        },
+        {
+          tag: '不聽勸告獨白',
+          zh: `「${r.targetZh}總是小題大做，我的身體這麼強壯，吃多一點怎麼會生病呢？」`,
+          th: `“${r.targetTh}ชอบกังวลเกินเหตุ ร่างกายเราแข็งแรงขนาดนี้ กินเยอะแค่นี้ไม่ป่วยหรอก!”`,
+          ja: `「${r.targetJa}は心配しすぎだよ、僕の体はこんなに丈夫なんだから、ちょっと食べ過ぎたくらいで病気になるわけがない！」`
+        }
+      ];
+
+      return { p1ActionOptions, p1WarnOptions, p1ThoughtOptions };
+    }
+
+    // --- 第 4 關選項庫（片段二：後悲 — 根據食物冷熱＋第 2 關人物動態生成！） ---
+    function getStep4Options() {
+      const s = getCurrentStory();
+      const r = getRoleNames();
+      const isCold = (s.id === 'cola_shower' || s.id === 'sushi_icecream');
+
+      // 4-1 身體不適症狀（4個選項，冷飲雪糕 vs 熱麵甜食不同症狀）
+      const p2SymptomOptions = isCold ? [
+        {
+          tag: '受寒絞痛',
+          zh: `不到半小時，冰冷的${s.food.zh}讓腸胃受寒痙攣，肚子一陣陣劇烈絞痛，還不停反胃`,
+          th: `ไม่ถึงครึ่งชั่วโมง ความเย็นของ${s.food.th}ทำให้กระเพาะหดเกร็ง ปวดท้องบิดอย่างรุนแรงและคลื่นไส้`,
+          ja: `30分もしないうちに冷たい${s.food.ja}で胃腸が冷えて痙攣し、お腹がキリキリ痛み吐き気が襲ってきた`
+        },
+        {
+          tag: '上吐下瀉發燒',
+          zh: `生冷食物嚴重刺激腸胃，半夜我開始上吐下瀉，甚至發起低燒，頭重腳輕`,
+          th: `ของเย็นจัดระคายเคืองกระเพาะอย่างหนัก กลางดึกฉันเริ่มอาเจียนและท้องเสีย แถมมีไข้ต่ำๆ เวียนหัว`,
+          ja: `冷たい物が胃腸を強く刺激し、夜中に嘔吐と下痢が始まり、微熱まで出てふらふらになった`
+        },
+        {
+          tag: '喉嚨痛兼腹痛',
+          zh: `冰涼氣泡與寒氣刺激喉嚨和腸胃，我不但肚子痛得像刀割，喉嚨也又乾又痛、咳嗽不止`,
+          th: `ความเย็นจัดทำร้ายทั้งลำคอและกระเพาะ นอกจากจะปวดท้องเหมือนมีดบาดแล้ว ยังเจ็บคอและไอไม่หยุด`,
+          ja: `冷たさが喉と胃腸を直撃し、お腹が切り裂かれるように痛いだけでなく、喉も痛んで咳が止まらなくなった`
+        },
+        {
+          tag: '腹脹冷汗',
+          zh: `過量冰冷食物積在胃裡消化不良，腹部脹得像皮球，一陣陣寒意湧上心頭`,
+          th: `ของเย็นจำนวนมากไม่ย่อยในกระเพาะ ท้องอืดตึงเหมือนลูกบอล และรู้สึกหนาวสั่นไปทั้งตัว`,
+          ja: `大量の冷たい物が胃に溜まって消化不良を起こし、お腹が風船のように張って寒気が走った`
+        }
+      ] : [
+        {
+          tag: '劇烈胃痛反胃',
+          zh: `過量吃下${s.food.zh}後消化不良，沒多久胃部便劇烈絞痛，胃酸直往上湧、反胃想吐`,
+          th: `กิน${s.food.th}มากเกินไปจนอาหารไม่ย่อย ไม่นานก็ปวดท้องบิดอย่างรุนแรง กรดไหลย้อนและคลื่นไส้อยากอาเจียน`,
+          ja: `${s.food.ja}を食べ過ぎて消化不良を起こし、まもなく胃が激しく痛み、胃酸がこみ上げて吐き気がした`
+        },
+        {
+          tag: '腹痛上吐下瀉',
+          zh: `油膩重口味的${s.food.zh}令腸胃不勝負荷，我肚子痛得翻江倒海，連跑了好幾趟洗手間`,
+          th: `${s.food.th}ที่มันและรสจัดทำให้กระเพาะรับไม่ไหว ฉันปวดท้องปั่นป่วนจนต้องวิ่งเข้าห้องน้ำหลายรอบ`,
+          ja: `脂っこくて味の濃い${s.food.ja}で胃腸が悲鳴を上げ、お腹が激しく痛んで何度もトイレに駆け込んだ`
+        },
+        {
+          tag: '胃脹頭暈作嘔',
+          zh: `吃得太急太多，胃部脹痛難當，頓時感到天旋地轉、噁心作嘔，連站也站不穩`,
+          th: `กินเร็วและเยอะเกินไปจนปวดแน่นท้องอย่างหนัก รู้สึกบ้านหมุนติ้วและคลื่นไส้จนแทบยืนไม่อยู่`,
+          ja: `急いで食べ過ぎたため胃が張り裂けそうに痛み、目が回るようなめまいと吐き気で立っていられなくなった`
+        },
+        {
+          tag: '胃痛兼牙痛',
+          zh: `半夜吃完沒刷牙又暴食，凌晨時我被一陣劇烈的胃痛和牙痛驚醒，嘴巴又苦又酸`,
+          th: `กินแล้วไม่แปรงฟันแถมกินจุเกินขนาด ตอนเช้ามืดฉันสะดุ้งตื่นเพราะปวดท้องและปวดฟันอย่างรุนแรง`,
+          ja: `食べ過ぎたうえ歯も磨かず寝たため、明け方に激しい胃痛と歯痛で目が覚め、口の中が苦くて酸っぱかった`
+        }
+      ];
+
+      // 4-2 五官神態與動作（4個選項，強化課堂寫作技巧：五官＋動作＋情感）
+      const p2ReactionOptions = [
+        {
+          tag: '五官＋動作描寫',
+          zh: `我痛苦得眉頭緊皺、臉色蒼白，雙手緊緊捂着肚子在床上翻來覆去，額頭冒出豆大的冷汗`,
+          th: `ฉันทรมานจนขมวดคิ้วแน่น หน้าซีดเผือด เอามือกุมท้องนอนพลิกไปมาบนเตียง เหงื่อเย็นไหลซึมหน้าผาก`,
+          ja: `私は苦しくて眉をひそめ顔面蒼白になり、両手でお腹を押さえてベッドで転げ回り、額に大粒の冷や汗をかいた`
+        },
+        {
+          tag: '蜷縮發抖描寫',
+          zh: `我抱緊肚子蜷縮在被窩裡，嘴唇發白、牙齒打顫，難受得眼淚都掉了下來`,
+          th: `ฉันกอดท้องขดตัวอยู่ในผ้าห่ม ริมฝีปากซีด ตัวสั่นเทา ทรมานจนน้ำตาไหลออกมา`,
+          ja: `私はお腹を抱えて布団の中で丸くなり、唇は真っ白で歯がガタガタ震え、苦しくて涙がこぼれた`
+        },
+        {
+          tag: '奔向洗手間嘔吐',
+          zh: `我捂着嘴巴衝進洗手間劇烈嘔吐，雙腿發軟、面如土色，連說話的力氣也沒有`,
+          th: `ฉันเอามือปิดปากวิ่งเข้าห้องน้ำอาเจียนอย่างหนัก ขาอ่อนแรง หน้าซีดไร้สีเลือด แทบไม่มีแรงพูด`,
+          ja: `私は口を押さえてトイレに駆け込み激しく嘔吐し、足がふらふらで顔面蒼白になり、話す力もなかった`
+        },
+        {
+          tag: '痛苦呻吟自責',
+          zh: `我雙眼布滿血絲、額頭冷汗直流，捂着咕嚕作響的肚子痛苦呻吟，心裡後悔極了`,
+          th: `ตาแดงก่ำ เหงื่อเย็นไหลท่วมหน้าผาก เอามือกุมท้องที่ร้องโครกครากครวญครางด้วยความเจ็บปวดและเสียใจ`,
+          ja: `目は充血し額から冷や汗が流れ、グルグル鳴るお腹を押さえて苦しそうにうめき、心から後悔した`
+        }
+      ];
+
+      // 4-3 家人發現與結果（4個選項，100% 鎖定第 2 關的 targetZh，絕對不會爸爸變媽媽！）
+      const p2ResultOptions = [
+        {
+          tag: `${r.targetZh}發現並送醫`,
+          zh: `${r.targetZh}聽到我的呻吟聲趕來查看，一眼就發現了${s.food.zh}的包裝，立刻帶我去看醫生吃苦藥`,
+          th: `${r.targetTh}ได้ยินเสียงร้องครางจึงรีบมาดู และเห็นซองของ${s.food.th}ทันที จึงพาไปหาหมอและกินยาขมๆ`,
+          ja: `${r.targetJa}が私のうめき声を聞いて駆けつけ、${s.food.ja}の空き袋をすぐに見つけ、病院へ連れて行かれ苦い薬を飲んだ`
+        },
+        {
+          tag: `${r.targetZh}徹夜照顧`,
+          zh: `${r.targetZh}發現我偷吃生病後又氣又心疼，徹夜照顧我喝溫水、量體溫，害我整天只能吃白粥`,
+          th: `${r.targetTh}รู้ว่าฉันแอบกินจนป่วยทั้งโกรธทั้งสงสาร คอยดูแลเช็ดตัวและวัดไข้ทั้งคืน วันรุ่งขึ้นฉันกินได้แค่ข้าวต้ม`,
+          ja: `${r.targetJa}は隠れ食いで病気になった私に呆れつつ心配し、一晩中看病してくれ、翌日は白がゆしか食べられなかった`
+        },
+        {
+          tag: `錯過心愛活動`,
+          zh: `${r.targetZh}連夜帶我去診所打針吃藥，我足足在床上躺了兩天，連最期待的學校活動也去不了`,
+          th: `${r.targetTh}รีบพาไปคลินิกฉีดยาและกินยากลางดึก ฉันต้องนอนซมอยู่บนเตียงถึงสองวัน อดไปกิจกรรมที่โรงเรียน`,
+          ja: `${r.targetJa}に夜中に診療所へ連れて行かれ点滴と薬を受け、2日間寝込んで楽しみにしていた学校行事にも行けなかった`
+        },
+        {
+          tag: `誠實向${r.targetZh}認錯`,
+          zh: r.hasSister
+            ? `妹妹嚇得趕緊叫醒${r.targetZh}，我羞愧地向${r.targetZh}坦白認錯，並在${r.targetZh}陪同下看醫生治療`
+            : `我忍痛向${r.targetZh}坦白偷吃經過，${r.targetZh}雖然責備我不聽話，但還是馬上帶我去醫院診治`,
+          th: r.hasSister
+            ? `น้องสาวตกใจรีบไปปลุก${r.targetTh} ฉันสารภาพผิดกับ${r.targetTh}ด้วยความละอายใจ และไปหาหมอกับ${r.targetTh}`
+            : `ฉันทนปวดไม่ไหวจึงสารภาพความจริงกับ${r.targetTh} แม้${r.targetTh}จะดุที่ไม่เชื่อฟัง แต่ก็รีบพาไปหาหมอทันที`,
+          ja: r.hasSister
+            ? `妹が驚いて${r.targetJa}を起こし、私は恥ずかしさでいっぱいで${r.targetJa}に謝り、病院へ連れて行ってもらった`
+            : `私は痛みに耐えきれず${r.targetJa}に正直に打ち明け、叱られながらもすぐに病院へ連れて行ってもらった`
+        }
+      ];
+
+      return { p2SymptomOptions, p2ReactionOptions, p2ResultOptions };
+    }
+
+    // --- 第 5 關選項庫（總結段：道理反思 ＋ 以後做法，各 4 個選項） ---
+    function getStep5Options() {
+      const s = getCurrentStory();
+      const r = getRoleNames();
+
+      const moralOptions = [
+        {
+          tag: '引用諺語「病從口入」',
+          zh: `「病從口入」，吃東西必須懂得節制與適可而止，暴飲暴食只會嚴重傷害腸胃健康`,
+          th: `“โรคภัยเข้าทางปาก” การกินต้องรู้จักประมาณตนและพอดี การกินจุเกินขนาดมีแต่จะทำร้ายกระเพาะอาหาร`,
+          ja: `「病は口より入る」と言う通り、食事は節度を守り腹八分目にすべきで、暴飲暴食は胃腸をひどく傷つけると悟った`
+        },
+        {
+          tag: '明白家人苦心',
+          zh: `${r.targetZh}平日的叮嚀都是為了我的健康着想，貪一時口腹之欲、暗中違規最終受苦的還是自己`,
+          th: `คำเตือนของ${r.targetTh}ล้วนหวังดีต่อสุขภาพของเรา การตามใจปากและแอบทำผิดกฎ สุดท้ายคนที่ทรมานก็คือตัวเราเอง`,
+          ja: `${r.targetJa}の普段の注意はすべて私の健康を思ってのことだと分かり、目先の欲でルールを破れば結局自分が苦しむと学んだ`
+        },
+        {
+          tag: '健康比貪吃重要',
+          zh: `美食雖然誘人，但健康的身體才是最寶貴的財富，千萬不能因為嘴饞而拿身體開玩笑`,
+          th: `แม้อาหารอร่อยจะน่าดึงดูดใจ แต่สุขภาพที่แข็งแรงคือสมบัติล้ำค่าที่สุด ไม่ควรเอาสุขภาพมาเสี่ยงเพราะความตะกละ`,
+          ja: `美味しい食べ物は魅力的だが、健康な体こそが一番の宝物であり、食い意地のために体を壊してはいけないと痛感した`
+        },
+        {
+          tag: '自律與誠實反思',
+          zh: `做人要誠實自律，學會克制自己的慾望，不在半夜或背着家人偷偷暴食${s.food.zh}`,
+          th: `คนเราต้องซื่อสัตย์และมีวินัย รู้จักหักห้ามใจ ไม่แอบกิน${s.food.th}เกินขนาดลับหลังครอบครัวอีก`,
+          ja: `人は正直で自分を律することが大切であり、欲望を抑えて家族に隠れて${s.food.ja}を暴食してはいけないと反省した`
+        }
+      ];
+
+      const futureOptions = [
+        {
+          tag: '飲食有節制',
+          zh: `以後吃飯我一定做到「三餐定時、八分飽就停口」，再也不貪吃過量零食`,
+          th: `ต่อไปฉันจะกินอาหารให้ตรงเวลาและพออิ่ม ไม่ตะกละกินขนมเกินขนาดอีกต่อไป`,
+          ja: `これからは三食規則正しく腹八分目を心がけ、お菓子や夜食を食べ過ぎることは二度としない`
+        },
+        {
+          tag: `聽從${r.targetZh}教導`,
+          zh: `以後我會乖乖聽從${r.targetZh}的健康提醒，想吃東西前先問准大人，做個誠實乖巧的孩子`,
+          th: `ต่อไปฉันจะเชื่อฟังคำเตือนของ${r.targetTh} ขออนุญาตผู้ใหญ่ก่อนกินเสมอ และเป็นเด็กดีที่ซื่อสัตย์`,
+          ja: `これからは${r.targetJa}の健康へのアドバイスを素直に聞き、食べる前に必ず確認する正直な子になる`
+        },
+        {
+          tag: '早睡早起不熬夜',
+          zh: `以後我一定養成早睡早起的好習慣，晚上按時上床睡覺，絕不在深夜偷偷爬起來找東西吃`,
+          th: `ต่อไปฉันจะฝึกนิสัยเข้านอนแต่หัวค่ำ ตื่นเช้า และไม่แอบลุกขึ้นมาหาของกินกลางดึกอีกเด็ดขาด`,
+          ja: `これからは早寝早起きの習慣をつけ、夜は時間通りに寝て、深夜にこっそり起きて食べ物を探すことは絶対にしない`
+        },
+        {
+          tag: '愛惜腸胃健康',
+          zh: `以後我會好好愛惜自己的腸胃，少吃生冷油膩的食物，讓${r.targetZh}不再為我擔心`,
+          th: `ต่อไปฉันจะดูแลกระเพาะอาหารให้ดี ลดของเย็นจัดและของมัน เพื่อไม่ให้${r.targetTh}ต้องเป็นห่วงอีก`,
+          ja: `これからは自分の胃腸を大切にし、冷たい物や脂っこい物を控え、${r.targetJa}に二度と心配をかけないようにする`
+        }
+      ];
+
+      return { moralOptions, futureOptions };
+    }
+
+    // --- 第 6 關選項庫（引子段：倒敍法 物 → 事 → 情，各 4 個選項，首尾呼應！） ---
+    function getStep6Options() {
+      const s = getCurrentStory();
+      const r = getRoleNames();
+
+      // 6-1 物（4個選項，直接連結故事物件與醫療物件）
+      const introObjOptions = [
+        {
+          tag: '故事專屬物件',
+          zh: s.obj.zh,
+          th: s.obj.th,
+          ja: s.obj.ja
+        },
+        {
+          tag: '食物包裝回憶',
+          zh: `超市貨架上的${s.food.zh}`,
+          th: `${s.food.th}บนชั้นวางในซูเปอร์มาร์เก็ต`,
+          ja: `スーパーの棚に並ぶ${s.food.ja}`
+        },
+        {
+          tag: '藥櫃藥水瓶',
+          zh: `藥箱裡那瓶苦澀的腸胃藥水`,
+          th: `ขวดยาแก้ปวดท้องรสขมในตู้ยา`,
+          ja: `薬箱にあるあの苦い胃腸薬の瓶`
+        },
+        {
+          tag: '家中冰箱門',
+          zh: `家裡那台白色的電冰箱`,
+          th: `ตู้เย็นสีขาวเครื่องนั้นในบ้าน`,
+          ja: `家にあるあの白い冷蔵庫`
+        }
+      ];
+
+      // 6-2 事（4個選項，總括整個貪吃生病事件）
+      const introEventOptions = [
+        {
+          tag: '點明偷吃生病',
+          zh: `那次我偷偷貪吃${s.food.zh}結果肚子劇痛生病的經歷`,
+          th: `เหตุการณ์ครั้งนั้นที่ฉันแอบกิน${s.food.th}จนปวดท้องอย่างหนักและป่วย`,
+          ja: `あの時こっそり${s.food.ja}を食べ過ぎて激しい腹痛で病気になった経験`
+        },
+        {
+          tag: `連累${r.targetZh}擔心`,
+          zh: `那次我不聽${r.targetZh}勸告、貪吃${s.food.zh}而進醫院看病的情形`,
+          th: `เหตุการณ์ครั้งนั้นที่ฉันไม่เชื่อฟัง${r.targetTh} แอบกิน${s.food.th}จนต้องไปหาหมอ`,
+          ja: `あの時${r.targetJa}の忠告を聞かずに${s.food.ja}を食べ過ぎて病院へ行った出来事`
+        },
+        {
+          tag: '先喜後悲教訓',
+          zh: `那次因為一時嘴饞偷吃${s.food.zh}、樂極生悲的慘痛教訓`,
+          th: `บทเรียนราคาแพงครั้งนั้นที่ฉันตามใจปากแอบกิน${s.food.th}จนเกิดเรื่อง`,
+          ja: `あの時つい食い意地を張って${s.food.ja}を隠れ食いし、痛い目を見た苦い教訓`
+        },
+        {
+          tag: '自討苦吃回憶',
+          zh: `那次我暴飲暴食${s.food.zh}後上吐下瀉、自討苦吃的往事`,
+          th: `เรื่องราวในครั้งนั้นที่ฉันกิน${s.food.th}เกินขนาดจนอาเจียนและท้องเสีย`,
+          ja: `あの時${s.food.ja}を暴飲暴食して嘔吐下痢になり、自業自得で苦しんだ出来事`
+        }
+      ];
+
+      // 6-3 情（4個選項，點出情感與反省）
+      const introFeelingOptions = [
+        {
+          tag: '後悔羞愧',
+          zh: `至今仍讓我感到十分後悔與羞愧`,
+          th: `จนถึงวันนี้ยังทำให้ฉันรู้สึกเสียใจและละอายใจอย่างยิ่ง`,
+          ja: `今でも大変後悔し、恥ずかしい気持ちでいっぱいになる`
+        },
+        {
+          tag: '難以忘懷',
+          zh: `直到今天仍讓我難以忘懷，時刻警惕自己`,
+          th: `จนถึงวันนี้ยังทำให้ฉันจำไม่ลืมและคอยเตือนสติตัวเองเสมอ`,
+          ja: `今日まで決して忘れることができず、いつも自分を戒めている`
+        },
+        {
+          tag: '懊悔萬分',
+          zh: `心裡仍感到懊悔萬分，再也不敢貪吃了`,
+          th: `ในใจยังคงรู้สึกเสียใจอย่างสุดซึ้ง และไม่กล้าตะกละอีกต่อไป`,
+          ja: `今でも心から後悔しており、二度と食べ過ぎまいと心に誓っている`
+        },
+        {
+          tag: '深刻反省',
+          zh: `讓我深深反省，明白健康才是最重要的`,
+          th: `ทำให้ฉันทบทวนตัวเองอย่างลึกซึ้งและเข้าใจว่าสุขภาพสำคัญที่สุด`,
+          ja: `深く反省させられ、健康こそが一番大切だと痛感させられる`
+        }
+      ];
+
+      return { introObjOptions, introEventOptions, introFeelingOptions };
+    }
+
+    // =========================================================================
+    // 5. 渲染頂部零打字點名按鈕 ＋ 蝴蝶效應連鎖追蹤條
+    // =========================================================================
+    function renderStudentButtons() {
+      const container = document.getElementById('studentButtonsRow');
+      container.innerHTML = STUDENTS_LIST.map(st => {
+        const active = (gameState.studentName === st.name);
+        return `
+          <button onclick="selectStudent('${st.name}', '${st.cls}')"
+            class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition ${
+              active
+                ? 'bg-teal-600 text-white border-teal-700 shadow-sm scale-105'
+                : 'bg-slate-50 text-[#1e3a5f] border-slate-200 hover:border-teal-500 hover:bg-teal-50'
+            }">
+            ${active ? '✓ ' : ''}${st.name}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectStudent(name, cls) {
+      gameState.studentName = name;
+      gameState.studentClass = cls || '4N';
+      renderStudentButtons();
+      updateMindMapHeader();
+    }
+
+    function updateMindMapHeader() {
+      document.getElementById('mapNameText').textContent = gameState.studentName;
+      document.getElementById('mapClassText').textContent = gameState.studentClass;
+    }
+
+    // 即時更新蝴蝶效應連鎖追蹤條
+    function renderButterflyChainTracker() {
+      const s = getCurrentStory();
+      const s2 = getStep2Options();
+      const whoObj = s2.whoOptions.find(w => w.role === gameState.whoRole) || s2.whoOptions[0];
+      const placeObj = s2.placeOptions[gameState.placeIdx] || s2.placeOptions[0];
+      const r = getRoleNames();
+
+      const chainPills = [
+        { label: `主線：${s.icon} ${s.tag}`, color: 'bg-amber-100 text-amber-950 border-amber-300' },
+        { label: `食物：${s.food.zh}`, color: 'bg-orange-100 text-orange-950 border-orange-300' },
+        { label: `鎖定人物：${whoObj.tag}`, color: 'bg-sky-100 text-sky-950 border-sky-300' },
+        { label: `地點：${placeObj.zh}`, color: 'bg-teal-100 text-teal-950 border-teal-300' },
+        { label: `後果發現者：${r.targetZh}`, color: 'bg-rose-100 text-rose-950 border-rose-300' }
+      ];
+
+      document.getElementById('butterflyChainTracker').innerHTML = chainPills.map((p, i) => `
+        <span class="chain-pill px-2.5 py-1 rounded-full border font-bold ${p.color}">
+          ${p.label}
+        </span>
+        ${i < chainPills.length - 1 ? '<span class="text-slate-400 font-black">➔</span>' : ''}
+      `).join('');
+    }
+
+    // =========================================================================
+    // 6. 語言模式切換
     // =========================================================================
     function setLangMode(mode) {
-      appState.langMode = mode;
+      gameState.langMode = mode;
       document.body.classList.remove('hide-th', 'hide-ja');
       if (mode === 'th') document.body.classList.add('hide-ja');
       if (mode === 'ja') document.body.classList.add('hide-th');
       if (mode === 'zh') document.body.classList.add('hide-th', 'hide-ja');
 
-      const modes = ['all', 'th', 'ja', 'zh'];
-      modes.forEach(m => {
+      ['all', 'th', 'ja', 'zh'].forEach(m => {
         const btn = document.getElementById('langMode' + m.charAt(0).toUpperCase() + m.slice(1));
         if (!btn) return;
-        if (m === mode) {
-          btn.className = 'px-2 py-1.5 rounded-lg text-xs font-bold bg-[#1e3a5f] text-white shadow-sm';
-        } else {
-          btn.className = 'px-2 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100';
-        }
+        btn.className = (m === mode)
+          ? 'px-2 py-1.5 rounded-lg text-xs font-bold bg-[#1e3a5f] text-white shadow-sm'
+          : 'px-2 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100';
       });
-    }
-
-    function selectStudent(name) {
-      document.getElementById('inputStudentName').value = name;
-      document.querySelectorAll('.student-pill').forEach(btn => {
-        if (btn.textContent.trim() === name) {
-          btn.classList.add('bg-teal-600', 'text-white', 'border-teal-600');
-          btn.classList.remove('bg-slate-50', 'text-slate-800');
-        } else {
-          btn.classList.remove('bg-teal-600', 'text-white', 'border-teal-600');
-          btn.classList.add('bg-slate-50', 'text-slate-800');
-        }
-      });
-      updateStudentInfo();
-    }
-
-    function updateStudentInfo() {
-      appState.studentName = document.getElementById('inputStudentName').value.trim();
-      appState.studentClass = document.getElementById('inputStudentClass').value.trim() || '4N';
-      document.getElementById('mapNameText').textContent = appState.studentName || '＿＿＿＿';
-      document.getElementById('mapClassText').textContent = appState.studentClass;
-    }
-
-    function updateStoryBadges() {
-      const story = STORIES_DATA.find(s => s.id === appState.selectedStoryId);
-      if (!story) return;
-      document.getElementById('currentStoryBadge').innerHTML =
-        `🦋 已選故事：${story.title.zh} <span class="lang-th block text-[11px] font-normal text-teal-800">🇹🇭 ${story.title.th}</span>`;
-      document.getElementById('mapStoryTag').textContent = `${story.icon} ${story.title.zh}`;
     }
 
     // =========================================================================
-    // 4. 分頁與步驟導航控制
+    // 7. 分頁與關卡導航
     // =========================================================================
     function switchMainTab(tab) {
-      appState.activeTab = tab;
+      gameState.activeTab = tab;
       ['form', 'map', 'essay'].forEach(t => {
         const viewEl = document.getElementById('view' + t.charAt(0).toUpperCase() + t.slice(1));
         const navEl = document.getElementById('navTab' + t.charAt(0).toUpperCase() + t.slice(1));
         if (t === tab) {
           viewEl.classList.remove('hidden');
-          navEl.className = 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-[#1e3a5f] shadow transition';
+          navEl.className = 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black bg-white text-[#1e3a5f] shadow transition';
         } else {
           viewEl.classList.add('hidden');
-          navEl.className = 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white transition';
+          navEl.className = 'px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black bg-white/15 hover:bg-white/25 text-white transition';
         }
       });
 
@@ -1226,77 +1441,131 @@
     }
 
     function goStep(stepNum) {
-      appState.currentStep = Math.max(1, Math.min(6, stepNum));
-      renderStepForm();
+      gameState.currentStep = Math.max(1, Math.min(6, stepNum));
+      renderStepGame();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function changeStep(delta) {
-      if (appState.currentStep === 6 && delta === 1) {
+      if (gameState.currentStep === 6 && delta === 1) {
         switchMainTab('map');
         return;
       }
-      goStep(appState.currentStep + delta);
+      goStep(gameState.currentStep + delta);
     }
 
     // =========================================================================
-    // 5. 渲染 6 步互動寫作表單（支援修改文字並保持三語對應）
+    // 8. 選擇卡片點擊處理器（觸發蝴蝶效應重繪）
     // =========================================================================
-    function updateFieldZh(fieldKey, newValue) {
-      if (!appState.fields[fieldKey]) {
-        appState.fields[fieldKey] = { zh: '', th: '', ja: '' };
-      }
-      appState.fields[fieldKey].zh = newValue;
+    function selectStoryBranch(storyId) {
+      gameState.storyId = storyId;
+      const story = getCurrentStory();
+      // 切換主線時自動對齊該主線最合理的預設人物，並重置後面索引避免越界
+      gameState.whoRole = story.defaultWhoKey;
+      gameState.timeIdx = 0;
+      gameState.placeIdx = 0;
+      gameState.causeIdx = 0;
+      gameState.p1ActionIdx = 0;
+      gameState.p1WarnIdx = 0;
+      gameState.p1ThoughtIdx = 0;
+      gameState.p2SymptomIdx = 0;
+      gameState.p2ReactionIdx = 0;
+      gameState.p2ResultIdx = 0;
+      gameState.moralIdx = 0;
+      gameState.futureIdx = 0;
+      gameState.introObjIdx = 0;
+      gameState.introEventIdx = 0;
+      gameState.introFeelingIdx = 0;
+
+      renderButterflyChainTracker();
+      renderStepGame();
     }
 
-    // 輔助函數：生成三語可編輯卡片區塊
-    function buildTrilingualFieldCard(fieldKey, labelZh, labelTh, labelJa, badgeColorClass, hintText) {
-      const item = appState.fields[fieldKey] || { zh: '', th: '', ja: '' };
-      return `
-        <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 space-y-2">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div class="text-sm font-black ${badgeColorClass}">
-              ${labelZh}
-              <span class="lang-th text-xs font-medium text-teal-700 ml-1">🇹🇭 ${labelTh}</span>
-              <span class="lang-ja text-xs font-medium text-indigo-700 ml-1">🇯🇵 ${labelJa}</span>
+    function selectWhoRole(roleKey) {
+      gameState.whoRole = roleKey;
+      renderButterflyChainTracker();
+      renderStepGame();
+    }
+
+    function selectOptionIndex(stateKey, idx) {
+      gameState[stateKey] = idx;
+      renderButterflyChainTracker();
+      renderStepGame();
+    }
+
+    // =========================================================================
+    // 9. 渲染純點擊選項卡片組（每題至少 4 個三語選項卡）
+    // =========================================================================
+    function buildChoiceGridHtml(titleZh, titleTh, titleJa, headerColorClass, options, currentIdx, onClickFnName, stateKeyOrIsRole) {
+      const cards = options.map((opt, idx) => {
+        const isSelected = (stateKeyOrIsRole === 'ROLE')
+          ? (opt.role === gameState.whoRole)
+          : (idx === currentIdx);
+
+        const clickCall = (stateKeyOrIsRole === 'ROLE')
+          ? `selectWhoRole('${opt.role}')`
+          : `${onClickFnName}('${stateKeyOrIsRole}', ${idx})`;
+
+        return `
+          <div onclick="${clickCall}"
+            class="choice-card rounded-2xl border-2 p-3.5 flex flex-col justify-between gap-2 ${
+              isSelected ? 'choice-selected' : 'border-slate-200 bg-white'
+            }">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-1.5">
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-bold ${
+                  isSelected ? 'bg-teal-700 text-white' : 'bg-slate-100 text-slate-700'
+                }">
+                  ${opt.tag || ('選項 ' + (idx + 1))}
+                </span>
+                ${isSelected ? '<span class="text-teal-800 font-black text-xs">✓ 已選擇</span>' : '<span class="text-slate-400 text-xs">點擊選擇</span>'}
+              </div>
+              <div class="text-sm sm:text-base font-bold text-[#1e3a5f] leading-relaxed">
+                ${opt.zh}
+              </div>
             </div>
-            <span class="text-[11px] text-slate-500">${hintText}</span>
+
+            <div class="pt-2 border-t border-slate-200/70 space-y-1 text-xs">
+              <div class="lang-th text-teal-800 leading-snug">🇹🇭 ${opt.th}</div>
+              <div class="lang-ja text-indigo-800 leading-snug">🇯🇵 ${opt.ja}</div>
+            </div>
           </div>
+        `;
+      }).join('');
 
-          <!-- 繁體中文可編輯輸入框 -->
-          <textarea rows="2" oninput="updateFieldZh('${fieldKey}', this.value)"
-            class="w-full rounded-xl border-2 border-slate-300 focus:border-teal-600 focus:outline-none p-2.5 text-sm sm:text-base font-bold text-[#1e3a5f] bg-white shadow-inner">${item.zh}</textarea>
-
-          <!-- 泰文與日文輔助翻譯卡 -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
-            <div class="lang-th bg-teal-50/90 border border-teal-200 rounded-lg px-3 py-1.5 text-teal-950">
-              <span class="font-bold">🇹🇭 泰文輔助：</span>${item.th}
-            </div>
-            <div class="lang-ja bg-indigo-50/90 border border-indigo-200 rounded-lg px-3 py-1.5 text-indigo-950">
-              <span class="font-bold">🇯🇵 日文輔助：</span>${item.ja}
-            </div>
+      return `
+        <div class="edu-card p-4 sm:p-5 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+            <h3 class="text-base font-black ${headerColorClass}">
+              ${titleZh}
+              <span class="lang-th text-xs font-medium text-teal-700 ml-1.5">🇹🇭 ${titleTh}</span>
+              <span class="lang-ja text-xs font-medium text-indigo-700 ml-1.5">🇯🇵 ${titleJa}</span>
+            </h3>
+            <span class="text-xs font-bold text-slate-500">共 ${options.length} 個選項・點擊即選</span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            ${cards}
           </div>
         </div>
       `;
     }
 
-    function renderStepForm() {
-      const step = appState.currentStep;
+    function renderStepGame() {
+      const step = gameState.currentStep;
       const stepTitles = [
-        '第 1 步 / 共 6 步：選擇故事分支（蝴蝶效應起點）',
-        '第 2 步 / 共 6 步：過渡／背景段（四素句：時、人、地、事）',
-        '第 3 步 / 共 6 步：片段（一）先喜（如何貪吃・當時情形與心理獨白）',
-        '第 4 步 / 共 6 步：片段（二）後悲（身體不適反應・五官神態與結果）',
-        '第 5 步 / 共 6 步：總結段（道理反思・感受與以後做法）',
-        '第 6 步 / 共 6 步：引子段（倒敍法：物 → 事 → 情）'
+        '第 1 關 / 共 6 關：選擇貪吃故事主線（決定食物與核心物件）',
+        '第 2 關 / 共 6 關：選擇四素背景（時・人・地・事 — 人物選擇將影響後面所有關卡！）',
+        '第 3 關 / 共 6 關：片段（一）先喜 — 根據你選的人物與食物，選擇貪吃經過',
+        '第 4 關 / 共 6 關：片段（二）後悲 — 選擇身體不適症狀與被發現的結果',
+        '第 5 關 / 共 6 關：總結段 — 選擇領悟的道理與以後的改法',
+        '第 6 關 / 共 6 關：引子段 — 倒敍法（物 → 事 → 情）首尾呼應'
       ];
 
       document.getElementById('progressStepText').textContent = stepTitles[step - 1];
       const pct = Math.round((step / 6) * 100);
-      document.getElementById('progressPercentText').textContent = `完成度 ${pct}%`;
+      document.getElementById('progressPercentText').textContent = `進度 ${pct}%`;
       document.getElementById('progressBarFill').style.width = `${pct}%`;
 
-      // 更新步驟按鈕高亮
       for (let i = 1; i <= 6; i++) {
         const btn = document.getElementById('stepBtn' + i);
         if (i === step) {
@@ -1313,35 +1582,38 @@
 
       const nextBtn = document.getElementById('btnNextStep');
       if (step === 6) {
-        nextBtn.innerHTML = '🎉 完成！生成專屬寫作腦圖與範文 →';
+        nextBtn.innerHTML = '🎉 完成闖關！生成寫作腦圖與佳作 →';
         nextBtn.className = 'px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-black shadow-lg transition';
       } else {
-        nextBtn.innerHTML = '下一步 → <span class="lang-th text-xs font-normal text-teal-200">ถัดไป</span> <span class="lang-ja text-xs font-normal text-indigo-200">次へ</span>';
+        nextBtn.innerHTML = '下一關 → <span class="lang-th text-xs font-normal text-teal-200">ด่านถัดไป</span> <span class="lang-ja text-xs font-normal text-indigo-200">次へ</span>';
         nextBtn.className = 'px-6 py-2.5 rounded-xl bg-[#1e3a5f] hover:bg-[#152a45] text-white text-sm font-bold shadow-md transition';
       }
 
       const container = document.getElementById('stepBodyContainer');
 
-      // 步驟 1：選擇 6 大真實課堂故事
+      // ---------------- 第 1 關：6 大故事主線卡片 ----------------
       if (step === 1) {
-        const cardsHtml = STORIES_DATA.map(s => {
-          const isSelected = (s.id === appState.selectedStoryId);
+        const storyCards = STORY_BRANCHES.map(st => {
+          const isSelected = (st.id === gameState.storyId);
           return `
-            <div onclick="handleSelectStory('${s.id}')"
+            <div onclick="selectStoryBranch('${st.id}')"
               class="choice-card edu-card p-4 border-2 ${isSelected ? 'choice-selected' : 'border-slate-200'}">
-              <div class="flex items-start gap-3">
-                <div class="text-3xl bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 shrink-0">
-                  ${s.icon}
+              <div class="flex items-start gap-3.5">
+                <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-3xl shrink-0 shadow-sm">
+                  ${st.icon}
                 </div>
-                <div class="flex-1">
-                  <div class="flex items-center justify-between gap-2">
-                    <h3 class="text-base font-black text-[#1e3a5f]">${s.title.zh}</h3>
-                    ${isSelected ? '<span class="px-2 py-0.5 rounded-full bg-teal-700 text-white text-[11px] font-bold">✓ 已選用</span>' : ''}
+                <div class="flex-1 space-y-1.5">
+                  <div class="flex flex-wrap items-center justify-between gap-2">
+                    <span class="px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-900 text-[11px] font-bold">
+                      ${st.tag}
+                    </span>
+                    ${isSelected ? '<span class="px-2.5 py-0.5 rounded-full bg-teal-700 text-white text-xs font-black">✓ 已選主線</span>' : ''}
                   </div>
-                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">${s.subtitle.zh}</p>
-                  <div class="mt-2 pt-2 border-t border-slate-200/70 space-y-1 text-xs">
-                    <div class="lang-th text-teal-800">🇹🇭 ${s.title.th}</div>
-                    <div class="lang-ja text-indigo-800">🇯🇵 ${s.title.ja}</div>
+                  <h3 class="text-base sm:text-lg font-black text-[#1e3a5f]">${st.title.zh}</h3>
+                  <p class="text-xs text-slate-600 leading-relaxed">${st.desc.zh}</p>
+                  <div class="pt-2 border-t border-slate-200/70 space-y-1 text-xs">
+                    <div class="lang-th text-teal-800">🇹🇭 ${st.title.th} — ${st.desc.th}</div>
+                    <div class="lang-ja text-indigo-800">🇯🇵 ${st.title.ja} — ${st.desc.ja}</div>
                   </div>
                 </div>
               </div>
@@ -1350,184 +1622,158 @@
         }).join('');
 
         container.innerHTML = `
-          <div class="edu-card p-5 space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
-              <div>
-                <h2 class="text-lg font-black text-[#1e3a5f]">🦋 步驟一：點選一個最貼近你經歷的《貪吃之過》故事</h2>
-                <p class="text-xs text-slate-600 mt-0.5">
-                  點選後，後面第 2 至第 6 步的人物、食物、身體症狀與引子物件會自動蝴蝶效應連動配對！
-                </p>
-              </div>
+          <div class="edu-card p-4 bg-amber-50/80 border border-amber-300 flex items-center gap-3 text-xs sm:text-sm text-amber-950 font-bold">
+            <span class="text-2xl">🦋</span>
+            <div>
+              蝴蝶效應提示：選擇不同故事主線後，後面第 2 至第 6 關的所有選項（時間、人物、地點、偷吃動作、身體症狀、引子物件）都會自動隨之改變！
+              <span class="lang-th block font-normal text-teal-800 mt-0.5">🇹🇭 ตัวเลือกทั้งหมดในด่านต่อไปจะเปลี่ยนตามเรื่องที่เธอเลือกในด่านนี้!</span>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-              ${cardsHtml}
-            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            ${storyCards}
           </div>
         `;
         return;
       }
 
-      // 步驟 2：過渡／背景段（四素句）
+      // ---------------- 第 2 關：四素背景（時、人、地、事） ----------------
       if (step === 2) {
-        container.innerHTML = `
-          <div class="edu-card p-5 space-y-4">
-            <div class="bg-sky-50 border border-sky-200 rounded-xl p-3.5">
-              <h2 class="text-base sm:text-lg font-black text-sky-950">
-                📖 步驟二（第二段）：過渡段／四素句段 — 交代事件背景（起因）
-              </h2>
-              <p class="text-xs text-sky-800 mt-1">
-                寫作錦囊：用簡潔通順的句子交代「時間、人物、地點、起因」，自然引出你為甚麼會貪吃。（可直接修改下方繁體中文內容）
-              </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              ${buildTrilingualFieldCard('time', '⏰ 時間（時）', 'เวลา', 'いつ（時間）', 'text-sky-800', '交代事情發生的時間')}
-              ${buildTrilingualFieldCard('who', '👨‍👩‍👧 人物（人）', 'บุคคล', 'だれが（人物）', 'text-sky-800', '交代主角和相關家人')}
-              ${buildTrilingualFieldCard('place', '🏠 地點（地）', 'สถานที่', 'どこで（場所）', 'text-sky-800', '交代偷吃發生的地點')}
-              ${buildTrilingualFieldCard('cause', '💡 起因（事）', 'สาเหตุ', 'きっかけ（原因）', 'text-sky-800', '為甚麼會忍不住想吃')}
-            </div>
-          </div>
-        `;
+        const s2 = getStep2Options();
+        container.innerHTML =
+          buildChoiceGridHtml('⏰ 2-1 選擇「時間（時）」', 'เลือกเวลา', '時間を選ぶ', 'text-sky-900', s2.timeOptions, gameState.timeIdx, 'selectOptionIndex', 'timeIdx') +
+          buildChoiceGridHtml('👨‍👩‍👧 2-2 選擇「人物（人）」— 蝴蝶效應關鍵分支！', 'เลือกบุคคล (กำหนดผู้ที่จะมาเจอในตอนท้าย!)', '人物を選ぶ（後の登場人物が連動変化！）', 'text-rose-800', s2.whoOptions, 0, 'selectWhoRole', 'ROLE') +
+          buildChoiceGridHtml('🏠 2-3 選擇「地點（地）」', 'เลือกสถานที่', '場所を選ぶ', 'text-sky-900', s2.placeOptions, gameState.placeIdx, 'selectOptionIndex', 'placeIdx') +
+          buildChoiceGridHtml('💡 2-4 選擇「起因（事）」', 'เลือกสาเหตุ', 'きっかけを選ぶ', 'text-sky-900', s2.causeOptions, gameState.causeIdx, 'selectOptionIndex', 'causeIdx');
         return;
       }
 
-      // 步驟 3：片段（一）先喜
+      // ---------------- 第 3 關：片段（一）先喜 ----------------
       if (step === 3) {
+        const s3 = getStep3Options();
+        const r = getRoleNames();
         container.innerHTML = `
-          <div class="edu-card p-5 space-y-4">
-            <div class="bg-amber-50 border border-amber-200 rounded-xl p-3.5">
-              <h2 class="text-base sm:text-lg font-black text-amber-950">
-                😊 步驟三（第三段）：片段（一）先喜 — 寫出貪吃的得意情形
-              </h2>
-              <p class="text-xs text-amber-900 mt-1">
-                寫作錦囊：運用 <span class="bg-red-100 text-red-900 px-1.5 rounded font-bold">描述</span>、<span class="bg-cyan-100 text-cyan-900 px-1.5 rounded font-bold">動作描寫</span> 與 <span class="bg-fuchsia-100 text-fuchsia-900 px-1.5 rounded font-bold">心理獨白</span>，寫出你如何偷吃、當時多麼得意開心！
-              </p>
-            </div>
-            <div class="space-y-4">
-              ${buildTrilingualFieldCard('p1Action', '😋 貪吃經過與動作描寫', 'ท่าทางตอนแอบกินอย่างอร่อย', '貪り食べる様子と動作', 'text-amber-900', '用生動動詞寫出吃得有多急、多香')}
-              ${buildTrilingualFieldCard('p1Warn', '👂 家人勸告或小心掩飾的細節', 'คำเตือนหรือการแอบซ่อน', '注意や隠蔽のディテール', 'text-amber-900', '寫出聲響、氣味或家人的提醒')}
-              ${buildTrilingualFieldCard('p1Thought', '💭 當時的得意心理獨白', 'ความคิดในใจตอนนั้น', 'その時の得意げな心の声', 'text-fuchsia-900', '用引號「……」寫出心裡的僥倖想法')}
-            </div>
+          <div class="edu-card p-3.5 bg-teal-50 border border-teal-300 text-xs font-bold text-teal-950">
+            🦋 已自動連動你的選擇：主角動作與心理獨白已自動配合【${r.targetZh}${r.partnerZh}】的劇情線！
           </div>
-        `;
+        ` +
+          buildChoiceGridHtml('😋 3-1 選擇「貪吃經過與動作描寫」', 'เลือกท่าทางตอนแอบกิน', '食べ方と動作を選ぶ', 'text-amber-900', s3.p1ActionOptions, gameState.p1ActionIdx, 'selectOptionIndex', 'p1ActionIdx') +
+          buildChoiceGridHtml(`👂 3-2 選擇「躲避${r.targetZh}／勸告細節」`, 'เลือกรายละเอียดการแอบซ่อนหรือคำเตือน', '注意や隠れ方のディテールを選ぶ', 'text-amber-900', s3.p1WarnOptions, gameState.p1WarnIdx, 'selectOptionIndex', 'p1WarnIdx') +
+          buildChoiceGridHtml('💭 3-3 選擇「當時的得意心理獨白」', 'เลือกความคิดในใจตอนนั้น', '得意げな心の声を選ぶ', 'text-fuchsia-900', s3.p1ThoughtOptions, gameState.p1ThoughtIdx, 'selectOptionIndex', 'p1ThoughtIdx');
         return;
       }
 
-      // 步驟 4：片段（二）後悲
+      // ---------------- 第 4 關：片段（二）後悲 ----------------
       if (step === 4) {
+        const s4 = getStep4Options();
+        const r = getRoleNames();
         container.innerHTML = `
-          <div class="edu-card p-5 space-y-4">
-            <div class="bg-rose-50 border border-rose-200 rounded-xl p-3.5">
-              <h2 class="text-base sm:text-lg font-black text-rose-950">
-                😭 步驟四（第四段）：片段（二）後悲 — 貪吃生病的痛苦經過
-              </h2>
-              <p class="text-xs text-rose-900 mt-1">
-                寫作錦囊：前後對比「樂極生悲」！加入 <span class="bg-yellow-100 text-yellow-900 px-1.5 rounded font-bold">五官神態（眉頭緊皺、臉色蒼白）</span> 與 <span class="bg-green-100 text-green-900 px-1.5 rounded font-bold">痛苦情感</span>。
-              </p>
-            </div>
-            <div class="space-y-4">
-              ${buildTrilingualFieldCard('p2Symptom', '🤢 身體出現的不適症狀', 'อาการป่วยของร่างกาย', '体に現れた不調・症状', 'text-rose-900', '肚子痛、反胃、腹瀉或發燒')}
-              ${buildTrilingualFieldCard('p2Reaction', '💦 痛苦時的五官神態與動作', 'สีหน้าและท่าทางตอนทรมาน', '苦しむ表情・五官と動作', 'text-rose-900', '皺眉、臉色發白、冒冷汗、捂肚子')}
-              ${buildTrilingualFieldCard('p2Result', '🏥 家人發現與看醫生結果', 'ผลลัพธ์สุดท้ายและการรักษา', '家族にバレた結末と治療', 'text-rose-900', '看醫生、吃苦藥或錯過活動')}
-            </div>
+          <div class="edu-card p-3.5 bg-rose-50 border border-rose-300 text-xs font-bold text-rose-950">
+            🦋 樂極生悲連動：最後發現你生病並照顧你的人，已鎖定為前面所選的【${r.targetZh}】，絕不會前後矛盾！
           </div>
-        `;
+        ` +
+          buildChoiceGridHtml('🤢 4-1 選擇「身體出現的不適症狀」', 'เลือกอาการป่วยของร่างกาย', '体の不調・症状を選ぶ', 'text-rose-900', s4.p2SymptomOptions, gameState.p2SymptomIdx, 'selectOptionIndex', 'p2SymptomIdx') +
+          buildChoiceGridHtml('💦 4-2 選擇「痛苦時的五官神態與動作」', 'เลือกสีหน้าและท่าทางตอนทรมาน', '苦しむ表情・五官と動作を選ぶ', 'text-rose-900', s4.p2ReactionOptions, gameState.p2ReactionIdx, 'selectOptionIndex', 'p2ReactionIdx') +
+          buildChoiceGridHtml(`🏥 4-3 選擇「${r.targetZh}發現與最後結果」`, 'เลือกผลลัพธ์สุดท้ายและการรักษา', '家族の発見と結末を選ぶ', 'text-rose-900', s4.p2ResultOptions, gameState.p2ResultIdx, 'selectOptionIndex', 'p2ResultIdx');
         return;
       }
 
-      // 步驟 5：總結段（道理反思）
+      // ---------------- 第 5 關：總結段 ----------------
       if (step === 5) {
-        container.innerHTML = `
-          <div class="edu-card p-5 space-y-4">
-            <div class="bg-purple-50 border border-purple-200 rounded-xl p-3.5">
-              <h2 class="text-base sm:text-lg font-black text-purple-950">
-                🌟 步驟五（第五段）：總結段 — 領悟道理與以後的做法
-              </h2>
-              <p class="text-xs text-purple-900 mt-1">
-                寫作錦囊：扣緊題目《貪吃之過》，寫出這次教訓讓你明白甚麼 <span class="bg-orange-100 text-orange-900 px-1.5 rounded font-bold">道理反思</span>，以及以後會怎樣做。
-              </p>
-            </div>
-            <div class="space-y-4">
-              ${buildTrilingualFieldCard('moral', '💡 這次經歷令你明白的道理', 'ข้อคิดที่ได้เรียนรู้จากครั้งนี้', '今回の経験で悟った教訓', 'text-purple-900', '例如：飲食要適可而止、病從口入')}
-              ${buildTrilingualFieldCard('future', '🌱 以後的具體做法與期盼', 'ความตั้งใจและการปฏิบัติในอนาคต', '今後の具体的な行動と決意', 'text-purple-900', '以後怎樣愛惜身體、聽從勸告')}
-            </div>
-          </div>
-        `;
+        const s5 = getStep5Options();
+        container.innerHTML =
+          buildChoiceGridHtml('💡 5-1 選擇「這次經歷領悟的道理」', 'เลือกข้อคิดที่ได้เรียนรู้', '学んだ教訓を選ぶ', 'text-purple-900', s5.moralOptions, gameState.moralIdx, 'selectOptionIndex', 'moralIdx') +
+          buildChoiceGridHtml('🌱 5-2 選擇「以後的具體做法與期盼」', 'เลือกการปรับปรุงตัวในอนาคต', '今後の行動と決意を選ぶ', 'text-purple-900', s5.futureOptions, gameState.futureIdx, 'selectOptionIndex', 'futureIdx');
         return;
       }
 
-      // 步驟 6：引子段（倒敍法：物 → 事 → 情）
+      // ---------------- 第 6 關：引子段（倒敍法：物 → 事 → 情） ----------------
       if (step === 6) {
-        container.innerHTML = `
-          <div class="edu-card p-5 space-y-4">
-            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3.5">
-              <h2 class="text-base sm:text-lg font-black text-emerald-950">
-                🎬 步驟六（第一段）：引子段 — 倒敍法（物 → 事 → 情）
-              </h2>
-              <p class="text-xs text-emerald-900 mt-1">
-                寫作秘訣：由眼前的「物件」聯想到那次「生病的經歷」，再點出「後悔／難忘的情感」，開頭立刻吸引讀者！
-              </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              ${buildTrilingualFieldCard('introObj', '① 物（引發回憶的物件）', 'สิ่งของที่เห็น', '① モノ（きっかけの物）', 'text-emerald-900', '每當我看見……')}
-              ${buildTrilingualFieldCard('introEvent', '② 事（聯想到的經歷）', 'เหตุการณ์ที่นึกถึง', '② コト（思い出す出来事）', 'text-emerald-900', '便會想起……')}
-              ${buildTrilingualFieldCard('introFeeling', '③ 情（至今的感受）', 'ความรู้สึกจนถึงวันนี้', '③ 感情（今の気持ち）', 'text-emerald-900', '至今仍讓我……')}
-            </div>
-          </div>
-        `;
+        const s6 = getStep6Options();
+        container.innerHTML =
+          buildChoiceGridHtml('① 6-1 選擇引子「物（引發回憶的物件）」', 'เลือกสิ่งของที่ทำให้นึกถึงเรื่องนี้', '① モノ（思い出のきっかけ）を選ぶ', 'text-emerald-900', s6.introObjOptions, gameState.introObjIdx, 'selectOptionIndex', 'introObjIdx') +
+          buildChoiceGridHtml('② 6-2 選擇引子「事（聯想到的經歷）」', 'เลือกเหตุการณ์ที่นึกถึง', '② コト（思い出す出来事）を選ぶ', 'text-emerald-900', s6.introEventOptions, gameState.introEventIdx, 'selectOptionIndex', 'introEventIdx') +
+          buildChoiceGridHtml('③ 6-3 選擇引子「情（至今的感受）」', 'เลือกความรู้สึกจนถึงวันนี้', '③ 感情（今の気持ち）を選ぶ', 'text-emerald-900', s6.introFeelingOptions, gameState.introFeelingIdx, 'selectOptionIndex', 'introFeelingIdx');
       }
     }
 
-    function handleSelectStory(storyId) {
-      loadStoryDefaults(storyId);
-      renderStepForm();
+    // =========================================================================
+    // 10. 彙整當前所有已選結果物件（供腦圖與五段式範文共用）
+    // =========================================================================
+    function getResolvedSelections() {
+      const story = getCurrentStory();
+      const s2 = getStep2Options();
+      const s3 = getStep3Options();
+      const s4 = getStep4Options();
+      const s5 = getStep5Options();
+      const s6 = getStep6Options();
+
+      return {
+        story,
+        time: s2.timeOptions[gameState.timeIdx] || s2.timeOptions[0],
+        who: s2.whoOptions.find(w => w.role === gameState.whoRole) || s2.whoOptions[0],
+        place: s2.placeOptions[gameState.placeIdx] || s2.placeOptions[0],
+        cause: s2.causeOptions[gameState.causeIdx] || s2.causeOptions[0],
+        p1Action: s3.p1ActionOptions[gameState.p1ActionIdx] || s3.p1ActionOptions[0],
+        p1Warn: s3.p1WarnOptions[gameState.p1WarnIdx] || s3.p1WarnOptions[0],
+        p1Thought: s3.p1ThoughtOptions[gameState.p1ThoughtIdx] || s3.p1ThoughtOptions[0],
+        p2Symptom: s4.p2SymptomOptions[gameState.p2SymptomIdx] || s4.p2SymptomOptions[0],
+        p2Reaction: s4.p2ReactionOptions[gameState.p2ReactionIdx] || s4.p2ReactionOptions[0],
+        p2Result: s4.p2ResultOptions[gameState.p2ResultIdx] || s4.p2ResultOptions[0],
+        moral: s5.moralOptions[gameState.moralIdx] || s5.moralOptions[0],
+        future: s5.futureOptions[gameState.futureIdx] || s5.futureOptions[0],
+        introObj: s6.introObjOptions[gameState.introObjIdx] || s6.introObjOptions[0],
+        introEvent: s6.introEventOptions[gameState.introEventIdx] || s6.introEventOptions[0],
+        introFeeling: s6.introFeelingOptions[gameState.introFeelingIdx] || s6.introFeelingOptions[0]
+      };
     }
 
     // =========================================================================
-    // 6. 渲染《貪吃之過》視覺化腦圖（中・泰・日三語）
+    // 11. 渲染視覺化《貪吃之過》寫作腦圖（三語對照）
     // =========================================================================
-    function formatTrilingualBoxHtml(fieldObj) {
-      if (!fieldObj) return '';
+    function formatMapCellHtml(opt) {
       return `
-        <div class="font-bold text-[#1e3a5f] text-xs sm:text-sm leading-snug">${fieldObj.zh}</div>
-        <div class="lang-th text-[11px] text-teal-800 mt-1 leading-snug">🇹🇭 ${fieldObj.th}</div>
-        <div class="lang-ja text-[11px] text-indigo-800 mt-0.5 leading-snug">🇯🇵 ${fieldObj.ja}</div>
+        <div class="font-bold text-[#1e3a5f] text-xs sm:text-sm leading-snug">${opt.zh}</div>
+        <div class="lang-th text-[11px] text-teal-800 mt-1 leading-snug">🇹🇭 ${opt.th}</div>
+        <div class="lang-ja text-[11px] text-indigo-800 mt-0.5 leading-snug">🇯🇵 ${opt.ja}</div>
       `;
     }
 
     function renderMindMap() {
-      updateStudentInfo();
-      updateStoryBadges();
-      const f = appState.fields;
-      document.getElementById('mapBoxObj').innerHTML = formatTrilingualBoxHtml(f.introObj);
-      document.getElementById('mapBoxEvent').innerHTML = formatTrilingualBoxHtml(f.introEvent);
-      document.getElementById('mapBoxFeeling').innerHTML = formatTrilingualBoxHtml(f.introFeeling);
+      updateMindMapHeader();
+      const sel = getResolvedSelections();
 
-      document.getElementById('mapBoxTime').innerHTML = formatTrilingualBoxHtml(f.time);
-      document.getElementById('mapBoxWho').innerHTML = formatTrilingualBoxHtml(f.who);
-      document.getElementById('mapBoxPlace').innerHTML = formatTrilingualBoxHtml(f.place);
-      document.getElementById('mapBoxCause').innerHTML = formatTrilingualBoxHtml(f.cause);
+      document.getElementById('mapStoryTag').textContent = `${sel.story.icon} ${sel.story.title.zh}`;
 
-      document.getElementById('mapBoxP1Action').innerHTML = formatTrilingualBoxHtml(f.p1Action);
-      document.getElementById('mapBoxP1Warn').innerHTML = formatTrilingualBoxHtml(f.p1Warn);
-      document.getElementById('mapBoxP1Thought').innerHTML = formatTrilingualBoxHtml(f.p1Thought);
+      document.getElementById('mapBoxObj').innerHTML = formatMapCellHtml(sel.introObj);
+      document.getElementById('mapBoxEvent').innerHTML = formatMapCellHtml(sel.introEvent);
+      document.getElementById('mapBoxFeeling').innerHTML = formatMapCellHtml(sel.introFeeling);
 
-      document.getElementById('mapBoxP2Symptom').innerHTML = formatTrilingualBoxHtml(f.p2Symptom);
-      document.getElementById('mapBoxP2Reaction').innerHTML = formatTrilingualBoxHtml(f.p2Reaction);
-      document.getElementById('mapBoxP2Result').innerHTML = formatTrilingualBoxHtml(f.p2Result);
+      document.getElementById('mapBoxTime').innerHTML = formatMapCellHtml(sel.time);
+      document.getElementById('mapBoxWho').innerHTML = formatMapCellHtml(sel.who);
+      document.getElementById('mapBoxPlace').innerHTML = formatMapCellHtml(sel.place);
+      document.getElementById('mapBoxCause').innerHTML = formatMapCellHtml(sel.cause);
 
-      document.getElementById('mapBoxMoral').innerHTML = formatTrilingualBoxHtml(f.moral);
-      document.getElementById('mapBoxFuture').innerHTML = formatTrilingualBoxHtml(f.future);
+      document.getElementById('mapBoxP1Action').innerHTML = formatMapCellHtml(sel.p1Action);
+      document.getElementById('mapBoxP1Warn').innerHTML = formatMapCellHtml(sel.p1Warn);
+      document.getElementById('mapBoxP1Thought').innerHTML = formatMapCellHtml(sel.p1Thought);
+
+      document.getElementById('mapBoxP2Symptom').innerHTML = formatMapCellHtml(sel.p2Symptom);
+      document.getElementById('mapBoxP2Reaction').innerHTML = formatMapCellHtml(sel.p2Reaction);
+      document.getElementById('mapBoxP2Result').innerHTML = formatMapCellHtml(sel.p2Result);
+
+      document.getElementById('mapBoxMoral').innerHTML = formatMapCellHtml(sel.moral);
+      document.getElementById('mapBoxFuture').innerHTML = formatMapCellHtml(sel.future);
     }
 
     // =========================================================================
-    // 7. 渲染五段式佳作範文（含寫作技巧彩色標記與三語翻譯）
+    // 12. 渲染五段式佳作範文（含課堂寫作技巧高光標記＋泰日三語翻譯）
     // =========================================================================
     function toggleSkillsHighlight() {
-      appState.skillsHighlight = !appState.skillsHighlight;
+      gameState.skillsHighlight = !gameState.skillsHighlight;
       const container = document.getElementById('essayParagraphsContainer');
       const btn = document.getElementById('toggleSkillsBtn');
       const legend = document.getElementById('skillsLegendBar');
-      if (appState.skillsHighlight) {
+      if (gameState.skillsHighlight) {
         container.classList.add('skills-on');
         legend.classList.remove('hidden');
         btn.textContent = '🎨 寫作技巧彩色標記：開啟';
@@ -1539,59 +1785,57 @@
     }
 
     function renderFullEssay() {
-      const f = appState.fields;
+      const sel = getResolvedSelections();
 
-      // 組合五段繁體中文文章（帶技巧高光標籤）
       const paragraphs = [
         {
           label: '第一段：引子（倒敍法：物 → 事 → 情）',
           badgeColor: 'bg-emerald-600',
-          zhHtml: `　　每當我看見<span class="hl-desc">${f.introObj.zh}</span>時，便會想起<span class="hl-desc">${f.introEvent.zh}</span>的情景，<span class="hl-emotion">${f.introFeeling.zh}</span>。`,
-          zhPlain: `　　每當我看見${f.introObj.zh}時，便會想起${f.introEvent.zh}的情景，${f.introFeeling.zh}。`,
-          th: `ทุกครั้งที่ฉันเห็น${f.introObj.th} ฉันก็จะนึกถึงเหตุการณ์${f.introEvent.th} ซึ่งทำให้ฉัน${f.introFeeling.th}`,
-          ja: `${f.introObj.ja}を見るたびに、${f.introEvent.ja}を思い出し、${f.introFeeling.ja}。`
+          zhHtml: `　　每當我看見<span class="hl-desc">${sel.introObj.zh}</span>時，便會想起<span class="hl-desc">${sel.introEvent.zh}</span>，<span class="hl-emotion">${sel.introFeeling.zh}</span>。`,
+          zhPlain: `　　每當我看見${sel.introObj.zh}時，便會想起${sel.introEvent.zh}，${sel.introFeeling.zh}。`,
+          th: `ทุกครั้งที่ฉันเห็น${sel.introObj.th} ฉันก็จะนึกถึง${sel.introEvent.th} ซึ่ง${sel.introFeeling.th}`,
+          ja: `${sel.introObj.ja}を見るたびに、${sel.introEvent.ja}を思い出し、${sel.introFeeling.ja}。`
         },
         {
           label: '第二段：過渡段／四素句段（起因）',
           badgeColor: 'bg-sky-600',
-          zhHtml: `　　<span class="hl-desc">${f.time.zh}</span>，<span class="hl-desc">${f.who.zh}</span>在<span class="hl-desc">${f.place.zh}</span>。那時候，因為<span class="hl-desc">${f.cause.zh}</span>，於是我決定偷偷滿足一下自己的口腹之欲。`,
-          zhPlain: `　　${f.time.zh}，${f.who.zh}在${f.place.zh}。那時候，因為${f.cause.zh}，於是我決定偷偷滿足一下自己的口腹之欲。`,
-          th: `${f.time.th} ${f.who.th}อยู่ที่${f.place.th} ในตอนนั้น เนื่องจาก${f.cause.th} ฉันจึงตัดสินใจแอบตามใจปากสักหน่อย`,
-          ja: `${f.time.ja}、${f.who.ja}は${f.place.ja}にいた。その時、${f.cause.ja}ため、私はこっそり食欲を満たすことにした。`
+          zhHtml: `　　<span class="hl-desc">${sel.time.zh}</span>，<span class="hl-desc">${sel.who.zh}</span>在<span class="hl-desc">${sel.place.zh}</span>。那時候，因為<span class="hl-desc">${sel.cause.zh}</span>，於是我決定偷偷滿足一下自己的口腹之欲。`,
+          zhPlain: `　　${sel.time.zh}，${sel.who.zh}在${sel.place.zh}。那時候，因為${sel.cause.zh}，於是我決定偷偷滿足一下自己的口腹之欲。`,
+          th: `${sel.time.th} ${sel.who.th}อยู่ที่${sel.place.th} ในตอนนั้น เนื่องจาก${sel.cause.th} ฉันจึงตัดสินใจแอบตามใจปากสักหน่อย`,
+          ja: `${sel.time.ja}、${sel.who.ja}は${sel.place.ja}にいた。その時、${sel.cause.ja}ため、私はこっそり食欲を満たすことにした。`
         },
         {
           label: '第三段：片段（一）先喜（貪吃經過與得意心情）😊',
           badgeColor: 'bg-amber-600',
-          zhHtml: `　　我心裡又興奮又嘴饞，<span class="hl-action">${f.p1Action.zh}</span>。<span class="hl-desc">${f.p1Warn.zh}</span>。那時我得意洋洋，心想：<span class="hl-thought">${f.p1Thought.zh}</span>`,
-          zhPlain: `　　我心裡又興奮又嘴饞，${f.p1Action.zh}。${f.p1Warn.zh}。那時我得意洋洋，心想：${f.p1Thought.zh}`,
-          th: `ฉันรู้สึกตื่นเต้นและอยากกินมาก ${f.p1Action.th} ${f.p1Warn.th} ตอนนั้นฉันรู้สึกภูมิใจมากและคิดในใจว่า ${f.p1Thought.th}`,
-          ja: `私はワクワクしてたまらず、${f.p1Action.ja}。${f.p1Warn.ja}。その時私は得意満面で、心の中で${f.p1Thought.ja}と思った。`
+          zhHtml: `　　我心裡又興奮又嘴饞，<span class="hl-action">${sel.p1Action.zh}</span>。<span class="hl-desc">${sel.p1Warn.zh}</span>。那時我得意洋洋，心想：<span class="hl-thought">${sel.p1Thought.zh}</span>`,
+          zhPlain: `　　我心裡又興奮又嘴饞，${sel.p1Action.zh}。${sel.p1Warn.zh}。那時我得意洋洋，心想：${sel.p1Thought.zh}`,
+          th: `ฉันรู้สึกตื่นเต้นและอยากกินมาก ${sel.p1Action.th} ${sel.p1Warn.th} ตอนนั้นฉันรู้สึกภูมิใจมากและคิดในใจว่า ${sel.p1Thought.th}`,
+          ja: `私はワクワクしてたまらず、${sel.p1Action.ja}。${sel.p1Warn.ja}。その時私は得意満面で、心の中で${sel.p1Thought.ja}と思った。`
         },
         {
           label: '第四段：片段（二）後悲（樂極生悲・生病經過）😭',
           badgeColor: 'bg-rose-600',
-          zhHtml: `　　誰知樂極生悲，過了不久，<span class="hl-desc">${f.p2Symptom.zh}</span>。<span class="hl-face">${f.p2Reaction.zh}</span>，<span class="hl-emotion">心裡後悔得直暗罵自己太貪吃</span>！最後，<span class="hl-action">${f.p2Result.zh}</span>，真是自討苦吃。`,
-          zhPlain: `　　誰知樂極生悲，過了不久，${f.p2Symptom.zh}。${f.p2Reaction.zh}，心裡後悔得直暗罵自己太貪吃！最後，${f.p2Result.zh}，真是自討苦吃。`,
-          th: `ใครจะรู้ว่าความสุขอยู่ได้ไม่นาน ไม่นานนัก${f.p2Symptom.th} ${f.p2Reaction.th} ในใจรู้สึกเสียใจและโทษตัวเองที่ตะกละเกินไป! สุดท้าย${f.p2Result.th} ช่างหาเรื่องใส่ตัวจริงๆ`,
-          ja: `ところが喜びも束の間、まもなく${f.p2Symptom.ja}。${f.p2Reaction.ja}、心の中で自分の食い意地を後悔して責めた！結局、${f.p2Result.ja}、本当に自業自得だった。`
+          zhHtml: `　　誰知樂極生悲，過了不久，<span class="hl-desc">${sel.p2Symptom.zh}</span>。<span class="hl-face">${sel.p2Reaction.zh}</span>，<span class="hl-emotion">心裡後悔得直暗罵自己太貪吃</span>！最後，<span class="hl-action">${sel.p2Result.zh}</span>，真是自討苦吃。`,
+          zhPlain: `　　誰知樂極生悲，過了不久，${sel.p2Symptom.zh}。${sel.p2Reaction.zh}，心裡後悔得直暗罵自己太貪吃！最後，${sel.p2Result.zh}，真是自討苦吃。`,
+          th: `ใครจะรู้ว่าความสุขอยู่ได้ไม่นาน ไม่นานนัก${sel.p2Symptom.th} ${sel.p2Reaction.th} ในใจรู้สึกเสียใจและโทษตัวเองที่ตะกละเกินไป! สุดท้าย${sel.p2Result.th} ช่างหาเรื่องใส่ตัวจริงๆ`,
+          ja: `ところが喜びも束の間、まもなく${sel.p2Symptom.ja}。${sel.p2Reaction.ja}、心の中で自分の食い意地を後悔して責めた！結局、${sel.p2Result.ja}、本当に自業自得だった。`
         },
         {
           label: '第五段：總結段（道理反思與期盼）🌟',
           badgeColor: 'bg-purple-600',
-          zhHtml: `　　經過這次《貪吃之過》的教訓，我才深刻明白<span class="hl-moral">${f.moral.zh}</span>。<span class="hl-moral">${f.future.zh}</span>，再也不會重蹈覆轍了！`,
-          zhPlain: `　　經過這次《貪吃之過》的教訓，我才深刻明白${f.moral.zh}。${f.future.zh}，再也不會重蹈覆轍了！`,
-          th: `จากบทเรียน "ผลเสียของการตะกละ" ในครั้งนี้ ทำให้ฉันเข้าใจอย่างลึกซึ้งว่า${f.moral.th} ${f.future.th} และจะไม่ทำผิดซ้ำรอยเดิมอีก!`,
-          ja: `今回の『食べ過ぎの過ち』の教訓を経て、私は${f.moral.ja}と深く悟った。${f.future.ja}、二度と同じ過ちを繰り返さないと誓った！`
+          zhHtml: `　　經過這次《貪吃之過》的教訓，我才深刻明白<span class="hl-moral">${sel.moral.zh}</span>。<span class="hl-moral">${sel.future.zh}</span>，再也不會重蹈覆轍了！`,
+          zhPlain: `　　經過這次《貪吃之過》的教訓，我才深刻明白${sel.moral.zh}。${sel.future.zh}，再也不會重蹈覆轍了！`,
+          th: `จากบทเรียน "ผลเสียของการตะกละ" ในครั้งนี้ ทำให้ฉันเข้าใจอย่างลึกซึ้งว่า${sel.moral.th} ${sel.future.th} และจะไม่ทำผิดซ้ำรอยเดิมอีก!`,
+          ja: `今回の『食べ過ぎの過ち』の教訓を経て、私は${sel.moral.ja}と深く悟った。${sel.future.ja}、二度と同じ過ちを繰り返さないと誓った！`
         }
       ];
 
-      // 計算中文字數（不含全形空格）
       const fullPlainZh = paragraphs.map(p => p.zhPlain.replace(/　/g, '')).join('');
       const charCount = fullPlainZh.length;
       document.getElementById('essayWordCount').textContent =
-        `字數：${charCount} 字（${charCount >= 200 ? '已超過 200 字要求 ✅' : '請再補充內容'}）`;
+        `字數：${charCount} 字（${charCount >= 200 ? '已超過 200 字要求 ✅' : '請補充內容'}）`;
 
-      const html = paragraphs.map(p => `
+      document.getElementById('essayParagraphsContainer').innerHTML = paragraphs.map(p => `
         <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm space-y-2.5">
           <div class="flex items-center justify-between">
             <span class="px-3 py-1 rounded-full ${p.badgeColor} text-white text-xs font-bold">
@@ -1612,26 +1856,23 @@
         </div>
       `).join('');
 
-      document.getElementById('essayParagraphsContainer').innerHTML = html;
-      window.__latestEssayExportText = buildExportText(paragraphs);
+      window.__latestExportText = buildExportText(sel, paragraphs);
     }
 
-    function buildExportText(paragraphs) {
-      const f = appState.fields;
-      const name = appState.studentName || '未填寫';
-      const cls = appState.studentClass || '4N';
+    function buildExportText(sel, paragraphs) {
       let lines = [
-        `九龍靈光小學｜四年級《貪吃之過》三語寫作腦圖與範文`,
-        `班別：${cls}　姓名：${name}`,
+        `九龍靈光小學｜四年級《貪吃之過》三語寫作腦圖與五段佳作`,
+        `班別：${gameState.studentClass}　姓名：${gameState.studentName}`,
+        `故事主線：${sel.story.title.zh}`,
         `====================================`,
         `【寫作腦圖摘要】`,
-        `1. 引子（物→事→情）：${f.introObj.zh} → ${f.introEvent.zh} → ${f.introFeeling.zh}`,
-        `2. 背景（時/人/地/事）：${f.time.zh}｜${f.who.zh}｜${f.place.zh}｜${f.cause.zh}`,
-        `3. 先喜段：${f.p1Action.zh}（${f.p1Thought.zh}）`,
-        `4. 後悲段：${f.p2Symptom.zh}；${f.p2Reaction.zh}；${f.p2Result.zh}`,
-        `5. 總結段：${f.moral.zh}；${f.future.zh}`,
+        `1. 引子（物→事→情）：${sel.introObj.zh} → ${sel.introEvent.zh} → ${sel.introFeeling.zh}`,
+        `2. 背景（時/人/地/事）：${sel.time.zh}｜${sel.who.zh}｜${sel.place.zh}｜${sel.cause.zh}`,
+        `3. 先喜段：${sel.p1Action.zh}；${sel.p1Warn.zh}；${sel.p1Thought.zh}`,
+        `4. 後悲段：${sel.p2Symptom.zh}；${sel.p2Reaction.zh}；${sel.p2Result.zh}`,
+        `5. 總結段：${sel.moral.zh}；${sel.future.zh}`,
         `====================================`,
-        `【五段式範文（繁體中文・泰文・日文）】`,
+        `【五段式佳作（繁體中文・泰文・日文）】`,
         ``
       ];
       paragraphs.forEach(p => {
@@ -1645,7 +1886,7 @@
     }
 
     function copyFullEssay() {
-      const text = window.__latestEssayExportText || '';
+      const text = window.__latestExportText || '';
       const textarea = document.createElement('textarea');
       textarea.value = text;
       textarea.style.position = 'fixed';
@@ -1664,12 +1905,13 @@
     }
 
     // =========================================================================
-    // 8. 頁面啟動初始化
+    // 13. 啟動初始化
     // =========================================================================
     window.addEventListener('DOMContentLoaded', () => {
-      loadStoryDefaults('kitchen_noodles');
+      renderStudentButtons();
       setLangMode('all');
-      renderStepForm();
+      renderButterflyChainTracker();
+      renderStepGame();
       renderMindMap();
       renderFullEssay();
     });
