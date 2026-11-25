@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>九龍靈光小學｜四年級《貪吃之過》零打字蝴蝶效應寫作遊戲（繁中・泰文・日文）</title>
+  <title>九龍靈光小學｜六年級《兒時記趣》零打字蝴蝶效應寫作遊戲（繁中・英文・泰文）</title>
   <link rel="icon" href="data:," />
   <!-- 載入 Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- 載入繁體中文、泰文、日文清晰字體 -->
+  <!-- 載入繁體中文、英文、泰文清晰字體 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     body {
-      font-family: 'Noto Sans TC', 'Noto Sans Thai', 'Noto Sans JP', sans-serif;
+      font-family: 'Inter', 'Noto Sans TC', 'Noto Sans Thai', sans-serif;
       background-color: #f0f5fa;
       color: #1e3a5f;
     }
@@ -45,11 +45,11 @@
       box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.28);
     }
 
-    /* 語言輔助切換控制 */
+    /* 語言輔助切換控制（英文與泰文） */
+    body.hide-en .lang-en { display: none !important; }
     body.hide-th .lang-th { display: none !important; }
-    body.hide-ja .lang-ja { display: none !important; }
 
-    /* 課堂寫作技巧高光標記（對應《媽媽生病了》簡報顏色法） */
+    /* 課堂寫作技巧高光標記 */
     .skills-on .hl-desc {
       background-color: #fee2e2;
       color: #991b1b;
@@ -115,7 +115,7 @@
 </head>
 <body class="min-h-screen pb-14">
 
-  <!-- ==================== 頂部導航列（繁中・泰文・日文三語，零英文） ==================== -->
+  <!-- ==================== 頂部導航列（繁中・英文・泰文三語） ==================== -->
   <header class="bg-gradient-to-r from-[#115e59] via-[#1e3a5f] to-[#1d4ed8] text-white shadow-lg sticky top-0 z-40 no-print">
     <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
@@ -124,11 +124,11 @@
         </div>
         <div>
           <div class="text-base sm:text-lg font-black tracking-wide">
-            九龍靈光小學｜四年級《貪吃之過》蝴蝶效應寫作遊戲
+            九龍靈光小學｜六年級《兒時記趣》蝴蝶效應寫作遊戲
           </div>
-          <div class="text-xs text-teal-100 flex flex-wrap gap-x-2">
-            <span class="lang-th">🇹🇭 เกมเลือกเส้นเรื่อง "ผลเสียของการตะกละ" (ไม่ต้องพิมพ์)</span>
-            <span class="lang-ja">🇯🇵 小4作文『食べ過ぎの過ち』分岐選択ゲーム（入力不要）</span>
+          <div class="text-xs text-teal-100 flex flex-wrap gap-x-3">
+            <span class="lang-en">🇬🇧 G6 "Childhood Fun" Butterfly-Effect Writing Game (Zero Typing)</span>
+            <span class="lang-th">🇹🇭 เกมเลือกเส้นเรื่อง ป.6 "เรื่องสนุกวัยเด็ก" (ไม่ต้องพิมพ์)</span>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@
           class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black bg-white text-[#1e3a5f] shadow transition">
           1️⃣ 劇情選擇關卡
           <span class="block text-[10px] font-normal">
-            <span class="lang-th">เลือกเนื้อเรื่อง</span> <span class="lang-ja">ストーリー選択</span>
+            <span class="lang-en">Story Choices</span> <span class="lang-th">เลือกเนื้อเรื่อง</span>
           </span>
         </button>
 
@@ -147,7 +147,7 @@
           class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black bg-white/15 hover:bg-white/25 text-white transition">
           2️⃣ 專屬寫作腦圖
           <span class="block text-[10px] font-normal text-teal-100">
-            <span class="lang-th">แผนผังความคิด</span> <span class="lang-ja">構成マップ</span>
+            <span class="lang-en">Writing Mind Map</span> <span class="lang-th">แผนผังความคิด</span>
           </span>
         </button>
 
@@ -155,7 +155,7 @@
           class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black bg-white/15 hover:bg-white/25 text-white transition">
           3️⃣ 五段佳作與技巧
           <span class="block text-[10px] font-normal text-teal-100">
-            <span class="lang-th">เรียงความ 5 ย่อหน้า</span> <span class="lang-ja">模範作文・技法</span>
+            <span class="lang-en">5-Paragraph Essay</span> <span class="lang-th">เรียงความ 5 ย่อหน้า</span>
           </span>
         </button>
       </div>
@@ -167,38 +167,40 @@
     <!-- ==================== 頂部控制列：零打字點名 ＋ 三語切換 ＋ 蝴蝶效應連鎖追蹤條 ==================== -->
     <section class="edu-card p-4 space-y-3.5 no-print">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-3.5 items-center">
-        <!-- 零打字點選學生姓名（4N 班學生＋更多同學選項） -->
+        <!-- 零打字點選學生姓名（6N 班一鍵點名） -->
         <div class="lg:col-span-7 space-y-1.5">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <span class="text-xs sm:text-sm font-black text-[#1e3a5f]">
-              🧑‍🎓 第一步點選你的名字（零打字一鍵點名）
+              🧑‍🎓 點選你的名字（零打字點名）
+              <span class="lang-en text-blue-700 font-normal">｜Tap Your Name</span>
               <span class="lang-th text-teal-700 font-normal">｜กดเลือกชื่อของเธอ</span>
-              <span class="lang-ja text-indigo-700 font-normal">｜自分の名前をタップ</span>
             </span>
             <span class="text-xs font-bold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full">
-              班別：4N（不少於200字）
+              班別：6N（非華語精簡版：不少於110字）
+              <span class="lang-en font-normal"> | NCS 110+ chars</span>
+              <span class="lang-th font-normal"> | 110+ ตัวอักษร</span>
             </span>
           </div>
 
           <div id="studentButtonsRow" class="flex flex-wrap items-center gap-1.5"></div>
         </div>
 
-        <!-- 三語顯示模式切換器（完全不含英文） -->
+        <!-- 四模式語言切換器（繁中・英文・泰文） -->
         <div class="lg:col-span-5 bg-slate-50 p-3 rounded-xl border border-slate-200">
           <div class="text-xs font-bold text-slate-700 mb-1.5">
             🌐 輔助語言顯示模式
+            <span class="lang-en text-blue-700 font-normal">｜Language Display</span>
             <span class="lang-th text-teal-700 font-normal">｜เลือกภาษาช่วยเหลือ</span>
-            <span class="lang-ja text-indigo-700 font-normal">｜補助言語表示</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
             <button id="langModeAll" onclick="setLangMode('all')" class="px-2 py-1.5 rounded-lg text-xs font-bold bg-[#1e3a5f] text-white shadow-sm">
               三語全開
             </button>
+            <button id="langModeEn" onclick="setLangMode('en')" class="px-2 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-blue-50">
+              🇬🇧 繁中+英文
+            </button>
             <button id="langModeTh" onclick="setLangMode('th')" class="px-2 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-teal-50">
               🇹🇭 繁中+泰文
-            </button>
-            <button id="langModeJa" onclick="setLangMode('ja')" class="px-2 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-indigo-50">
-              🇯🇵 繁中+日文
             </button>
             <button id="langModeZh" onclick="setLangMode('zh')" class="px-2 py-1.5 rounded-lg text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">
               純繁體中文
@@ -207,13 +209,13 @@
         </div>
       </div>
 
-      <!-- 🦋 蝴蝶效應連鎖追蹤條（即時顯示前後因果連動） -->
+      <!-- 🦋 蝴蝶效應連鎖追蹤條 -->
       <div class="pt-2.5 border-t border-slate-100">
         <div class="flex flex-wrap items-center gap-2 text-xs">
           <span class="font-black text-teal-900 bg-teal-100 px-2.5 py-1 rounded-lg flex items-center gap-1">
             🦋 蝴蝶效應連鎖鎖定
-            <span class="lang-th font-normal">（เชื่อมโยงเนื้อเรื่อง）</span>
-            <span class="lang-ja font-normal">（物語連動）</span>：
+            <span class="lang-en font-normal">(Chain Tracker)</span>
+            <span class="lang-th font-normal">(เชื่อมโยงเนื้อเรื่อง)</span>：
           </span>
           <div id="butterflyChainTracker" class="flex flex-wrap items-center gap-1.5"></div>
         </div>
@@ -227,13 +229,13 @@
         <div class="flex flex-wrap items-start justify-between gap-3">
           <div>
             <span class="inline-block text-xs font-bold bg-teal-100 text-teal-900 px-2.5 py-0.5 rounded-md mb-1">
-              📝 題目：你因為貪吃而生病。請你寫一篇文章，記述那一次的經歷和感受。（純點擊選擇・無需打字）
+              📝 題目：請以《兒時記趣》為題，記述一件兒時發生的趣事。（20個主線・每題6個選項・零打字）
             </span>
-            <p class="text-xs text-teal-800 lang-th">
-              🇹🇭 กติกา: กดเลือกการ์ดคำตอบในแต่ละด่าน ตัวเลือกในด่านถัดไปจะเปลี่ยนตามสิ่งที่เธอเลือกโดยอัตโนมัติ!
+            <p class="text-xs text-blue-800 lang-en">
+              🇬🇧 Topic: Write about a funny childhood memory. Tap cards to choose — later options automatically adapt to your story &amp; character!
             </p>
-            <p class="text-xs text-indigo-800 lang-ja">
-              🇯🇵 ルール：各ステージのカードをタップして選ぶだけ！前の選択に合わせて次の選択肢が自動的に変化します！
+            <p class="text-xs text-teal-800 lang-th">
+              🇹🇭 หัวข้อ: เล่าเรื่องสนุกในวัยเด็ก กดเลือกการ์ดในแต่ละด่าน ตัวเลือกในด่านถัดไปจะเปลี่ยนตามเรื่องและตัวละครที่เธอเลือก!
             </p>
           </div>
         </div>
@@ -241,7 +243,7 @@
         <!-- 進度條與 6 關卡按鈕 -->
         <div class="mt-3 pt-3 border-t border-slate-100">
           <div class="flex items-center justify-between text-xs font-bold text-slate-600 mb-1.5">
-            <span id="progressStepText">第 1 關 / 共 6 關：選擇貪吃故事主線</span>
+            <span id="progressStepText">第 1 關 / 共 6 關：選擇兒時趣事主線（20選1）</span>
             <span id="progressPercentText">進度 17%</span>
           </div>
           <div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
@@ -250,39 +252,39 @@
 
           <div class="grid grid-cols-2 sm:grid-cols-6 gap-1.5 mt-3">
             <button onclick="goStep(1)" id="stepBtn1" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
-              <div>1. 選故事主線</div>
+              <div>1. 選趣事主線</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">เลือกเรื่องหลัก</span> <span class="lang-ja">主線選択</span>
+                <span class="lang-en">20 Stories</span> <span class="lang-th">20 เรื่อง</span>
               </div>
             </button>
             <button onclick="goStep(2)" id="stepBtn2" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
               <div>2. 四素背景</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">ฉากหลัง 4 อย่าง</span> <span class="lang-ja">時・人・地・事</span>
+                <span class="lang-en">Background</span> <span class="lang-th">ฉากหลัง</span>
               </div>
             </button>
             <button onclick="goStep(3)" id="stepBtn3" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
-              <div>3. 片段一(先喜)</div>
+              <div>3. 片段(一)</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">ตอนแอบกิน</span> <span class="lang-ja">前半(喜・貪食)</span>
+                <span class="lang-en">Fun Part 1</span> <span class="lang-th">ตอนที่ 1</span>
               </div>
             </button>
             <button onclick="goStep(4)" id="stepBtn4" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
-              <div>4. 片段二(後悲)</div>
+              <div>4. 片段(二)</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">ตอนปวดท้อง</span> <span class="lang-ja">後半(悲・発病)</span>
+                <span class="lang-en">Twist Part 2</span> <span class="lang-th">ตอนที่ 2</span>
               </div>
             </button>
             <button onclick="goStep(5)" id="stepBtn5" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
-              <div>5. 總結反思</div>
+              <div>5. 總結感受</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">ข้อคิดที่ได้</span> <span class="lang-ja">まとめ・教訓</span>
+                <span class="lang-en">Conclusion</span> <span class="lang-th">สรุปความรู้สึก</span>
               </div>
             </button>
             <button onclick="goStep(6)" id="stepBtn6" class="py-2 px-2 rounded-xl text-xs font-bold text-left border transition">
               <div>6. 倒敍引子</div>
               <div class="text-[10px] font-normal opacity-85">
-                <span class="lang-th">คำนำย้อนอดีต</span> <span class="lang-ja">導入(物→事→情)</span>
+                <span class="lang-en">Flashback</span> <span class="lang-th">คำนำย้อนอดีต</span>
               </div>
             </button>
           </div>
@@ -297,68 +299,69 @@
         <button id="btnPrevStep" onclick="changeStep(-1)"
           class="px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-sm font-bold text-slate-700 shadow-sm transition">
           ← 上一關
+          <span class="lang-en text-xs font-normal text-blue-700">Prev</span>
           <span class="lang-th text-xs font-normal text-teal-700">ย้อนกลับ</span>
-          <span class="lang-ja text-xs font-normal text-indigo-700">前へ</span>
         </button>
 
         <div class="flex flex-wrap items-center gap-2.5">
           <button onclick="switchMainTab('map')"
             class="px-4 py-2.5 rounded-xl border-2 border-teal-600 bg-teal-50 hover:bg-teal-100 text-sm font-bold text-teal-900 transition">
             🗺️ 預覽寫作腦圖
+            <span class="lang-en text-xs font-normal">Mind Map</span>
             <span class="lang-th text-xs font-normal">ดูแผนผัง</span>
-            <span class="lang-ja text-xs font-normal">マップを見る</span>
           </button>
           <button id="btnNextStep" onclick="changeStep(1)"
             class="px-6 py-2.5 rounded-xl bg-[#1e3a5f] hover:bg-[#152a45] text-white text-sm font-bold shadow-md transition">
             下一關 →
+            <span class="lang-en text-xs font-normal text-blue-200">Next</span>
             <span class="lang-th text-xs font-normal text-teal-200">ด่านถัดไป</span>
-            <span class="lang-ja text-xs font-normal text-indigo-200">次へ</span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- ==================== 分頁 2：視覺化《貪吃之過》寫作腦圖 ==================== -->
+    <!-- ==================== 分頁 2：視覺化《兒時記趣》寫作腦圖 ==================== -->
     <section id="viewMap" class="hidden space-y-4">
       <div class="edu-card p-4 bg-gradient-to-r from-teal-900 to-[#1e3a5f] text-white flex flex-wrap items-center justify-between gap-3 no-print">
         <div>
           <h2 class="text-base sm:text-lg font-black">
-            🗺️ 你的專屬《貪吃之過》三語寫作腦圖已自動生成！
+            🗺️ 你的專屬《兒時記趣》三語寫作腦圖已自動生成！
           </h2>
           <p class="text-xs text-teal-100">
-            <span class="lang-th">🇹🇭 แผนผังความคิดเชื่อมโยงสอดคล้องกันทั้ง 5 ย่อหน้า</span>
-            <span class="lang-ja ml-2">🇯🇵 全5段落が前後矛盾なく連動した作文マップ</span>
+            <span class="lang-en">🇬🇧 Your 5-paragraph mind map is linked with zero contradictions.</span>
+            <span class="lang-th ml-2">🇹🇭 แผนผังความคิดเชื่อมโยงสอดคล้องกันทั้ง 5 ย่อหน้า</span>
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-2">
           <button onclick="switchMainTab('form')" class="px-3.5 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-bold">
-            ← 返回重選劇情
+            ← 返回重選 <span class="lang-en font-normal">(Edit)</span> <span class="lang-th font-normal">(แก้ไข)</span>
           </button>
           <button onclick="switchMainTab('essay')" class="px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 text-xs font-bold shadow">
-            ✍️ 查看五段佳作範文 →
+            ✍️ 查看五段佳作 <span class="lang-en font-normal">(Essay)</span> <span class="lang-th font-normal">(ดูเรียงความ)</span> →
           </button>
           <button onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-white text-[#1e3a5f] hover:bg-teal-50 text-xs font-bold shadow">
-            🖨️ 列印 / 存為文件
+            🖨️ 列印 <span class="lang-en font-normal">(Print)</span> <span class="lang-th font-normal">(พิมพ์)</span>
           </button>
         </div>
       </div>
 
-      <!-- 還原九龍靈光小學《四年級〈貪吃之過〉寫作腦圖》雙欄工作紙版面 -->
+      <!-- 還原九龍靈光小學《六年級〈兒時記趣〉寫作腦圖》雙欄工作紙版面 -->
       <div class="edu-card p-5 sm:p-6 border-2 border-[#1e3a5f]">
         <div class="flex flex-wrap items-center justify-between border-b-2 border-[#1e3a5f] pb-3 mb-5 gap-2">
           <div>
             <div class="text-xs font-bold text-teal-800">
-              九龍靈光小學｜四年級中文科寫作（二）
-              <span class="lang-th">｜โรงเรียนประถมเกาลูนเอ็มมานูเอล ป.4</span>
-              <span class="lang-ja">｜九龍霊光小学校 小4国語作文</span>
+              九龍靈光小學｜六年級中文科寫作（三）
+              <span class="lang-en">｜Kowloon Emmanuel Primary School G6 Writing (3)</span>
+              <span class="lang-th">｜โรงเรียนประถมเกาลูนเอ็มมานูเอล ป.6</span>
             </div>
             <h2 class="text-xl font-black text-[#1e3a5f] mt-0.5">
-              四年級《貪吃之過》寫作腦圖
+              六年級《兒時記趣》寫作腦圖
+              <span class="lang-en text-sm font-semibold text-blue-700 ml-1">(Childhood Fun Mind Map)</span>
             </h2>
           </div>
           <div class="flex flex-wrap items-center gap-4 text-sm font-bold text-slate-800 bg-slate-100 px-4 py-2 rounded-xl">
-            <span>班別：<u id="mapClassText" class="px-1.5 text-teal-800">4N</u></span>
-            <span>姓名：<u id="mapNameText" class="px-2 text-teal-800">湯雅智</u></span>
+            <span>班別 <span class="lang-en text-xs font-normal">(Class)</span>：<u id="mapClassText" class="px-1.5 text-teal-800">6N</u></span>
+            <span>姓名 <span class="lang-en text-xs font-normal">(Name)</span>：<u id="mapNameText" class="px-2 text-teal-800">陳樂言</u></span>
           </div>
         </div>
 
@@ -371,57 +374,57 @@
                 <span class="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-black">
                   1. 引子（倒敍法：物 → 事 → 情）
                 </span>
-                <span class="text-xs font-bold text-emerald-900">第一段</span>
+                <span class="text-xs font-bold text-emerald-900">第一段 <span class="lang-en">(Para 1)</span></span>
               </div>
               <div class="space-y-2 text-xs">
                 <div class="bg-white rounded-xl p-2.5 border border-emerald-200">
                   <div class="font-bold text-emerald-800">
-                    ① 物 <span class="lang-th font-normal">สิ่งของ</span> <span class="lang-ja font-normal">モノ</span>
+                    ① 物 <span class="lang-en font-normal text-blue-700">Object</span> <span class="lang-th font-normal text-teal-700">สิ่งของ</span>
                   </div>
                   <div id="mapBoxObj" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-emerald-200">
                   <div class="font-bold text-emerald-800">
-                    ② 事 <span class="lang-th font-normal">เหตุการณ์</span> <span class="lang-ja font-normal">出来事</span>
+                    ② 事 <span class="lang-en font-normal text-blue-700">Event</span> <span class="lang-th font-normal text-teal-700">เหตุการณ์</span>
                   </div>
                   <div id="mapBoxEvent" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-emerald-200">
                   <div class="font-bold text-emerald-800">
-                    ③ 情 <span class="lang-th font-normal">ความรู้สึก</span> <span class="lang-ja font-normal">感情</span>
+                    ③ 情 <span class="lang-en font-normal text-blue-700">Feeling</span> <span class="lang-th font-normal text-teal-700">ความรู้สึก</span>
                   </div>
                   <div id="mapBoxFeeling" class="mt-1"></div>
                 </div>
               </div>
             </div>
 
-            <!-- 中心核心圓框：《貪吃之過》 -->
+            <!-- 中心核心圓框：《兒時記趣》 -->
             <div class="rounded-2xl border-4 border-amber-500 bg-gradient-to-br from-amber-50 to-orange-50 p-4 text-center shadow-sm">
-              <div class="text-xs font-bold text-amber-800">中心題目・先喜後悲</div>
-              <div class="text-2xl font-black text-[#1e3a5f] my-1">《貪吃之過》</div>
-              <div class="text-xs text-teal-800 lang-th">🇹🇭 ผลเสียของการตะกละ</div>
-              <div class="text-xs text-indigo-800 lang-ja">🇯🇵 食べ過ぎの過ち</div>
+              <div class="text-xs font-bold text-amber-800">中心題目 <span class="lang-en">(Essay Topic)</span> <span class="lang-th">(หัวข้อเรื่อง)</span></div>
+              <div class="text-2xl font-black text-[#1e3a5f] my-1">《兒時記趣》</div>
+              <div class="text-xs text-blue-800 lang-en">🇬🇧 Childhood Fun Memories</div>
+              <div class="text-xs text-teal-800 lang-th">🇹🇭 เรื่องสนุกในวัยเด็ก</div>
               <div id="mapStoryTag" class="mt-2 inline-block px-3 py-1 rounded-full bg-amber-200/80 text-amber-950 text-xs font-bold"></div>
             </div>
 
-            <!-- 5. 總結段（道理反思／感受） -->
+            <!-- 5. 總結段（個人感受／道理反思／期盼） -->
             <div class="rounded-2xl border-2 border-purple-600 bg-purple-50/60 p-4">
               <div class="flex items-center justify-between mb-2.5">
                 <span class="px-3 py-1 rounded-full bg-purple-600 text-white text-xs font-black">
-                  5. 總結段（道理反思／感受）
+                  5. 總結段（感受／反思／期盼）
                 </span>
-                <span class="text-xs font-bold text-purple-900">第五段</span>
+                <span class="text-xs font-bold text-purple-900">第五段 <span class="lang-en">(Para 5)</span></span>
               </div>
               <div class="space-y-2 text-xs">
                 <div class="bg-white rounded-xl p-2.5 border border-purple-200">
                   <div class="font-bold text-purple-800">
-                    領悟道理 <span class="lang-th font-normal">ข้อคิดที่ได้เรียนรู้</span> <span class="lang-ja font-normal">学んだ教訓</span>
+                    感受反思 <span class="lang-en font-normal text-blue-700">Reflection</span> <span class="lang-th font-normal text-teal-700">ข้อคิดและความรู้สึก</span>
                   </div>
                   <div id="mapBoxMoral" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-purple-200">
                   <div class="font-bold text-purple-800">
-                    以後做法 <span class="lang-th font-normal">การปรับปรุงตัวในอนาคต</span> <span class="lang-ja font-normal">今後の行動</span>
+                    童心期盼 <span class="lang-en font-normal text-blue-700">Wish/Hope</span> <span class="lang-th font-normal text-teal-700">ความปรารถนา</span>
                   </div>
                   <div id="mapBoxFuture" class="mt-1"></div>
                 </div>
@@ -429,80 +432,80 @@
             </div>
           </div>
 
-          <!-- 右側：2.過渡/背景段 + 3.先喜段 + 4.後悲段 -->
+          <!-- 右側：2.過渡/背景段 + 3.片段(一) + 4.片段(二) -->
           <div class="lg:col-span-7 flex flex-col justify-between gap-4">
             <!-- 2. 過渡／背景段（四素句） -->
             <div class="rounded-2xl border-2 border-sky-600 bg-sky-50/60 p-4">
               <div class="flex items-center justify-between mb-2.5">
                 <span class="px-3 py-1 rounded-full bg-sky-600 text-white text-xs font-black">
-                  2. 過渡／背景段（起因：交代事情的四素）
+                  2. 過渡／背景段（四素句：時・人・地・事）
                 </span>
-                <span class="text-xs font-bold text-sky-900">第二段</span>
+                <span class="text-xs font-bold text-sky-900">第二段 <span class="lang-en">(Para 2)</span></span>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                 <div class="bg-white rounded-xl p-2.5 border border-sky-200">
-                  <div class="font-bold text-sky-800">⏰ 時 <span class="lang-th font-normal">เวลา</span> <span class="lang-ja font-normal">いつ</span></div>
+                  <div class="font-bold text-sky-800">⏰ 時 <span class="lang-en font-normal text-blue-700">Time</span> <span class="lang-th font-normal text-teal-700">เวลา</span></div>
                   <div id="mapBoxTime" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-sky-200">
-                  <div class="font-bold text-sky-800">👨‍👩‍👧 人 <span class="lang-th font-normal">บุคคล</span> <span class="lang-ja font-normal">だれが</span></div>
+                  <div class="font-bold text-sky-800">👨‍👩‍👧 人 <span class="lang-en font-normal text-blue-700">People</span> <span class="lang-th font-normal text-teal-700">บุคคล</span></div>
                   <div id="mapBoxWho" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-sky-200">
-                  <div class="font-bold text-sky-800">🏠 地 <span class="lang-th font-normal">สถานที่</span> <span class="lang-ja font-normal">どこで</span></div>
+                  <div class="font-bold text-sky-800">🏠 地 <span class="lang-en font-normal text-blue-700">Place</span> <span class="lang-th font-normal text-teal-700">สถานที่</span></div>
                   <div id="mapBoxPlace" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-sky-200">
-                  <div class="font-bold text-sky-800">💡 事（起因） <span class="lang-th font-normal">สาเหตุ</span> <span class="lang-ja font-normal">きっかけ</span></div>
+                  <div class="font-bold text-sky-800">💡 事（起因） <span class="lang-en font-normal text-blue-700">Cause</span> <span class="lang-th font-normal text-teal-700">สาเหตุ</span></div>
                   <div id="mapBoxCause" class="mt-1"></div>
                 </div>
               </div>
             </div>
 
-            <!-- 3. 先喜段（片段1） -->
+            <!-- 3. 片段(一) -->
             <div class="rounded-2xl border-2 border-amber-600 bg-amber-50/60 p-4">
               <div class="flex items-center justify-between mb-2.5">
                 <span class="px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-black">
-                  3. 先喜段（片段1：如何貪吃・當時情形與反應）😊
+                  3. 片段(一)：起因與好玩過程 😊
                 </span>
-                <span class="text-xs font-bold text-amber-900">第三段</span>
+                <span class="text-xs font-bold text-amber-900">第三段 <span class="lang-en">(Para 3)</span></span>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                 <div class="bg-white rounded-xl p-2.5 border border-amber-200">
-                  <div class="font-bold text-amber-900">😋 貪吃經過與動作</div>
+                  <div class="font-bold text-amber-900">🏃 趣味動作 <span class="lang-en font-normal text-blue-700">Action</span></div>
                   <div id="mapBoxP1Action" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-amber-200">
-                  <div class="font-bold text-amber-900">👂 勸告／小心聲響</div>
+                  <div class="font-bold text-amber-900">💬 反應對話 <span class="lang-en font-normal text-blue-700">Dialogue</span></div>
                   <div id="mapBoxP1Warn" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-amber-200">
-                  <div class="font-bold text-amber-900">💭 得意心理獨白</div>
+                  <div class="font-bold text-amber-900">💭 心理獨白 <span class="lang-en font-normal text-blue-700">Thought</span></div>
                   <div id="mapBoxP1Thought" class="mt-1"></div>
                 </div>
               </div>
             </div>
 
-            <!-- 4. 後悲段（片段2） -->
+            <!-- 4. 片段(二) -->
             <div class="rounded-2xl border-2 border-rose-600 bg-rose-50/60 p-4">
               <div class="flex items-center justify-between mb-2.5">
                 <span class="px-3 py-1 rounded-full bg-rose-600 text-white text-xs font-black">
-                  4. 後悲段（片段2：身體反應・狼狽結果）😭
+                  4. 片段(二)：高潮轉折與歡笑結局 😂
                 </span>
-                <span class="text-xs font-bold text-rose-900">第四段</span>
+                <span class="text-xs font-bold text-rose-900">第四段 <span class="lang-en">(Para 4)</span></span>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                 <div class="bg-white rounded-xl p-2.5 border border-rose-200">
-                  <div class="font-bold text-rose-900">🤢 身體不適症狀</div>
-                  <div id="mapBoxP2Symptom" class="mt-1"></div>
+                  <div class="font-bold text-rose-900">💥 趣事高潮 <span class="lang-en font-normal text-blue-700">Twist</span></div>
+                  <div id="mapBoxP2Twist" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-rose-200">
-                  <div class="font-bold text-rose-900">💦 五官神態與動作</div>
+                  <div class="font-bold text-rose-900">😆 五官動作 <span class="lang-en font-normal text-blue-700">Reaction</span></div>
                   <div id="mapBoxP2Reaction" class="mt-1"></div>
                 </div>
                 <div class="bg-white rounded-xl p-2.5 border border-rose-200">
-                  <div class="font-bold text-rose-900">🏥 家人發現與結果</div>
-                  <div id="mapBoxP2Result" class="mt-1"></div>
+                  <div class="font-bold text-rose-900">🎉 歡笑結局 <span class="lang-en font-normal text-blue-700">Ending</span></div>
+                  <div id="mapBoxP2Ending" class="mt-1"></div>
                 </div>
               </div>
             </div>
@@ -517,18 +520,18 @@
         <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200">
           <div>
             <h2 class="text-lg sm:text-xl font-black text-[#1e3a5f]">
-              ✍️ 《貪吃之過》五段式完整佳作（三語對照）
+              ✍️ 《兒時記趣》五段式精簡佳作（非華語 110–155 字・三語對照）
             </h2>
             <p class="text-xs text-slate-600 mt-0.5">
-              自動串連你的所有劇情分支，確保人物、地點、食物與後果首尾呼應！
-              <span class="lang-th text-teal-700">｜เรียงความสมบูรณ์ 5 ย่อหน้า</span>
-              <span class="lang-ja text-indigo-700">｜5段落模範作文</span>
+              自動串連你的所有劇情分支，簡潔易抄寫、首尾呼應！
+              <span class="lang-en text-blue-700">｜Concise 5-Paragraph Essay (NCS Target: 110+ chars)</span>
+              <span class="lang-th text-teal-700">｜เรียงความ 5 ย่อหน้าแบบกระชับ</span>
             </p>
           </div>
 
           <div class="flex flex-wrap items-center gap-2">
             <span id="essayWordCount" class="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-900 text-xs font-black">
-              字數：約 330 字（超過 200 字要求 ✅）
+              字數：130 字（已達非華語 110 字要求 ✅）
             </span>
 
             <button id="toggleSkillsBtn" onclick="toggleSkillsHighlight()"
@@ -538,24 +541,24 @@
 
             <button onclick="copyFullEssay()"
               class="px-3.5 py-1.5 rounded-xl bg-[#1e3a5f] hover:bg-[#152a45] text-white text-xs font-bold shadow transition">
-              📋 一鍵複製腦圖與佳作
+              📋 一鍵複製 <span class="lang-en font-normal">(Copy)</span> <span class="lang-th font-normal">(คัดลอก)</span>
             </button>
           </div>
         </div>
 
         <div id="copyAlertBox" class="hidden mt-3 p-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold text-center">
-          ✅ 已成功複製《貪吃之過》三語寫作腦圖與五段佳作！
+          ✅ 已成功複製《兒時記趣》三語寫作腦圖與五段佳作！(Copied to clipboard! / คัดลอกสำเร็จ!)
         </div>
 
         <!-- 課堂寫作技巧圖例 -->
         <div id="skillsLegendBar" class="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center gap-2 text-xs">
-          <span class="font-bold text-slate-700 mr-1">📚 寫作技巧圖例：</span>
-          <span class="px-2 py-0.5 rounded bg-red-100 text-red-900 border-b-2 border-red-500 font-bold">描述</span>
-          <span class="px-2 py-0.5 rounded bg-green-100 text-green-900 border-b-2 border-green-500 font-bold">人物反應—情感</span>
-          <span class="px-2 py-0.5 rounded bg-cyan-100 text-cyan-900 border-b-2 border-cyan-500 font-bold">人物反應—動作</span>
-          <span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-900 border-b-2 border-yellow-500 font-bold">人物反應—五官</span>
-          <span class="px-2 py-0.5 rounded bg-fuchsia-100 text-fuchsia-900 border-b-2 border-fuchsia-500 font-bold">心理獨白</span>
-          <span class="px-2 py-0.5 rounded bg-orange-100 text-orange-900 border-b-2 border-orange-500 font-bold">道理反思</span>
+          <span class="font-bold text-slate-700 mr-1">📚 寫作技巧圖例 <span class="lang-en font-normal">(Writing Skills)</span>：</span>
+          <span class="px-2 py-0.5 rounded bg-red-100 text-red-900 border-b-2 border-red-500 font-bold">描述 <span class="lang-en font-normal">Desc</span></span>
+          <span class="px-2 py-0.5 rounded bg-green-100 text-green-900 border-b-2 border-green-500 font-bold">人物反應—情感 <span class="lang-en font-normal">Emotion</span></span>
+          <span class="px-2 py-0.5 rounded bg-cyan-100 text-cyan-900 border-b-2 border-cyan-500 font-bold">人物反應—動作 <span class="lang-en font-normal">Action</span></span>
+          <span class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-900 border-b-2 border-yellow-500 font-bold">人物反應—五官 <span class="lang-en font-normal">Face</span></span>
+          <span class="px-2 py-0.5 rounded bg-fuchsia-100 text-fuchsia-900 border-b-2 border-fuchsia-500 font-bold">心理獨白 <span class="lang-en font-normal">Thought</span></span>
+          <span class="px-2 py-0.5 rounded bg-orange-100 text-orange-900 border-b-2 border-orange-500 font-bold">道理反思 <span class="lang-en font-normal">Reflection</span></span>
         </div>
 
         <!-- 五段文章容器 -->
@@ -565,786 +568,513 @@
 
   </main>
 
-  <!-- ==================== 零打字・真蝴蝶效應連鎖分支引擎（全單一檔案內建） ==================== -->
+  <!-- ==================== 零打字・20故事真蝴蝶效應分支引擎（繁中・英文・泰文） ==================== -->
   <script>
     // =========================================================================
-    // 1. 學生名單預設按鈕（零打字點名）
+    // 1. 學生名單預設按鈕（6N 班零打字點名）
     // =========================================================================
     const STUDENTS_LIST = [
-      { name: '湯雅智', cls: '4N' },
-      { name: '平野孝多', cls: '4N' },
-      { name: '陳詠思', cls: '4N' },
-      { name: '詹美珠', cls: '4N' },
-      { name: '林子軒', cls: '4N' },
-      { name: '黃悅晴', cls: '4N' }
+      { name: '陳樂言', cls: '6N' },
+      { name: '李子謙', cls: '6N' },
+      { name: '黃心怡', cls: '6N' },
+      { name: '張家豪', cls: '6N' },
+      { name: '林恩希', cls: '6N' },
+      { name: '何俊熙', cls: '6N' }
     ];
 
     // =========================================================================
-    // 2. 六大課堂真實故事主線（第 1 關選項，共 6 個）
-    //    每個故事設定初始「蝴蝶變數」：食物、關鍵物件、場景類型、預設陪伴/發現者
+    // 2. 六大人物角色（蝴蝶效應核心：第2關鎖定後，第3至6關全部同步稱謂！）
     // =========================================================================
-    const STORY_BRANCHES = [
+    const ROLES = [
       {
-        id: 'cup_noodle_bathroom',
-        icon: '🍜',
-        tag: '深夜熱水壺・杯麵香氛',
-        title: {
-          zh: '故事 A：深夜偷煮杯麵與鎖門煲水',
-          th: 'เรื่อง A: แอบต้มบะหมี่ถ้วยกลางดึกและล็อกประตูต้มน้ำ',
-          ja: '物語A：深夜のカップ麺隠れ食いとトイレ湯沸かし'
-        },
-        desc: {
-          zh: '半夜在上下格床睡覺肚子餓，偷偷把電熱水壺搬進洗手間鎖門煲水泡杯麵，還噴香水掩蓋味道！',
-          th: 'นอนเตียงสองชั้นแล้วหิวกลางดึก แอบยกกาต้มน้ำไปต้มบะหมี่ในห้องน้ำ ล็อกประตูและฉีดน้ำหอมกลบกลิ่น!',
-          ja: '二段ベッドで寝ていてお腹が空き、ケトルをトイレに持ち込んで鍵をかけ、香水で匂いを消して食べた！'
-        },
-        env: 'home_night',
-        food: { zh: '香辣海鮮杯麵', th: 'บะหมี่ถ้วยรสต้มยำทะเล', ja: 'ピリ辛海鮮カップ麺' },
-        obj: { zh: '客廳桌上那個電熱水壺', th: 'กาต้มน้ำไฟฟ้าบนโต๊ะในห้องนั่งเล่น', ja: 'リビングのテーブルにある電気ケトル' },
-        defaultWhoKey: 'dad_sister'
+        key: 'cousin',
+        tag: '角色：表弟 (Cousin)',
+        zh: '表弟',
+        en: 'my cousin',
+        th: 'ลูกพี่ลูกน้อง'
       },
       {
-        id: 'pack_noodle_stove',
-        icon: '🍲',
-        tag: '凌晨一時・開火煮包麵',
-        title: {
-          zh: '故事 B：半夜起床開火偷煮包麵',
-          th: 'เรื่อง B: ตื่นกลางดึกแอบจุดเตาต้มบะหมี่ซอง',
-          ja: '物語B：夜中に起きてコンロで袋麺をこっそり煮た話'
-        },
-        desc: {
-          zh: '凌晨一時起床嘴饞，躡手躡腳溜進廚房開火煮兩包公仔麵，聽到開門聲假裝睡覺卻被香味出賣！',
-          th: 'ตื่นตอนตีหนึ่งแล้วหิว ย่องเข้าครัวจุดเตาต้มบะหมี่สองซอง ได้ยินเสียงเปิดประตูรีบแกล้งหลับแต่กลิ่นฟ้อง!',
-          ja: '午前1時に起きてキッチンで袋麺を2袋煮て、ドアの音で寝たふりをしたが匂いでバレてしまった！'
-        },
-        env: 'home_night',
-        food: { zh: '兩大包麻油公仔麵', th: 'บะหมี่ซองรสงาหอมสองห่อใหญ่', ja: 'ごま油香る袋麺2袋' },
-        obj: { zh: '廚櫃裡那包公仔麵', th: 'บะหมี่ซองห่อนั้นในตู้ครัว', ja: '戸棚にあるあのインスタント袋麺' },
-        defaultWhoKey: 'dad_only'
+        key: 'sister',
+        tag: '角色：妹妹 (Sister)',
+        zh: '妹妹',
+        en: 'my younger sister',
+        th: 'น้องสาว'
       },
       {
-        id: 'cola_shower',
-        icon: '🥤',
-        tag: '浴室水聲・慢開冰可樂',
-        title: {
-          zh: '故事 C：趁媽媽洗澡偷喝兩罐冰可樂',
-          th: 'เรื่อง C: แอบดื่มโค้กเย็นสองกระป๋องตอนแม่อาบน้ำ',
-          ja: '物語C：お母さんがシャワー中に冷たいコーラ2缶を隠れ飲み'
-        },
-        desc: {
-          zh: '媽媽不准睡前喝汽水，趁媽媽進浴室洗澡水聲嘩啦啦響時，小心翼翼慢慢拉開罐環不發出聲音！',
-          th: 'แม่ห้ามดื่มน้ำอัดลมก่อนนอน ฉวยโอกาสตอนแม่อาบน้ำ ค่อยๆ เปิดกระป๋องเบาๆ ไม่ให้มีเสียง!',
-          ja: '寝る前の炭酸禁止なのに、お母さんのシャワーの音に紛れて缶をそっと開け、2缶一気飲み！'
-        },
-        env: 'home_evening',
-        food: { zh: '兩罐冰凍可樂', th: 'โค้กเย็นเจี๊ยบสองกระป๋อง', ja: 'キンキンに冷えたコーラ2缶' },
-        obj: { zh: '冰箱裡那罐冰凍可樂', th: 'กระป๋องโค้กเย็นในตู้เย็น', ja: '冷蔵庫の中の冷たいコーラの缶' },
-        defaultWhoKey: 'mom_shower'
+        key: 'dad',
+        tag: '角色：爸爸 (Dad)',
+        zh: '爸爸',
+        en: 'Dad',
+        th: 'คุณพ่อ'
       },
       {
-        id: 'sushi_icecream',
-        icon: '🍨',
-        tag: '壽司加雪糕・冷熱交加',
-        title: {
-          zh: '故事 D：吃飽壽司回家再偷吃雪糕',
-          th: 'เรื่อง D: กินซูชิจนอิ่มแล้วแอบกินไอศกรีมต่อ',
-          ja: '物語D：お寿司でお腹いっぱいなのに帰宅後アイスを暴食'
-        },
-        desc: {
-          zh: '晚上已經吃了十多碟壽司，回家趁十二點家人睡覺又「靜雞雞」偷吃幾杯雪糕，冷熱交加出事！',
-          th: 'กินซูชิไปสิบกว่าจานจนอิ่มแล้ว พอกลับบ้านตอนเที่ยงคืนยังแอบกินไอศกรีมอีกหลายถ้วย!',
-          ja: '夜にお寿司を十数皿も食べたのに、帰宅後12時にこっそりカップアイスを何個も食べてお腹を壊した！'
-        },
-        env: 'home_night',
-        food: { zh: '幾大杯朱古力雪糕', th: 'ไอศกรีมช็อกโกแลตถ้วยใหญ่หลายถ้วย', ja: '大きなチョコアイス数個' },
-        obj: { zh: '冰箱冰格裡的雪糕盒', th: 'กล่องไอศกรีมในช่องแช่แข็ง', ja: '冷凍庫の中のアイスの箱' },
-        defaultWhoKey: 'mom_dad'
+        key: 'mom',
+        tag: '角色：媽媽 (Mom)',
+        zh: '媽媽',
+        en: 'Mom',
+        th: 'คุณแม่'
       },
       {
-        id: 'bread_candy_room',
-        icon: '🍞',
-        tag: '甜麵包糖果・偷藏猛吃',
-        title: {
-          zh: '故事 E：偷藏麵包與糖果在房間猛吃',
-          th: 'เรื่อง E: แอบซ่อนขนมปังและลูกอมไว้กินในห้อง',
-          ja: '物語E：パンと飴を部屋に隠して一気に食べ過ぎた話'
-        },
-        desc: {
-          zh: '星期五買回來的忌廉麵包和一大罐水果糖，偷偷藏在書包帶回房間猛吃，吃完沒刷牙直接睡覺！',
-          th: 'ขนมปังครีมและกระปุกลูกอมที่ซื้อมาวันศุกร์ แอบซ่อนในกระเป๋าแล้วเอามากินรวดเดียวในห้อง!',
-          ja: '金曜日に買ったクリームパンとフルーツ飴の缶を部屋に持ち込み、歯も磨かず一気に食べ過ぎた！'
-        },
-        env: 'home_evening',
-        food: { zh: '三個忌廉麵包和一大把糖果', th: 'ขนมปังครีมสามชิ้นกับลูกอมกำใหญ่', ja: 'クリームパン3個と大量のフルーツ飴' },
-        obj: { zh: '餐桌上那個五顏六色的糖果罐', th: 'กระปุกลูกอมหลากสีสันบนโต๊ะอาหาร', ja: 'テーブルの上のカラフルな飴の缶' },
-        defaultWhoKey: 'mom_only'
+        key: 'grandparents',
+        tag: '角色：爺爺奶奶 (Grandparents)',
+        zh: '爺爺奶奶',
+        en: 'Grandpa and Grandma',
+        th: 'คุณปู่คุณย่า'
       },
       {
-        id: 'sister_quilt_snacks',
-        icon: '🎮',
-        tag: '被窩偷吃・靜音打機',
-        title: {
-          zh: '故事 F：和妹妹躲在被窩偷吃零食打機',
-          th: 'เรื่อง F: แอบกินขนมและเล่นเกมใต้ผ้าห่มกับน้องสาว',
-          ja: '物語F：妹と布団に隠れてお菓子を暴食＆夜更かしゲーム'
-        },
-        desc: {
-          zh: '深夜拉着妹妹一起躲在被窩裡，把遊戲機調成靜音模式，一邊玩到凌晨一邊狂吃薯片和汽水！',
-          th: 'ชวนน้องสาวมุดใต้ผ้าห่มกลางดึก ปิดเสียงเกมแล้วกินมันฝรั่งทอดกับน้ำอัดลมจนถึงเช้า!',
-          ja: '深夜に妹と布団に潜り込み、ゲームを消音にして朝方までポテチと炭酸を暴食した！'
-        },
-        env: 'home_night',
-        food: { zh: '兩大包薯片和冰汽水', th: 'มันฝรั่งทอดสองห่อใหญ่กับน้ำอัดลมเย็น', ja: '大きなポテチ2袋と冷たい炭酸飲料' },
-        obj: { zh: '書桌抽屜裡那台遊戲機', th: 'เครื่องเล่นเกมในลิ้นชักโต๊ะเขียนหนังสือ', ja: '勉強机の引き出しにあるあのゲーム機' },
-        defaultWhoKey: 'sister_dad'
+        key: 'friend',
+        tag: '角色：好朋友 (Best Friend)',
+        zh: '好朋友',
+        en: 'my best friend',
+        th: 'เพื่อนสนิท'
       }
     ];
 
     // =========================================================================
-    // 3. 應用程式全局蝴蝶效應狀態（每一步的選擇都會更新此狀態並連動後面關卡）
+    // 3. 20 個兒時記趣故事主線（第 1 關 20 選 1）
+    //    每個故事皆附：繁中/英文/泰文標題、簡介、核心物件、核心動作、高潮事件、場景類型
+    // =========================================================================
+    const STORY_BRANCHES = [
+      {
+        id: 'mud_paddy', icon: '🌾', tag: '水田泥人', placeType: 'outdoor', defaultRole: 'cousin',
+        title: { zh: '1. 掉進水田變泥人', en: '1. Fell into a paddy field, became a mud man', th: '1. ตกทุ่งนากลายเป็นมนุษย์โคลน' },
+        desc: { zh: '在鄉下田野玩耍，不小心滑進水田變成小泥人。', en: 'Slipped into a muddy paddy field while playing in the countryside.', th: 'เล่นในทุ่งนาแล้วลื่นตกลงไปเปื้อนโคลนทั้งตัว' },
+        obj: { zh: '畫冊裡的泥人照片', en: 'the mud-man photo in the album', th: 'รูปมนุษย์โคลนในอัลบั้ม' },
+        act: { zh: '在田野追逐打野戰', en: 'chasing and playing in the field', th: 'วิ่งไล่จับกันกลางทุ่งนา' },
+        twist: { zh: '腳下一滑掉進水田變成泥人', en: 'slipped into the paddy field and became a mud man', th: 'ลื่นตกทุ่งนาจนตัวเปื้อนโคลนไปหมด' }
+      },
+      {
+        id: 'paper_wings', icon: '🪽', tag: '紙做翅膀', placeType: 'park', defaultRole: 'sister',
+        title: { zh: '2. 用紙做翅膀想飛', en: '2. Made paper wings to fly', th: '2. ทำปีกกระดาษอยากบินได้' },
+        desc: { zh: '把紙翅膀綁在背上，一邊跑一邊大喊要飛上天。', en: 'Tied paper wings on my back and ran around shouting to fly.', th: 'ผูกปีกกระดาษไว้ข้างหลังแล้ววิ่งตะโกนว่าจะบิน' },
+        obj: { zh: '一對摺皺的紙翅膀', en: 'a pair of crumpled paper wings', th: 'ปีกกระดาษยับๆ หนึ่งคู่' },
+        act: { zh: '背着紙翅膀拍手助跑', en: 'flapping paper wings and running', th: 'สะพายปีกกระดาษแล้ววิ่งกางแขน' },
+        twist: { zh: '飛不起來反倒摔進草坪', en: 'couldn’t fly and tumbled onto the grass', th: 'บินไม่ขึ้นแถมล้มกลิ้งลงบนสนามหญ้า' }
+      },
+      {
+        id: 'plant_soda', icon: '🌸', tag: '澆汽水種花', placeType: 'garden', defaultRole: 'sister',
+        title: { zh: '3. 採花種土澆飲料', en: '3. Planted flowers & watered with soda', th: '3. เก็บดอกไม้มาปลูกแล้วรดด้วยน้ำอัดลม' },
+        desc: { zh: '把採來的花插進土裡，還餵它喝汽水吃餅乾。', en: 'Planted picked flowers in soil and fed them soda and biscuits.', th: 'นำดอกไม้มาปักดินแล้วรดน้ำอัดลมกับให้กินบิสกิต' },
+        obj: { zh: '窗台上的小花盆', en: 'the small flowerpot on the sill', th: 'กระถางดอกไม้เล็กๆ ริมหน้าต่าง' },
+        act: { zh: '把花插進土裡澆汽水', en: 'planting flowers and pouring soda', th: 'ปักดอกไม้ลงดินแล้วเทน้ำอัดลมรด' },
+        twist: { zh: '沒長出花反倒引來一群螞蟻', en: 'no flowers grew, only a swarm of ants came', th: 'ดอกไม้ไม่โตแต่กลับเรียกมดมาเต็มเลย' }
+      },
+      {
+        id: 'sun_jelly', icon: '🍮', tag: '果凍裡的太陽', placeType: 'home', defaultRole: 'sister',
+        title: { zh: '4. 果凍裡掉進太陽', en: '4. Thought the sun fell into the jelly', th: '4. นึกว่าพระอาทิตย์ตกในเยลลี่' },
+        desc: { zh: '盯着有圓形黃色果肉的果凍，以為太陽掉進去了。', en: 'Stared at yellow fruit jelly and thought the sun fell inside.', th: 'จ้องเยลลี่สีเหลืองกลมๆ แล้วคิดว่าพระอาทิตย์ตกลงไป' },
+        obj: { zh: '杯子裡的黃色果凍', en: 'the yellow fruit jelly in a cup', th: 'เยลลี่ผลไม้สีเหลืองในถ้วย' },
+        act: { zh: '舉着果凍對着陽光看', en: 'holding the jelly up to the sunlight', th: 'ชูเยลลี่ส่องดูกับแสงแดด' },
+        twist: { zh: '捨不得吃卻手滑把果凍掉地上', en: 'refused to eat it, then dropped it on the floor', th: 'เสียดายไม่กล้ากินแต่ดันทำหลุดมือตกพื้น' }
+      },
+      {
+        id: 'skip_stones', icon: '🪨', tag: '池塘打水漂', placeType: 'park', defaultRole: 'dad',
+        title: { zh: '5. 公園池塘打水漂', en: '5. Skipping stones at the park pond', th: '5. ขว้างหินกระเด้งน้ำที่สระสวนสาธารณะ' },
+        desc: { zh: '在池塘邊比賽用扁石子打水漂，水花濺了一身。', en: 'Competed in skipping flat stones across the pond.', th: 'แข่งกันขว้างหินแบนๆ ให้กระเด้งบนผิวน้ำ' },
+        obj: { zh: '那塊扁平的小石子', en: 'that flat little pebble', th: 'ก้อนหินแบนๆ ก้อนนั้น' },
+        act: { zh: '彎腰用力朝水面丟石子', en: 'bending down to throw flat stones', th: 'ก้มตัวขว้างก้อนหินลงน้ำอย่างแรง' },
+        twist: { zh: '石子沒跳反倒濺了滿臉水花', en: 'the stone sank and splashed water all over my face', th: 'หินไม่กระเด้งแต่ดันกระเด็นน้ำใส่หน้าเต็มๆ' }
+      },
+      {
+        id: 'pick_stars', icon: '⭐', tag: '摘星星項鍊', placeType: 'outdoor', defaultRole: 'grandparents',
+        title: { zh: '6. 幻想摘星星做項鍊', en: '6. Wanted to pick stars for a necklace', th: '6. จินตนาการอยากเด็ดดาวมาทำสร้อยคอ' },
+        desc: { zh: '夜晚望着星空發呆，搬梯子想摘星星做成項鍊。', en: 'Stared at the night sky and tried to catch stars for a necklace.', th: 'มองท้องฟ้ายามค่ำคืนแล้วอยากเด็ดดาวมาทำสร้อยคอ' },
+        obj: { zh: '夜空中閃亮的星星', en: 'the shining stars in the night sky', th: 'ดวงดาวที่ส่องแสงบนท้องฟ้า' },
+        act: { zh: '踮起腳尖伸手抓星星', en: 'standing on tiptoe to grab the stars', th: 'เขย่งปลายเท้าเอื้อมมือคว้าดวงดาว' },
+        twist: { zh: '跳了半天只抓到一隻飛蛾', en: 'jumped hard and only caught a moth', th: 'กระโดดตั้งนานกลับจับได้แค่ผีเสื้อกลางคืน' }
+      },
+      {
+        id: 'high_heels', icon: '👗', tag: '偷穿高跟鞋', placeType: 'home', defaultRole: 'mom',
+        title: { zh: '7. 偷穿大人高跟鞋', en: '7. Secretly wore adult high heels', th: '7. แอบใส่รองเท้าส้นสูงของผู้ใหญ่' },
+        desc: { zh: '偷偷穿上大人高跟鞋走貓步，結果像企鵝一樣搖晃。', en: 'Secretly wore adult high heels and wobbled like a penguin.', th: 'แอบใส่รองเท้าส้นสูงเดินแบบจนเซเหมือนเพนกวิน' },
+        obj: { zh: '鞋櫃裡那雙紅色高跟鞋', en: 'that pair of red high heels', th: 'รองเท้าส้นสูงสีแดงคู่นั้นในตู้' },
+        act: { zh: '套上大高跟鞋學走貓步', en: 'wearing huge heels and catwalking', th: 'ใส่รองเท้าส้นสูงแล้วหัดเดินแบบ' },
+        twist: { zh: '走不到三步就扭腳摔倒', en: 'tripped and tumbled within three steps', th: 'เดินไม่ถึงสามก้าวก็สะดุดล้มลง' }
+      },
+      {
+        id: 'puppy_bath', icon: '🫧', tag: '小狗泡泡怪', placeType: 'home', defaultRole: 'dad',
+        title: { zh: '8. 幫小狗洗澡變泡泡怪', en: '8. Puppy bath turned into bubble monsters', th: '8. อาบน้ำให้ลูกหมาจนกลายเป็นปีศาจฟองสบู่' },
+        desc: { zh: '幫小狗倒了太多沐浴露，結果全家都沾滿泡泡。', en: 'Used way too much soap on the puppy and got bubbles everywhere.', th: 'เทสบู่อาบน้ำให้ลูกหมาเยอะเกินไปจนฟองเต็มตัวไปหมด' },
+        obj: { zh: '浴室裡那瓶寵物沐浴露', en: 'the pet shampoo bottle in the bathroom', th: 'ขวดแชมพูอาบน้ำหมาในห้องน้ำ' },
+        act: { zh: '倒了一大堆沐浴露搓泡泡', en: 'pouring tons of soap to scrub bubbles', th: 'เทสบู่เยอะมากแล้วถูจนฟองฟู' },
+        twist: { zh: '小狗一甩毛把我們變成泡泡怪', en: 'the puppy shook and turned us into bubble monsters', th: 'ลูกหมาสะบัดขนจนพวกเรากลายเป็นมนุษย์ฟองสบู่' }
+      },
+      {
+        id: 'closet_nap', icon: '🙈', tag: '衣櫃捉迷藏', placeType: 'home', defaultRole: 'friend',
+        title: { zh: '9. 捉迷藏躲衣櫃睡着', en: '9. Fell asleep in the closet during hide-and-seek', th: '9. เล่นซ่อนแอบแล้วเผลอหลับในตู้เสื้อผ้า' },
+        desc: { zh: '玩捉迷藏躲進黑漆漆的衣櫃，竟然舒服得睡着了。', en: 'Hid in the dark closet during hide-and-seek and fell asleep.', th: 'ซ่อนในตู้เสื้อผ้ามืดๆ ตอนเล่นซ่อนแอบจนเผลอหลับไป' },
+        obj: { zh: '房間裡那個大衣櫃', en: 'that big wardrobe in the bedroom', th: 'ตู้เสื้อผ้าใบใหญ่ในห้องนอน' },
+        act: { zh: '鑽進衣櫃用衣服蓋住自己', en: 'hiding under clothes in the closet', th: 'มุดเข้าตู้เสื้อผ้าเอาเสื้อคลุมตัว' },
+        twist: { zh: '躲太久竟然在裡面打呼睡着', en: 'hid so long I started snoring inside', th: 'ซ่อนนานเกินไปจนเผลอหลับกรนอยู่ในตู้' }
+      },
+      {
+        id: 'rain_puddle', icon: '🌧️', tag: '雨天踩水坑', placeType: 'outdoor', defaultRole: 'friend',
+        title: { zh: '10. 下雨天踩水坑濺泥', en: '10. Jumped in rain puddles and splashed mud', th: '10. กระโดดเหยียบแอ่งน้ำฝนจนโคลนกระเด็น' },
+        desc: { zh: '雨停後穿着雨鞋用力踩水坑，濺得褲子滿是泥點。', en: 'Jumped hard in puddles after rain and got covered in mud.', th: 'ใส่รองเท้าบู๊ทกระโดดเหยียบแอ่งน้ำจนเลอะโคลนเต็มกางเกง' },
+        obj: { zh: '門邊那雙黃色小雨鞋', en: 'that pair of yellow rain boots', th: 'รองเท้าบู๊ทกันฝนสีเหลืองคู่นั้น' },
+        act: { zh: '用力跳進水坑踩出大水花', en: 'jumping into puddles to make big splashes', th: 'กระโดดลงแอ่งน้ำให้น้ำกระเซ็นสูง' },
+        twist: { zh: '水花太高濺得全身像斑點狗', en: 'splashed mud everywhere like a spotted dog', th: 'น้ำโคลนกระเด็นเลอะทั้งตัวเหมือนหมาลายจุด' }
+      },
+      {
+        id: 'chase_butterfly', icon: '🦋', tag: '追蝴蝶摔草叢', placeType: 'park', defaultRole: 'cousin',
+        title: { zh: '11. 抓蝴蝶摔進草叢', en: '11. Chased butterflies and tumbled into bushes', th: '11. วิ่งไล่จับผีเสื้อจนล้มเข้าพุ่มไม้' },
+        desc: { zh: '拿着捕蝶網狂追彩蝶，一頭栽進軟綿綿的草叢裡。', en: 'Chased a butterfly with a net and fell right into the bushes.', th: 'ถือสวิงวิ่งไล่ผีเสื้อจนล้มคะมำเข้าไปในพุ่มไม้' },
+        obj: { zh: '陽台那支小捕蝶網', en: 'that small butterfly net on the balcony', th: 'สวิงจับผีเสื้ออันเล็กที่ระเบียง' },
+        act: { zh: '揮着網子追着彩蝶跑', en: 'waving a net to chase a butterfly', th: 'แกว่งสวิงวิ่งตามผีเสื้อสีสวย' },
+        twist: { zh: '沒抓到蝴蝶反倒摔進草叢滿頭草', en: 'missed the butterfly and got leaves all over my head', th: 'จับไม่ได้แถมล้มเข้าพุ่มไม้จนใบไม้ติดเต็มหัว' }
+      },
+      {
+        id: 'mud_cake', icon: '🎂', tag: '泥巴生日蛋糕', placeType: 'garden', defaultRole: 'sister',
+        title: { zh: '12. 用泥巴做生日蛋糕', en: '12. Made a mud birthday cake', th: '12. ปั้นเค้กวันเกิดจากดินโคลน' },
+        desc: { zh: '用濕泥巴捏成雙層蛋糕，插上樹枝當蠟燭慶生。', en: 'Shaped wet mud into a birthday cake with twigs as candles.', th: 'ปั้นดินโคลนเป็นเค้กแล้วปักกิ่งไม้แทนเทียน' },
+        obj: { zh: '公園角落的小塑膠桶', en: 'the little plastic bucket', th: 'ถังพลาสติกใบเล็กในสวน' },
+        act: { zh: '把泥巴捏成蛋糕插上小花', en: 'shaping mud into a cake with flowers', th: 'ปั้นโคลนเป็นก้อนเค้กแล้วปักดอกไม้' },
+        twist: { zh: '假裝吃蛋糕結果糊了滿臉泥巴', en: 'pretended to eat it and got mud all over my face', th: 'แกล้งทำท่ากินจนโคลนเลอะเต็มหน้า' }
+      },
+      {
+        id: 'kite_tree', icon: '🪁', tag: '風箏掛樹梢', placeType: 'park', defaultRole: 'dad',
+        title: { zh: '13. 放風箏掛在樹梢', en: '13. Flew a kite and got it stuck in a tree', th: '13. เล่นว่าวจนติดยอดต้นไม้' },
+        desc: { zh: '興高采烈跑着放風箏，一陣大風把風箏掛在樹上。', en: 'Ran happily flying a kite until a gust blew it into a tree.', th: 'วิ่งเล่นว่าวอย่างสนุกแต่ลมพัดว่าวไปติดบนต้นไม้' },
+        obj: { zh: '那隻彩色的蝴蝶風箏', en: 'that colorful butterfly kite', th: 'ว่าวผีเสื้อหลากสีตัวนั้น' },
+        act: { zh: '拉着線軸在草地迎風奔跑', en: 'running across the grass holding the kite reel', th: 'ถือสายป่านวิ่งต้านลมกลางสนามหญ้า' },
+        twist: { zh: '大風一吹風箏牢牢掛在樹梢上', en: 'a big wind blew the kite right onto a treetop', th: 'ลมแรงพัดว่าวไปติดแน่นอยู่บนยอดไม้' }
+      },
+      {
+        id: 'sand_castle', icon: '🏖️', tag: '海邊堆沙堡', placeType: 'beach', defaultRole: 'cousin',
+        title: { zh: '14. 海邊堆沙堡被浪沖', en: '14. Sandcastle washed away by waves', th: '14. ก่อปราสาททรายริมทะเลแต่โดนคลื่นซัด' },
+        desc: { zh: '辛辛苦苦堆好豪華大沙堡，一個大浪就把它沖平了。', en: 'Built a grand sandcastle, then a big wave flattened it.', th: 'ตั้งใจก่อปราสาททรายอย่างดีแต่คลื่นลูกใหญ่ซัดหายไปหมด' },
+        obj: { zh: '書架上那枚白色的貝殼', en: 'that white seashell on the shelf', th: 'เปลือกหอยสีขาวบนชั้นหนังสือ' },
+        act: { zh: '用小鏟子堆出高大的沙堡', en: 'shoveling sand to build a tall castle', th: 'ใช้พลั่วเล็กตักทรายก่อเป็นปราสาทสูง' },
+        twist: { zh: '剛插上旗子就被大浪沖得無影無蹤', en: 'a huge wave washed it away right after we finished', th: 'เพิ่งปักธงเสร็จคลื่นก็ซัดพังเรียบไม่มีเหลือ' }
+      },
+      {
+        id: 'wall_elephant', icon: '🎨', tag: '粉筆畫大象', placeType: 'home', defaultRole: 'mom',
+        title: { zh: '15. 用粉筆在牆上畫大象', en: '15. Drew a giant elephant on the wall with chalk', th: '15. ใช้ชอล์กวาดรูปช้างตัวใหญ่บนกำแพง' },
+        desc: { zh: '把客廳白牆當成大畫布，用彩色粉筆畫了隻大象。', en: 'Treated the white wall as a canvas and drew a giant elephant.', th: 'ใช้กำแพงสีขาวเป็นกระดาษแล้ววาดรูปช้างตัวใหญ่' },
+        obj: { zh: '抽屜裡那盒彩色粉筆', en: 'that box of colorful chalk', th: 'กล่องชอล์กสีในลิ้นชัก' },
+        act: { zh: '拿着粉筆在白牆上大畫大象', en: 'drawing a huge elephant on the wall', th: 'ถือชอล์กวาดรูปช้างตัวโตบนกำแพงขาว' },
+        twist: { zh: '大象畫成四不像還弄得滿手粉筆灰', en: 'it looked like a funny monster and my hands were dusty', th: 'วาดออกมาดูตลกแถมมือเปื้อนฝุ่นชอล์กเต็มไปหมด' }
+      },
+      {
+        id: 'snow_ball', icon: '⛄', tag: '打雪仗變雪球', placeType: 'outdoor', defaultRole: 'friend',
+        title: { zh: '16. 打雪仗滾成大雪球', en: '16. Snowball fight & rolling in the snow', th: '16. ปาหิมะเล่นจนกลิ้งเป็นลูกบอลหิมะ' },
+        desc: { zh: '冬天和大家歡笑打雪仗，不小心在雪地滾成雪人。', en: 'Had a snowball fight and rolled into a giant human snowball.', th: 'เล่นปาหิมะกันอย่างสนุกจนกลิ้งบนหิมะกลายเป็นตุ๊กตาหิมะ' },
+        obj: { zh: '櫃子裡那雙紅毛線手套', en: 'that pair of red wool mittens', th: 'ถุงมือไหมพรมสีแดงคู่นั้น' },
+        act: { zh: '捏着雪球互相追打歡笑', en: 'making snowballs and chasing each other', th: 'ปั้นลูกหิมะวิ่งไล่ปาใส่กันอย่างสนุก' },
+        twist: { zh: '腳滑滾下雪坡變成大雪球', en: 'slipped down the slope and became a big snowball', th: 'ลื่นกลิ้งลงเนินหิมะจนตัวขาวโพลนเหมือนลูกบอลหิมะ' }
+      },
+      {
+        id: 'cut_bangs', icon: '💈', tag: '自己剪劉海', placeType: 'home', defaultRole: 'mom',
+        title: { zh: '17. 自己剪劉海變狗啃頭', en: '17. Cut my own bangs crooked', th: '17. ตัดผมหน้าม้าเองจนแหว่งเบี้ยว' },
+        desc: { zh: '學理髮師對着鏡子剪劉海，結果剪得像鋸齒一樣短。', en: 'Played barber in front of the mirror and cut crooked bangs.', th: 'เลียนแบบช่างตัดผมส่องกระจกตัดหน้าม้าเองจนสั้นแหว่ง' },
+        obj: { zh: '桌上那把安全小剪刀', en: 'that pair of safety scissors', th: 'กรรไกรอันเล็กบนโต๊ะ' },
+        act: { zh: '對着鏡子咔嚓咔嚓剪劉海', en: 'snipping my bangs in front of the mirror', th: 'ส่องกระจกแล้วใช้กรรไกรตัดผมหน้าม้าเอง' },
+        twist: { zh: '越修越短變成搞笑的鋸齒頭', en: 'kept trimming until it turned into zigzag bangs', th: 'ยิ่งเล็มยิ่งสั้นจนกลายเป็นทรงผมฟันปลาสุดตลก' }
+      },
+      {
+        id: 'flour_cook', icon: '🍳', tag: '煎蛋變白臉貓', placeType: 'home', defaultRole: 'grandparents',
+        title: { zh: '18. 學大人煎蛋滿臉麵粉', en: '18. Tried cooking like an adult, flour everywhere', th: '18. หัดทำอาหารเหมือนผู้ใหญ่จนแป้งเปื้อนเต็มหน้า' },
+        desc: { zh: '想學大人下廚做點心，卻把麵粉撒得滿臉像小花貓。', en: 'Tried cooking snacks like an adult and got flour all over my face.', th: 'อยากหัดทำขนมเหมือนผู้ใหญ่แต่ทำแป้งหกเลอะเต็มหน้าเหมือนลูกแมว' },
+        obj: { zh: '廚房那條小格子圍裙', en: 'that small checkered apron', th: 'ผ้ากันเปื้อนลายสก๊อตผืนเล็กในครัว' },
+        act: { zh: '穿上大圍裙打蛋攪拌麵粉', en: 'wearing a big apron to mix eggs and flour', th: 'ใส่ผ้ากันเปื้อนตอกไข่และคนแป้ง' },
+        twist: { zh: '一打噴嚏把麵粉吹得滿臉都是', en: 'sneezed and blew flour all over my face', th: 'เผลอจามทีเดียวแป้งฟุ้งเลอะขาวไปทั้งหน้า' }
+      },
+      {
+        id: 'giant_bubbles', icon: '🫧', tag: '吹巨型泡泡', placeType: 'park', defaultRole: 'friend',
+        title: { zh: '19. 公園吹巨型泡泡比賽', en: '19. Giant soap bubble contest in the park', th: '19. แข่งเป่าฟองสบู่ยักษ์ในสวนสาธารณะ' },
+        desc: { zh: '在公園比賽吹巨型肥皂泡，泡泡飛滿天還破在鼻尖。', en: 'Competed to blow giant bubbles in the park until one popped on my nose.', th: 'แข่งเป่าฟองสบู่ยักษ์ในสวนจนฟองลอยเต็มฟ้าแล้วแตกใส่จมูก' },
+        obj: { zh: '那支彩色的泡泡棒', en: 'that colorful bubble wand', th: 'ไม้เป่าฟองสบู่หลากสีอันนั้น' },
+        act: { zh: '蘸滿泡泡水迎風甩出巨型泡泡', en: 'dipping the wand to make giant bubbles', th: 'จุ่มน้ำสบู่แล้วแกว่งให้เกิดฟองยักษ์' },
+        twist: { zh: '超大泡泡啪一聲破在我鼻尖上', en: 'a giant bubble popped right on my nose', th: 'ฟองสบู่ยักษ์แตกดังเป๊าะใส่ปลายจมูกพอดี' }
+      },
+      {
+        id: 'ant_glass', icon: '🐞', tag: '放大鏡看螞蟻', placeType: 'garden', defaultRole: 'grandparents',
+        title: { zh: '20. 拿放大鏡觀察螞蟻搬家', en: '20. Watched ants moving house with a magnifying glass', th: '20. ส่องแว่นขยายดูมดย้ายรัง' },
+        desc: { zh: '趴在地上拿放大鏡看螞蟻搬餅乾，看得太入迷忘了時間。', en: 'Lay on the ground watching ants carry crumbs with a magnifying glass.', th: 'นอนคว่ำส่องแว่นขยายดูมดขนเศษขนมจนเพลินลืมเวลา' },
+        obj: { zh: '書桌上的圓形放大鏡', en: 'the round magnifying glass on the desk', th: 'แว่นขยายทรงกลมบนโต๊ะ' },
+        act: { zh: '趴在地上用放大鏡追看螞蟻', en: 'lying down watching ants with a magnifying glass', th: 'นอนส่องแว่นขยายตามดูขบวนมด' },
+        twist: { zh: '看得太入迷竟有螞蟻爬上我鼻尖', en: 'watched so closely an ant crawled onto my nose', th: 'ดูเพลินเกินไปจนมดไต่ขึ้นมาบนจมูก' }
+      }
+    ];
+
+    // =========================================================================
+    // 4. 應用程式全局蝴蝶效應狀態
     // =========================================================================
     let gameState = {
-      studentName: '湯雅智',
-      studentClass: '4N',
-      langMode: 'all', // 'all' | 'th' | 'ja' | 'zh'
+      studentName: '陳樂言',
+      studentClass: '6N',
+      langMode: 'all', // 'all' | 'en' | 'th' | 'zh'
       currentStep: 1,
       activeTab: 'form',
       skillsHighlight: true,
 
-      // 第 1 關狀態
-      storyId: 'cup_noodle_bathroom',
+      // 第 1 關
+      storyId: 'mud_paddy',
 
-      // 第 2 關狀態（四素：時、人、地、事）— 關鍵「人 (whoRole)」會直接決定第3、4關的發現者！
+      // 第 2 關（四素：時、人、地、事）
       timeIdx: 0,
-      whoRole: 'dad_sister', // 'dad_only' | 'mom_only' | 'dad_sister' | 'mom_shower' | 'sister_dad' | 'alone_parents'
+      roleKey: 'cousin',
       placeIdx: 0,
       causeIdx: 0,
 
-      // 第 3 關狀態（片段一：先喜）
+      // 第 3 關（片段一）
       p1ActionIdx: 0,
       p1WarnIdx: 0,
       p1ThoughtIdx: 0,
 
-      // 第 4 關狀態（片段二：後悲）
-      p2SymptomIdx: 0,
+      // 第 4 關（片段二）
+      p2TwistIdx: 0,
       p2ReactionIdx: 0,
-      p2ResultIdx: 0,
+      p2EndingIdx: 0,
 
-      // 第 5 關狀態（總結段）
+      // 第 5 關（總結段）
       moralIdx: 0,
       futureIdx: 0,
 
-      // 第 6 關狀態（引子段：物 → 事 → 情）
+      // 第 6 關（引子段）
       introObjIdx: 0,
       introEventIdx: 0,
       introFeelingIdx: 0
     };
 
-    // 取得目前主線物件
     function getCurrentStory() {
       return STORY_BRANCHES.find(s => s.id === gameState.storyId) || STORY_BRANCHES[0];
     }
 
+    function getCurrentRole() {
+      return ROLES.find(r => r.key === gameState.roleKey) || ROLES[0];
+    }
+
     // =========================================================================
-    // 4. 動態蝴蝶效應選項生成器（根據前面關卡的選擇，即時生成每題 4~5 個選項）
-    //    確保：前後人物 100% 一致、地點與動作嚴密呼應、每題至少 4 個選項！
+    // 5. 動態蝴蝶效應選項庫（第 2 至第 6 關，每道題目嚴格提供 6 個精簡三語選項！）
+    //    設計目標：五段組合起來約 115–155 字（非華語六年級 110 字以上精簡標準）
     // =========================================================================
 
-    // --- 第 2 關選項庫（四素：時、人、地、事） ---
+    // --- 第 2 關：四素背景（每題 6 個選項） ---
     function getStep2Options() {
       const s = getCurrentStory();
-      const isNight = (s.env === 'home_night');
+      const r = getCurrentRole();
 
-      // 2-1 時間（4個選項，根據深夜或晚上自動調整）
-      const timeOptions = isNight ? [
-        {
-          tag: '時間點描寫',
-          zh: '上星期五深夜一兩點',
-          th: 'คืนวันศุกร์ที่แล้วตอนตีหนึ่งตีสอง',
-          ja: '先週の金曜日の深夜1時か2時ごろ'
-        },
-        {
-          tag: '氛圍烘托',
-          zh: '上星期六凌晨一點多，萬籟俱寂的時候',
-          th: 'คืนวันเสาร์ที่แล้วเวลาตีหนึ่งกว่า ตอนที่ทุกอย่างเงียบสงัด',
-          ja: '先週の土曜日の午前1時過ぎ、辺りが静まり返ったころ'
-        },
-        {
-          tag: '鐘聲點題',
-          zh: '昨天晚上十二點剛過，全家人都入睡後',
-          th: 'เมื่อคืนนี้ตอนเที่ยงคืนกว่า หลังจากทุกคนหลับกันหมดแล้ว',
-          ja: '昨夜の12時を過ぎ、家族全員が寝静まったあと'
-        },
-        {
-          tag: '週末深夜',
-          zh: '上個週末的深宵時分',
-          th: 'ช่วงดึกสงัดของวันหยุดสุดสัปดาห์ที่แล้ว',
-          ja: '先週末の夜更けのこと'
-        }
-      ] : [
-        {
-          tag: '晚飯後時段',
-          zh: '上星期日晚上九點多',
-          th: 'คืนวันอาทิตย์ที่แล้วเวลาสามทุ่มกว่า',
-          ja: '先週の日曜日の夜9時過ぎ'
-        },
-        {
-          tag: '睡前時段',
-          zh: '昨天晚上十點半，快要上床睡覺前',
-          th: 'เมื่อคืนนี้ตอนสี่ทุ่มครึ่ง ก่อนจะเข้านอน',
-          ja: '昨夜の10時半ごろ、ちょうど寝る前の時間'
-        },
-        {
-          tag: '放學回家',
-          zh: '上星期五傍晚放學回家後',
-          th: 'เย็นวันศุกร์ที่แล้วหลังจากกลับจากโรงเรียน',
-          ja: '先週の金曜日の夕方、学校から帰宅したあと'
-        },
-        {
-          tag: '週末晚上',
-          zh: '上星期六晚飯過後不久',
-          th: 'คืนวันเสาร์ที่แล้วหลังกินข้าวเย็นเสร็จไม่นาน',
-          ja: '先週の土曜日の夕食後まもなく'
-        }
+      // 2-1 時間（6選項）
+      const timeOptions = [
+        { tag: '年幼入學前', zh: '讀幼稚園那年', en: 'when I was in kindergarten', th: 'ตอนเรียนอนุบาลปีนั้น' },
+        { tag: '暑假時光', zh: '六歲那年暑假', en: 'during summer vacation at age six', th: 'ช่วงปิดเทอมฤดูร้อนตอนอายุหกขวบ' },
+        { tag: '快樂週末', zh: '小時候一個週末', en: 'one weekend in my childhood', th: 'วันหยุดสุดสัปดาห์หนึ่งตอนเด็ก' },
+        { tag: '晴朗午後', zh: '七歲一個晴朗下午', en: 'on a sunny afternoon at age seven', th: 'บ่ายวันอากาศแจ่มใสตอนอายุเจ็ดขวบ' },
+        { tag: '難忘假期', zh: '一年級的長假期', en: 'during a long holiday in Grade 1', th: 'ช่วงวันหยุดยาวตอน ป.1' },
+        { tag: '涼爽傍晚', zh: '童年一個涼爽傍晚', en: 'on a cool evening in my childhood', th: 'เย็นวันหนึ่งที่อากาศเย็นสบายตอนเด็ก' }
       ];
 
-      // 2-2 人物（5個明確角色分支！這個選擇會成為「蝴蝶核心」，改寫第3、4關的所有人物！）
-      const whoOptions = [
-        {
-          role: 'dad_only',
-          tag: '角色線：爸爸',
-          zh: '我和在隔壁房間睡覺的爸爸',
-          th: 'ฉันกับคุณพ่อที่นอนอยู่ในห้องข้างๆ',
-          ja: '私と隣の部屋で寝ていたお父さん'
-        },
-        {
-          role: 'mom_only',
-          tag: '角色線：媽媽',
-          zh: '我和正在家裡休息的媽媽',
-          th: 'ฉันกับคุณแม่ที่กำลังพักผ่อนอยู่ในบ้าน',
-          ja: '私と家で休んでいたお母さん'
-        },
-        {
-          role: 'dad_sister',
-          tag: '角色線：妹妹＋爸爸',
-          zh: '我和睡在下格床的妹妹（還有爸爸）',
-          th: 'ฉันกับน้องสาวที่นอนเตียงล่าง (และคุณพ่อ)',
-          ja: '私と二段ベッドの下で寝ていた妹（とお父さん）'
-        },
-        {
-          role: 'mom_shower',
-          tag: '角色線：洗澡的媽媽',
-          zh: '我和正在浴室洗澡的媽媽',
-          th: 'ฉันกับคุณแม่ที่กำลังอาบน้ำอยู่ในห้องน้ำ',
-          ja: '私とお風呂でシャワーを浴びていたお母さん'
-        },
-        {
-          role: 'sister_dad',
-          tag: '角色線：共犯妹妹＋爸爸',
-          zh: '我和貪吃的妹妹（後來還有爸爸）',
-          th: 'ฉันกับน้องสาวจอมตะกละ (และคุณพ่อในตอนท้าย)',
-          ja: '私と食いしん坊の妹（あとでお父さん）'
-        }
-      ];
+      // 2-2 人物（6個角色，決定後面所有人物稱謂！）
+      const whoOptions = ROLES.map(role => ({
+        role: role.key,
+        tag: role.tag,
+        zh: role.zh,
+        en: role.en,
+        th: role.th
+      }));
 
-      // 2-3 地點（4個選項，根據故事主線動態提供最貼切的地點）
-      const placeByStory = {
-        cup_noodle_bathroom: [
-          { tag: '課堂真實情節', zh: '家裡的洗手間和客廳', th: 'ห้องน้ำและห้องนั่งเล่นที่บ้าน', ja: '家のトイレとリビング' },
-          { tag: '上下格床睡房', zh: '家裡的上下格床睡房和洗手間', th: 'ห้องนอนเตียงสองชั้นและห้องน้ำที่บ้าน', ja: '二段ベッドの寝室とトイレ' },
-          { tag: '鎖門秘境', zh: '關緊門的洗手間裡', th: 'ในห้องน้ำที่ล็อกประตูสนิท', ja: '鍵を閉めた家のトイレの中' },
-          { tag: '飯廳角落', zh: '家裡的飯廳和洗手間', th: 'ห้องอาหารและห้องน้ำที่บ้าน', ja: '家のダイニングとトイレ' }
+      // 2-3 地點（6選項，依故事場景 placeType 動態配對）
+      const placeMap = {
+        outdoor: [
+          { tag: '鄉下田野', zh: '鄉下田野裡', en: 'in the countryside fields', th: 'กลางทุ่งนาต่างจังหวัด' },
+          { tag: '家門小路', zh: '家門前小路上', en: 'on the path outside home', th: 'บนทางเดินหน้าบ้าน' },
+          { tag: '寬闊草地', zh: '寬闊草地上', en: 'on the wide grassy field', th: 'บนสนามหญ้ากว้าง' },
+          { tag: '村口空地', zh: '村口空地上', en: 'in the open square of the village', th: 'ลานกว้างหน้าหมู่บ้าน' },
+          { tag: '郊外山坡', zh: '郊外小山坡', en: 'on a gentle hillside', th: 'บนเนินเขาเล็กๆ ชานเมือง' },
+          { tag: '大樹底下', zh: '大樹蔭底下', en: 'under a big shady tree', th: 'ใต้ร่มไม้ใหญ่' }
         ],
-        pack_noodle_stove: [
-          { tag: '廚房爐頭', zh: '家裡的睡房和廚房', th: 'ห้องนอนและห้องครัวที่บ้าน', ja: '家の寝室とキッチン' },
-          { tag: '餐桌旁', zh: '家裡的廚房和飯廳餐桌旁', th: 'ห้องครัวและข้างโต๊ะอาหารที่บ้าน', ja: '家のキッチンとダイニングテーブル' },
-          { tag: '上下格床', zh: '上下格床睡房和廚房爐灶前', th: 'ห้องนอนเตียงสองชั้นและหน้าเตาในครัว', ja: '二段ベッドの寝室とキッチンのコンロ前' },
-          { tag: '客廳沙發', zh: '家裡的廚房和客廳', th: 'ห้องครัวและห้องนั่งเล่นที่บ้าน', ja: '家のキッチンとリビング' }
+        park: [
+          { tag: '樓下公園', zh: '樓下公園裡', en: 'in the park downstairs', th: 'ในสวนสาธารณะข้างล่างบ้าน' },
+          { tag: '大草坪上', zh: '公園大草坪上', en: 'on the big park lawn', th: 'บนสนามหญ้าใหญ่ในสวน' },
+          { tag: '池塘旁邊', zh: '公園池塘邊', en: 'by the park pond', th: 'ริมสระน้ำในสวนสาธารณะ' },
+          { tag: '遊樂場旁', zh: '兒童遊樂場旁', en: 'beside the playground', th: 'ข้างสนามเด็กเล่น' },
+          { tag: '花叢小徑', zh: '公園花叢邊', en: 'by the park flowerbeds', th: 'ริมพุ่มดอกไม้ในสวน' },
+          { tag: '柳樹底下', zh: '彎腰柳樹下', en: 'under the willow tree', th: 'ใต้ต้นหลิวในสวน' }
         ],
-        cola_shower: [
-          { tag: '冰箱前', zh: '家裡的客廳冰箱旁', th: 'ข้างตู้เย็นในห้องนั่งเล่นที่บ้าน', ja: '家のリビングの冷蔵庫の前' },
-          { tag: '浴室門外', zh: '浴室門外的客廳沙發上', th: 'บนโซฟาในห้องนั่งเล่นหน้าประตูห้องน้ำ', ja: 'お風呂のドアの外のリビングのソファ' },
-          { tag: '飯廳角落', zh: '家裡的飯廳和冰箱前', th: 'ห้องอาหารและหน้าตู้เย็นที่บ้าน', ja: '家のダイニングと冷蔵庫の前' },
-          { tag: '自己睡房', zh: '客廳冰箱旁和自己的睡房', th: 'ข้างตู้เย็นในห้องนั่งเล่นและห้องนอนของฉัน', ja: 'リビングの冷蔵庫前と自分の寝室' }
+        garden: [
+          { tag: '家裡小花園', zh: '家裡小花園裡', en: 'in our little garden', th: 'ในสวนเล็กๆ ที่บ้าน' },
+          { tag: '陽台角落', zh: '家裡陽台邊', en: 'on the home balcony', th: 'ตรงระเบียงบ้าน' },
+          { tag: '花圃旁邊', zh: '樓下花圃旁', en: 'beside the flowerbed', th: 'ข้างแปลงดอกไม้' },
+          { tag: '院子泥地', zh: '院子泥地上', en: 'on the courtyard soil', th: 'บนพื้นดินในลานบ้าน' },
+          { tag: '公園草叢', zh: '公園草叢邊', en: 'by the park bushes', th: 'ริมพุ่มหญ้าในสวน' },
+          { tag: '大樹底下', zh: '院子大樹下', en: 'under the yard tree', th: 'ใต้ต้นไม้ใหญ่ในบ้าน' }
         ],
-        sushi_icecream: [
-          { tag: '壽司店＋冰格', zh: '壽司店和家裡的冰箱冰格前', th: 'ร้านซูชิและหน้าช่องแช่แข็งที่บ้าน', ja: 'お寿司屋さんと家の冷凍庫の前' },
-          { tag: '回家飯廳', zh: '家裡的飯廳和冰箱旁', th: 'ห้องอาหารและข้างตู้เย็นที่บ้าน', ja: '家のダイニングと冷蔵庫のそば' },
-          { tag: '客廳電視前', zh: '家裡的客廳沙發上', th: 'บนโซฟาในห้องนั่งเล่นที่บ้าน', ja: '家のリビングのソファの上' },
-          { tag: '睡房被窩', zh: '家裡的冰箱旁和睡房裡', th: 'ข้างตู้เย็นและในห้องนอนที่บ้าน', ja: '家の冷蔵庫のそばと寝室の中' }
+        home: [
+          { tag: '家裡客廳', zh: '家裡客廳中', en: 'in the living room', th: 'ในห้องนั่งเล่นที่บ้าน' },
+          { tag: '自己睡房', zh: '家裡睡房裡', en: 'in the bedroom at home', th: 'ในห้องนอนที่บ้าน' },
+          { tag: '客廳鏡前', zh: '客廳大鏡子前', en: 'in front of the mirror', th: 'หน้ากระจกบานใหญ่ในบ้าน' },
+          { tag: '廚房飯廳', zh: '廚房和飯廳裡', en: 'in the kitchen and dining room', th: 'ในห้องครัวและห้องอาหาร' },
+          { tag: '浴室門邊', zh: '家裡浴室裡', en: 'in the bathroom at home', th: 'ในห้องน้ำที่บ้าน' },
+          { tag: '溫暖家中', zh: '溫暖的家裡', en: 'at our cozy home', th: 'ที่บ้านอันอบอุ่น' }
         ],
-        bread_candy_room: [
-          { tag: '自己睡房', zh: '家裡的飯廳餐桌旁和睡房裡', th: 'ข้างโต๊ะอาหารและในห้องนอนที่บ้าน', ja: '家のダイニングテーブルと自分の寝室' },
-          { tag: '書桌抽屜', zh: '睡房的書桌前', th: 'หน้าโต๊ะเขียนหนังสือในห้องนอน', ja: '寝室の勉強机の前' },
-          { tag: '上下格床', zh: '家裡的睡房床上', th: 'บนเตียงในห้องนอนที่บ้าน', ja: '家の寝室のベッドの上' },
-          { tag: '客廳角落', zh: '家裡的客廳角落', th: 'มุมห้องนั่งเล่นที่บ้าน', ja: '家のリビングの隅' }
-        ],
-        sister_quilt_snacks: [
-          { tag: '溫暖被窩', zh: '家裡睡房的被窩裡', th: 'ใต้ผ้าห่มในห้องนอนที่บ้าน', ja: '家の寝室の布団の中' },
-          { tag: '上下格床', zh: '上下格床的下格床被窩裡', th: 'ใต้ผ้าห่มบนเตียงนอนชั้นล่าง', ja: '二段ベッドの下の段の布団の中' },
-          { tag: '關門睡房', zh: '關緊房門的睡房裡', th: 'ในห้องนอนที่ปิดประตูสนิท', ja: 'ドアを閉め切った寝室の中' },
-          { tag: '客廳地毯', zh: '家裡客廳的角落裡', th: 'มุมหนึ่งในห้องนั่งเล่นที่บ้าน', ja: '家のリビングの隅っこ' }
+        beach: [
+          { tag: '金色沙灘', zh: '金色沙灘上', en: 'on the golden beach', th: 'บนชายหาดสีทอง' },
+          { tag: '海邊浪旁', zh: '海邊淺水旁', en: 'by the shallow waves', th: 'ริมน้ำตื้นชายทะเล' },
+          { tag: '大傘底下', zh: '沙灘大傘下', en: 'under the beach umbrella', th: 'ใต้ร่มชายหาด' },
+          { tag: '椰樹沙地', zh: '海邊椰樹下', en: 'under the beach palms', th: 'ใต้ต้นมะพร้าวริมทะเล' },
+          { tag: '礁石旁邊', zh: '海邊小石旁', en: 'beside the coastal rocks', th: 'ข้างโขดหินริมทะเล' },
+          { tag: '海風岸邊', zh: '涼爽海岸邊', en: 'along the breezy shore', th: 'ริมฝั่งทะเลลมเย็น' }
         ]
       };
+      const placeOptions = placeMap[s.placeType] || placeMap.park;
 
-      // 2-4 起因（4個選項，結合食物與飢餓/嘴饞原因）
+      // 2-4 起因（6選項，連動故事動作與人物）
       const causeOptions = [
-        {
-          tag: '半夜肚餓',
-          zh: `晚飯吃得太少，肚子餓得咕咕叫，忍不住想偷吃${s.food.zh}`,
-          th: `มื้อเย็นกินน้อยเกินไป ท้องร้องจ๊อกๆ เลยอดใจไม่ไหวอยากแอบกิน${s.food.th}`,
-          ja: `夕飯が少なくてお腹がグーグー鳴り、我慢できず${s.food.ja}をこっそり食べたくなった`
-        },
-        {
-          tag: '嘴饞難耐',
-          zh: `看見家裡放着誘人的${s.food.zh}，頓時饞蟲大動，心癢難耐`,
-          th: `เห็น${s.food.th}วางอยู่เลยเกิดความอยากกินขึ้นมาทันทีจนอดใจไม่ไหว`,
-          ja: `美味しそうな${s.food.ja}を見て急に食い意地が張り、我慢できなくなった`
-        },
-        {
-          tag: '違反禁令',
-          zh: `家人平日不准我多吃${s.food.zh}，我卻趁大家不注意偷偷解饞`,
-          th: `ปกติคนที่บ้านห้ามกิน${s.food.th}เยอะ แต่ฉันฉวยโอกาสตอนไม่มีใครเห็นแอบกิน`,
-          ja: `普段は家族から${s.food.ja}を禁止されていたのに、誰も見ていない隙にこっそり食べようと思った`
-        },
-        {
-          tag: '貪心吃不夠',
-          zh: `本來已經吃過晚飯，卻覺得還不夠飽，又偷偷去拿${s.food.zh}`,
-          th: `ความจริงกินข้าวเย็นไปแล้ว แต่ยังรู้สึกไม่อิ่ม เลยแอบไปหยิบ${s.food.th}มากินเพิ่ม`,
-          ja: `もう夕飯は食べたのにまだ物足りなく感じて、さらに${s.food.ja}をこっそり持ち出した`
-        }
+        { tag: '好奇頑皮', zh: `我一時頑皮，拉着${r.zh}一起${s.act.zh}`, en: `feeling playful, I pulled ${r.en} into ${s.act.en}`, th: `ฉันซนเลยชวน${r.th}มา${s.act.th}` },
+        { tag: '天真幻想', zh: `我天真爛漫，提議和${r.zh}試試${s.act.zh}`, en: `innocently, I suggested ${s.act.en} with ${r.en}`, th: `ด้วยความไร้เดียงสา ฉันชวน${r.th}ลอง${s.act.th}` },
+        { tag: '無聊找樂', zh: `我覺得無聊，便約${r.zh}去${s.act.zh}`, en: `feeling bored, I asked ${r.en} to join ${s.act.en}`, th: `ฉันรู้สึกเบื่อ เลยชวน${r.th}ไป${s.act.th}` },
+        { tag: '古靈精怪', zh: `我機靈一動，想和${r.zh}比賽${s.act.zh}`, en: `a cheeky idea popped up: a contest of ${s.act.en} with ${r.en}`, th: `ฉันปิ๊งไอเดียชวน${r.th}แข่ง${s.act.th}` },
+        { tag: '興奮提議', zh: `我興奮不已，迫不及待和${r.zh}${s.act.zh}`, en: `excitedly, I couldn't wait to do ${s.act.en} with ${r.en}`, th: `ฉันตื่นเต้นมาก รีบชวน${r.th}มา${s.act.th}` },
+        { tag: '模仿大人', zh: `我年幼無知，愛裝模作樣拉${r.zh}${s.act.zh}`, en: `young and silly, I acted grown-up and got ${r.en} into ${s.act.en}`, th: `ตอนเด็กยังไม่ประสีประสา เลยชวน${r.th}ทำท่าทาง${s.act.th}` }
       ];
 
-      return {
-        timeOptions,
-        whoOptions,
-        placeOptions: placeByStory[s.id] || placeByStory.cup_noodle_bathroom,
-        causeOptions
-      };
+      return { timeOptions, whoOptions, placeOptions, causeOptions };
     }
 
-    // --- 輔助：根據第 2 關選的 whoRole，回傳精準稱謂（絕不前後矛盾！） ---
-    function getRoleNames() {
-      const role = gameState.whoRole;
-      if (role === 'dad_only') {
-        return {
-          targetZh: '爸爸', targetTh: 'คุณพ่อ', targetJa: 'お父さん',
-          partnerZh: '', partnerTh: '', partnerJa: '',
-          hasSister: false
-        };
-      }
-      if (role === 'mom_only' || role === 'mom_shower') {
-        return {
-          targetZh: '媽媽', targetTh: 'คุณแม่', targetJa: 'お母さん',
-          partnerZh: '', partnerTh: '', partnerJa: '',
-          hasSister: false
-        };
-      }
-      if (role === 'dad_sister' || role === 'sister_dad') {
-        return {
-          targetZh: '爸爸', targetTh: 'คุณพ่อ', targetJa: 'お父さん',
-          partnerZh: '和妹妹', partnerTh: 'กับน้องสาว', partnerJa: 'と妹',
-          hasSister: true
-        };
-      }
-      return {
-        targetZh: '爸爸', targetTh: 'คุณพ่อ', targetJa: 'お父さん',
-        partnerZh: '', partnerTh: '', partnerJa: '',
-        hasSister: false
-      };
-    }
-
-    // --- 第 3 關選項庫（片段一：先喜 — 根據故事食物與第 2 關人物動態生成！） ---
+    // --- 第 3 關：片段（一）好玩過程（每題 6 個選項） ---
     function getStep3Options() {
       const s = getCurrentStory();
-      const r = getRoleNames();
-      const place = getStep2Options().placeOptions[gameState.placeIdx]?.zh || '家裡';
+      const r = getCurrentRole();
 
-      // 3-1 貪吃動作（4個選項，呼應故事食物與是否有妹妹）
+      // 3-1 趣味動作（6選項）
       const p1ActionOptions = [
-        {
-          tag: '動作描寫＋四字詞',
-          zh: `我${r.partnerZh}躡手躡腳溜進${place}，迫不及待地拿出${s.food.zh}，狼吞虎嚥地大吃起來`,
-          th: `ฉัน${r.partnerTh}ย่องเข้าไปใน${place} รีบหยิบ${s.food.th}ออกมากินอย่างเอร็ดอร่อย`,
-          ja: `私${r.partnerJa}はそっと${place}に忍び込み、待ちきれずに${s.food.ja}を取り出してガツガツと食べ始めた`
-        },
-        {
-          tag: '課堂獨家細節',
-          zh: s.id === 'cup_noodle_bathroom'
-            ? `我${r.partnerZh}把電熱水壺搬進洗手間鎖上門煲水，還噴了香水蓋住味道，津津有味地吃着${s.food.zh}`
-            : s.id === 'cola_shower'
-            ? `我屏住呼吸，用手指一點一點慢慢拉開罐環，生怕發出聲響，一口氣喝光了${s.food.zh}`
-            : `我${r.partnerZh}小心翼翼躲在角落，眨眼間就把${s.food.zh}吃得一乾二淨`,
-          th: s.id === 'cup_noodle_bathroom'
-            ? `ฉัน${r.partnerTh}ยกกาต้มน้ำเข้าห้องน้ำล็อกประตูต้มน้ำ แถมฉีดน้ำหอมกลบกลิ่น แล้วกิน${s.food.th}อย่างอร่อย`
-            : s.id === 'cola_shower'
-            ? `ฉันกลั้นหายใจ ค่อยๆ ใช้นิ้วเปิดกระป๋องทีละนิดกลัวมีเสียง แล้วดื่ม${s.food.th}รวดเดียวจนหมด`
-            : `ฉัน${r.partnerTh}แอบหลบอยู่มุมห้อง แป๊บเดียวก็กิน${s.food.th}จนหมดเกลี้ยง`,
-          ja: s.id === 'cup_noodle_bathroom'
-            ? `私${r.partnerJa}はケトルをトイレに持ち込んで鍵をかけて湯を沸かし、香水で匂いを消して${s.food.ja}を味わった`
-            : s.id === 'cola_shower'
-            ? `私は息を潜め、音が鳴らないよう指で少しずつ缶を開け、${s.food.ja}を一気に飲み干した`
-            : `私${r.partnerJa}は隅にこっそり隠れ、あっという間に${s.food.ja}をペロリと平らげた`
-        },
-        {
-          tag: '感官美味描寫',
-          zh: `看着香噴噴的${s.food.zh}，我口水直流，一口接一口塞進嘴裡，吃得滿嘴都是`,
-          th: `เห็น${s.food.th}หอมกรุ่นจนน้ำลายไหล ฉันตักเข้าปากคำแล้วคำเล่าอย่างเอร็ดอร่อย`,
-          ja: `美味しそうな${s.food.ja}を見てよだれが垂れそうになり、次から次へと口に頬張った`
-        },
-        {
-          tag: '貪多不知足',
-          zh: `本來只想嘗一口，誰知越吃越上癮，結果我${r.partnerZh}把全部${s.food.zh}都掃光了`,
-          th: `ตอนแรกว่าจะชิมแค่คำเดียว แต่ยิ่งกินยิ่งอร่อย สุดท้ายฉัน${r.partnerTh}ก็กิน${s.food.th}จนหมดเรียบ`,
-          ja: `最初は一口だけのつもりが食べるほど止まらなくなり、結局私${r.partnerJa}で${s.food.ja}を全部平らげてしまった`
-        }
+        { tag: '興致勃勃', zh: `我興致勃勃地${s.act.zh}，玩得不亦樂乎`, en: `I eagerly tried ${s.act.en} and had a blast`, th: `ฉัน${s.act.th}อย่างตื่นเต้นและสนุกสุดๆ` },
+        { tag: '手舞足蹈', zh: `我一邊${s.act.zh}，一邊高興得手舞足蹈`, en: `I danced with joy while ${s.act.en}`, th: `ฉันทั้ง${s.act.th}ทั้งกระโดดโลดเต้นดีใจ` },
+        { tag: '嘻嘻哈哈', zh: `我和${r.zh}嘻嘻哈哈地${s.act.zh}，十分快活`, en: `${r.en} and I giggled happily while ${s.act.en}`, th: `ฉันกับ${r.th}หัวเราะคิกคักขณะ${s.act.th}` },
+        { tag: '裝模作樣', zh: `我裝模作樣地${s.act.zh}，自以為很厲害`, en: `I acted like a pro while ${s.act.en}`, th: `ฉันทำท่าเหมือนผู้เชี่ยวชาญตอน${s.act.th}` },
+        { tag: '全力以赴', zh: `我瞪大雙眼專心${s.act.zh}，動作十分滑稽`, en: `I focused wide-eyed on ${s.act.en}, looking silly`, th: `ฉันเบิกตากว้างตั้งใจ${s.act.th}ด้วยท่าทางตลกๆ` },
+        { tag: '活潑調皮', zh: `我活潑地跳來跳去，不停${s.act.zh}`, en: `I hopped around playfully, non-stop ${s.act.en}`, th: `ฉันกระโดดโลดเต้นไปมาและ${s.act.th}ไม่หยุด` }
       ];
 
-      // 3-2 躲避誰的視線／勸告細節（4個選項，精準使用第 2 關選的 targetZh：爸爸 或 媽媽！）
+      // 3-2 人物反應／對話（6選項，鎖定角色 r！）
       const p1WarnOptions = [
-        {
-          tag: `防備${r.targetZh}發現`,
-          zh: `為了不吵醒正在休息的${r.targetZh}，我連吞嚥和呼吸都放得極輕，生怕發出一點聲音`,
-          th: `เพื่อไม่ให้ปลุก${r.targetTh}ที่กำลังพักผ่อน ฉันทั้งกลืนและหายใจเบาที่สุดกลัวมีเสียงดัง`,
-          ja: `休んでいる${r.targetJa}を起こさないよう、飲み込む音も呼吸も極力小さくして物音を立てないようにした`
-        },
-        {
-          tag: `忘記${r.targetZh}叮嚀`,
-          zh: `其實${r.targetZh}早些時候才叮嚀過我「晚上千萬別貪吃」，我卻把${r.targetZh}的話當耳邊風`,
-          th: `ความจริงก่อนหน้านี้${r.targetTh}เพิ่งเตือนว่า “ตอนกลางคืนห้ามกินจุนะ” แต่ฉันกลับไม่ฟังคำเตือนของ${r.targetTh}`,
-          ja: `実はさっき${r.targetJa}から「夜は絶対に食べ過ぎちゃダメよ」と注意されたばかりなのに、聞き流してしまった`
-        },
-        {
-          tag: `假裝睡覺躲${r.targetZh}`,
-          zh: `中途突然聽到${r.targetZh}走動的聲音，嚇得我趕緊躲起來閉眼假裝睡覺，等${r.targetZh}離開又繼續偷吃`,
-          th: `ระหว่างนั้นได้ยินเสียง${r.targetTh}เดินผ่าน รีบซ่อนตัวหลับตาแกล้งหลับ พอ${r.targetTh}เดินไปก็แอบกินต่อ`,
-          ja: `途中で突然${r.targetJa}の足音が聞こえ、慌てて隠れて寝たふりをし、${r.targetJa}が去るとまた食べ続けた`
-        },
-        {
-          tag: `妹妹勸阻／共犯`,
-          zh: r.hasSister
-            ? `妹妹小聲提醒我：「別吃太多，小心被${r.targetZh}發現！」我卻擺擺手說沒關係`
-            : `我把包裝袋藏在最隱蔽的角落，以為做得天衣無縫，${r.targetZh}絕對不會察覺`,
-          th: r.hasSister
-            ? `น้องสาวกระซิบเตือนว่า “อย่ากินเยอะ เดี๋ยว${r.targetTh}จับได้!” แต่ฉันโบกมือบอกว่าไม่เป็นไร`
-            : `ฉันซ่อนห่อขนมไว้ในมุมที่มิดชิดที่สุด คิดว่าแนบเนียนจน${r.targetTh}ไม่มีทางรู้`,
-          ja: r.hasSister
-            ? `妹が小声で「食べ過ぎると${r.targetJa}にバレるよ！」と注意したが、私は平気だと手を振った`
-            : `私はゴミや袋を一番目立たない隅に隠し、これなら${r.targetJa}に絶対気づかれないと思った`
-        }
+        { tag: `${r.zh}提醒`, zh: `${r.zh}笑說：「小心點，別弄亂了！」`, en: `${r.en} laughed, "Be careful, don't make a mess!"`, th: `${r.th}หัวเราะแล้วบอกว่า “ระวังหน่อยนะ อย่าทำเลอะล่ะ!”` },
+        { tag: `${r.zh}拍手`, zh: `${r.zh}拍手大讚：「你真古靈精怪！」`, en: `${r.en} clapped and said, "You're so cheeky!"`, th: `${r.th}ปรบมือชมว่า “เธอช่างแสนซนจริงๆ!”` },
+        { tag: `${r.zh}陪玩`, zh: `${r.zh}陪我嘻皮笑臉，也跟着一起玩`, en: `${r.en} grinned playfully and joined right in`, th: `${r.th}ยิ้มร่าแล้วมาร่วมเล่นสนุกด้วยกัน` },
+        { tag: `${r.zh}加油`, zh: `${r.zh}在旁喊加油，我們充滿歡聲笑語`, en: `${r.en} cheered beside me amidst our laughter`, th: `${r.th}เชียร์อยู่ข้างๆ เต็มไปด้วยเสียงหัวเราะ` },
+        { tag: `${r.zh}好奇`, zh: `${r.zh}瞪大眼睛問：「這樣真的行嗎？」`, en: `${r.en} asked wide-eyed, "Will that really work?"`, th: `${r.th}ตาโตแล้วถามว่า “ทำแบบนี้จะได้ผลจริงเหรอ?”` },
+        { tag: `${r.zh}逗樂`, zh: `${r.zh}被我逗得樂不可支，笑彎了腰`, en: `${r.en} was so amused and doubled over laughing`, th: `${r.th}ขำจนตัวงอกับท่าทางของฉัน` }
       ];
 
-      // 3-3 得意心理獨白（4個選項，同樣精準呼應 targetZh！）
+      // 3-3 心理獨白（6選項）
       const p1ThoughtOptions = [
-        {
-          tag: '僥倖心理獨白',
-          zh: `「哈哈！我的動作這麼輕巧，${r.targetZh}一定不會發現我偷吃了${s.food.zh}！」`,
-          th: `“ฮ่าๆ! เราทำเงียบขนาดนี้ ${r.targetTh}ไม่มีทางรู้แน่ว่าเราแอบกิน${s.food.th}!”`,
-          ja: `「ははっ！こんなに静かに食べているんだから、${r.targetJa}に${s.food.ja}を隠れ食いしたなんてバレるはずがない！」`
-        },
-        {
-          tag: '滿足得意獨白',
-          zh: `「${s.food.zh}實在太美味了！趁現在沒人管，多吃一點也沒關係吧！」`,
-          th: `“${s.food.th}อร่อยสุดๆ ไปเลย! ตอนนี้ไม่มีใครห้าม กินเยอะอีกหน่อยคงไม่เป็นไรหรอก!”`,
-          ja: `「${s.food.ja}は最高に美味しい！今なら誰にも怒られないし、もう少し食べても平気だろう！」`
-        },
-        {
-          tag: '自以為聰明獨白',
-          zh: `「我真是太機靈了，神不知鬼不覺就享受了一頓大餐，真痛快！」`,
-          th: `“เราฉลาดจริงๆ แอบกินมื้อใหญ่ได้โดยไม่มีใครรู้ สะใจสุดๆ!”`,
-          ja: `「僕って本当に頭がいいな、誰にも気づかれずに豪華な夜食を楽しめるなんて最高だ！」`
-        },
-        {
-          tag: '不聽勸告獨白',
-          zh: `「${r.targetZh}總是小題大做，我的身體這麼強壯，吃多一點怎麼會生病呢？」`,
-          th: `“${r.targetTh}ชอบกังวลเกินเหตุ ร่างกายเราแข็งแรงขนาดนี้ กินเยอะแค่นี้ไม่ป่วยหรอก!”`,
-          ja: `「${r.targetJa}は心配しすぎだよ、僕の体はこんなに丈夫なんだから、ちょっと食べ過ぎたくらいで病気になるわけがない！」`
-        }
+        { tag: '得意洋洋', zh: '「哈哈，我真是世上最聰明的小孩！」', en: '"Haha, I am the smartest kid in the world!"', th: '“ฮ่าๆ ฉันเป็นเด็กที่ฉลาดที่สุดในโลกเลย!”' },
+        { tag: '滿心期待', zh: '「太好玩了，一定會成功！」', en: '"So fun! It will definitely work!"', th: '“สนุกจัง ต้องสำเร็จแน่นอน!”' },
+        { tag: '自以為是', zh: '「這點小事，完全難不倒我！」', en: '"This is easy, nothing can stop me!"', th: '“เรื่องแค่นี้ สบายมากสำหรับฉัน!”' },
+        { tag: '興奮不已', zh: '「我的心快要飛到雲彩裡去了！」', en: '"My heart is floating up to the clouds!"', th: '“ดีใจจนใจจะลอยขึ้นไปบนก้อนเมฆแล้ว!”' },
+        { tag: '天真幻想', zh: '「原來大人的世界這麼有趣！」', en: '"The grown-up world is so much fun!"', th: '“โลกของผู้ใหญ่สนุกแบบนี้นี่เอง!”' },
+        { tag: '快活無比', zh: '「今天真是我最快樂的一天！」', en: '"Today is the happiest day ever!"', th: '“วันนี้เป็นวันที่ฉันมีความสุขที่สุดเลย!”' }
       ];
 
       return { p1ActionOptions, p1WarnOptions, p1ThoughtOptions };
     }
 
-    // --- 第 4 關選項庫（片段二：後悲 — 根據食物冷熱＋第 2 關人物動態生成！） ---
+    // --- 第 4 關：片段（二）高潮轉折與結局（每題 6 個選項） ---
     function getStep4Options() {
       const s = getCurrentStory();
-      const r = getRoleNames();
-      const isCold = (s.id === 'cola_shower' || s.id === 'sushi_icecream');
+      const r = getCurrentRole();
 
-      // 4-1 身體不適症狀（4個選項，冷飲雪糕 vs 熱麵甜食不同症狀）
-      const p2SymptomOptions = isCold ? [
-        {
-          tag: '受寒絞痛',
-          zh: `不到半小時，冰冷的${s.food.zh}讓腸胃受寒痙攣，肚子一陣陣劇烈絞痛，還不停反胃`,
-          th: `ไม่ถึงครึ่งชั่วโมง ความเย็นของ${s.food.th}ทำให้กระเพาะหดเกร็ง ปวดท้องบิดอย่างรุนแรงและคลื่นไส้`,
-          ja: `30分もしないうちに冷たい${s.food.ja}で胃腸が冷えて痙攣し、お腹がキリキリ痛み吐き気が襲ってきた`
-        },
-        {
-          tag: '上吐下瀉發燒',
-          zh: `生冷食物嚴重刺激腸胃，半夜我開始上吐下瀉，甚至發起低燒，頭重腳輕`,
-          th: `ของเย็นจัดระคายเคืองกระเพาะอย่างหนัก กลางดึกฉันเริ่มอาเจียนและท้องเสีย แถมมีไข้ต่ำๆ เวียนหัว`,
-          ja: `冷たい物が胃腸を強く刺激し、夜中に嘔吐と下痢が始まり、微熱まで出てふらふらになった`
-        },
-        {
-          tag: '喉嚨痛兼腹痛',
-          zh: `冰涼氣泡與寒氣刺激喉嚨和腸胃，我不但肚子痛得像刀割，喉嚨也又乾又痛、咳嗽不止`,
-          th: `ความเย็นจัดทำร้ายทั้งลำคอและกระเพาะ นอกจากจะปวดท้องเหมือนมีดบาดแล้ว ยังเจ็บคอและไอไม่หยุด`,
-          ja: `冷たさが喉と胃腸を直撃し、お腹が切り裂かれるように痛いだけでなく、喉も痛んで咳が止まらなくなった`
-        },
-        {
-          tag: '腹脹冷汗',
-          zh: `過量冰冷食物積在胃裡消化不良，腹部脹得像皮球，一陣陣寒意湧上心頭`,
-          th: `ของเย็นจำนวนมากไม่ย่อยในกระเพาะ ท้องอืดตึงเหมือนลูกบอล และรู้สึกหนาวสั่นไปทั้งตัว`,
-          ja: `大量の冷たい物が胃に溜まって消化不良を起こし、お腹が風船のように張って寒気が走った`
-        }
-      ] : [
-        {
-          tag: '劇烈胃痛反胃',
-          zh: `過量吃下${s.food.zh}後消化不良，沒多久胃部便劇烈絞痛，胃酸直往上湧、反胃想吐`,
-          th: `กิน${s.food.th}มากเกินไปจนอาหารไม่ย่อย ไม่นานก็ปวดท้องบิดอย่างรุนแรง กรดไหลย้อนและคลื่นไส้อยากอาเจียน`,
-          ja: `${s.food.ja}を食べ過ぎて消化不良を起こし、まもなく胃が激しく痛み、胃酸がこみ上げて吐き気がした`
-        },
-        {
-          tag: '腹痛上吐下瀉',
-          zh: `油膩重口味的${s.food.zh}令腸胃不勝負荷，我肚子痛得翻江倒海，連跑了好幾趟洗手間`,
-          th: `${s.food.th}ที่มันและรสจัดทำให้กระเพาะรับไม่ไหว ฉันปวดท้องปั่นป่วนจนต้องวิ่งเข้าห้องน้ำหลายรอบ`,
-          ja: `脂っこくて味の濃い${s.food.ja}で胃腸が悲鳴を上げ、お腹が激しく痛んで何度もトイレに駆け込んだ`
-        },
-        {
-          tag: '胃脹頭暈作嘔',
-          zh: `吃得太急太多，胃部脹痛難當，頓時感到天旋地轉、噁心作嘔，連站也站不穩`,
-          th: `กินเร็วและเยอะเกินไปจนปวดแน่นท้องอย่างหนัก รู้สึกบ้านหมุนติ้วและคลื่นไส้จนแทบยืนไม่อยู่`,
-          ja: `急いで食べ過ぎたため胃が張り裂けそうに痛み、目が回るようなめまいと吐き気で立っていられなくなった`
-        },
-        {
-          tag: '胃痛兼牙痛',
-          zh: `半夜吃完沒刷牙又暴食，凌晨時我被一陣劇烈的胃痛和牙痛驚醒，嘴巴又苦又酸`,
-          th: `กินแล้วไม่แปรงฟันแถมกินจุเกินขนาด ตอนเช้ามืดฉันสะดุ้งตื่นเพราะปวดท้องและปวดฟันอย่างรุนแรง`,
-          ja: `食べ過ぎたうえ歯も磨かず寝たため、明け方に激しい胃痛と歯痛で目が覚め、口の中が苦くて酸っぱかった`
-        }
+      // 4-1 趣事高潮（6選項，緊扣故事專屬 twist！）
+      const p2TwistOptions = [
+        { tag: '故事專屬高潮', zh: `我太得意，竟然${s.twist.zh}`, en: `getting carried away, I ${s.twist.en}`, th: `ฉันเพลินไปหน่อยเลย${s.twist.th}` },
+        { tag: '突然出糗', zh: `一不小心，我${s.twist.zh}`, en: `accidentally, I ${s.twist.en}`, th: `ไม่ทันระวัง ฉันก็${s.twist.th}` },
+        { tag: '樂極生趣', zh: `正玩得痛快，誰料${s.twist.zh}`, en: `right at the peak of fun, I ${s.twist.en}`, th: `กำลังสนุกเต็มที่ จู่ๆ ก็${s.twist.th}` },
+        { tag: '亂作一團', zh: `現場亂作一團，我竟然${s.twist.zh}`, en: `chaos broke out and I ${s.twist.en}`, th: `วุ่นวายไปหมด แถมฉันยัง${s.twist.th}` },
+        { tag: '手忙腳亂', zh: `我手忙腳亂，結果${s.twist.zh}`, en: `I fumbled around and ${s.twist.en}`, th: `ฉันทำตัวไม่ถูก สุดท้ายเลย${s.twist.th}` },
+        { tag: '搞笑收場', zh: `短短一瞬間，我便${s.twist.zh}`, en: `in a split second, I ${s.twist.en}`, th: `แค่พริบตาเดียว ฉันก็${s.twist.th}` }
       ];
 
-      // 4-2 五官神態與動作（4個選項，強化課堂寫作技巧：五官＋動作＋情感）
+      // 4-2 五官神態與動作（6選項）
       const p2ReactionOptions = [
-        {
-          tag: '五官＋動作描寫',
-          zh: `我痛苦得眉頭緊皺、臉色蒼白，雙手緊緊捂着肚子在床上翻來覆去，額頭冒出豆大的冷汗`,
-          th: `ฉันทรมานจนขมวดคิ้วแน่น หน้าซีดเผือด เอามือกุมท้องนอนพลิกไปมาบนเตียง เหงื่อเย็นไหลซึมหน้าผาก`,
-          ja: `私は苦しくて眉をひそめ顔面蒼白になり、両手でお腹を押さえてベッドで転げ回り、額に大粒の冷や汗をかいた`
-        },
-        {
-          tag: '蜷縮發抖描寫',
-          zh: `我抱緊肚子蜷縮在被窩裡，嘴唇發白、牙齒打顫，難受得眼淚都掉了下來`,
-          th: `ฉันกอดท้องขดตัวอยู่ในผ้าห่ม ริมฝีปากซีด ตัวสั่นเทา ทรมานจนน้ำตาไหลออกมา`,
-          ja: `私はお腹を抱えて布団の中で丸くなり、唇は真っ白で歯がガタガタ震え、苦しくて涙がこぼれた`
-        },
-        {
-          tag: '奔向洗手間嘔吐',
-          zh: `我捂着嘴巴衝進洗手間劇烈嘔吐，雙腿發軟、面如土色，連說話的力氣也沒有`,
-          th: `ฉันเอามือปิดปากวิ่งเข้าห้องน้ำอาเจียนอย่างหนัก ขาอ่อนแรง หน้าซีดไร้สีเลือด แทบไม่มีแรงพูด`,
-          ja: `私は口を押さえてトイレに駆け込み激しく嘔吐し、足がふらふらで顔面蒼白になり、話す力もなかった`
-        },
-        {
-          tag: '痛苦呻吟自責',
-          zh: `我雙眼布滿血絲、額頭冷汗直流，捂着咕嚕作響的肚子痛苦呻吟，心裡後悔極了`,
-          th: `ตาแดงก่ำ เหงื่อเย็นไหลท่วมหน้าผาก เอามือกุมท้องที่ร้องโครกครากครวญครางด้วยความเจ็บปวดและเสียใจ`,
-          ja: `目は充血し額から冷や汗が流れ、グルグル鳴るお腹を押さえて苦しそうにうめき、心から後悔した`
-        }
+        { tag: '目瞪口呆', zh: '我嚇得目瞪口呆，臉紅得像蘋果', en: 'I froze in shock, blushing like an apple', th: 'ฉันตกใจตาค้าง หน้าแดงเหมือนแอปเปิ้ล' },
+        { tag: '撓頭傻笑', zh: '我尷尬地撓撓頭，忍不住傻笑起來', en: 'I scratched my head and giggled awkwardly', th: 'ฉันเกาหัวเขินๆ แล้วหัวเราะแห้งๆ ออกมา' },
+        { tag: '哈哈大笑', zh: '我眨眨眼，接着也跟着哈哈大笑', en: 'I blinked, then burst out laughing too', th: 'ฉันกะพริบตาปริบๆ แล้วก็หัวเราะตามออกมา' },
+        { tag: '扮鬼臉', zh: '我吐了吐舌頭，模樣十分滑稽可笑', en: 'I stuck out my tongue, looking hilarious', th: 'ฉันแลบลิ้นทำหน้าทะเล้น ดูตลกมาก' },
+        { tag: '愣在原地', zh: '我愣在原地瞪大雙眼，不知所措', en: 'I stood frozen with wide eyes', th: 'ฉันยืนอึ้งตาโต ทำอะไรไม่ถูก' },
+        { tag: '拍手笑翻', zh: '我笑得前俯後仰，眼淚都流出來了', en: 'I laughed so hard tears came out', th: 'ฉันหัวเราะจนตัวงอ น้ำตาไหลเลย' }
       ];
 
-      // 4-3 家人發現與結果（4個選項，100% 鎖定第 2 關的 targetZh，絕對不會爸爸變媽媽！）
-      const p2ResultOptions = [
-        {
-          tag: `${r.targetZh}發現並送醫`,
-          zh: `${r.targetZh}聽到我的呻吟聲趕來查看，一眼就發現了${s.food.zh}的包裝，立刻帶我去看醫生吃苦藥`,
-          th: `${r.targetTh}ได้ยินเสียงร้องครางจึงรีบมาดู และเห็นซองของ${s.food.th}ทันที จึงพาไปหาหมอและกินยาขมๆ`,
-          ja: `${r.targetJa}が私のうめき声を聞いて駆けつけ、${s.food.ja}の空き袋をすぐに見つけ、病院へ連れて行かれ苦い薬を飲んだ`
-        },
-        {
-          tag: `${r.targetZh}徹夜照顧`,
-          zh: `${r.targetZh}發現我偷吃生病後又氣又心疼，徹夜照顧我喝溫水、量體溫，害我整天只能吃白粥`,
-          th: `${r.targetTh}รู้ว่าฉันแอบกินจนป่วยทั้งโกรธทั้งสงสาร คอยดูแลเช็ดตัวและวัดไข้ทั้งคืน วันรุ่งขึ้นฉันกินได้แค่ข้าวต้ม`,
-          ja: `${r.targetJa}は隠れ食いで病気になった私に呆れつつ心配し、一晩中看病してくれ、翌日は白がゆしか食べられなかった`
-        },
-        {
-          tag: `錯過心愛活動`,
-          zh: `${r.targetZh}連夜帶我去診所打針吃藥，我足足在床上躺了兩天，連最期待的學校活動也去不了`,
-          th: `${r.targetTh}รีบพาไปคลินิกฉีดยาและกินยากลางดึก ฉันต้องนอนซมอยู่บนเตียงถึงสองวัน อดไปกิจกรรมที่โรงเรียน`,
-          ja: `${r.targetJa}に夜中に診療所へ連れて行かれ点滴と薬を受け、2日間寝込んで楽しみにしていた学校行事にも行けなかった`
-        },
-        {
-          tag: `誠實向${r.targetZh}認錯`,
-          zh: r.hasSister
-            ? `妹妹嚇得趕緊叫醒${r.targetZh}，我羞愧地向${r.targetZh}坦白認錯，並在${r.targetZh}陪同下看醫生治療`
-            : `我忍痛向${r.targetZh}坦白偷吃經過，${r.targetZh}雖然責備我不聽話，但還是馬上帶我去醫院診治`,
-          th: r.hasSister
-            ? `น้องสาวตกใจรีบไปปลุก${r.targetTh} ฉันสารภาพผิดกับ${r.targetTh}ด้วยความละอายใจ และไปหาหมอกับ${r.targetTh}`
-            : `ฉันทนปวดไม่ไหวจึงสารภาพความจริงกับ${r.targetTh} แม้${r.targetTh}จะดุที่ไม่เชื่อฟัง แต่ก็รีบพาไปหาหมอทันที`,
-          ja: r.hasSister
-            ? `妹が驚いて${r.targetJa}を起こし、私は恥ずかしさでいっぱいで${r.targetJa}に謝り、病院へ連れて行ってもらった`
-            : `私は痛みに耐えきれず${r.targetJa}に正直に打ち明け、叱られながらもすぐに病院へ連れて行ってもらった`
-        }
+      // 4-3 歡笑結局（6選項，鎖定角色 r！）
+      const p2EndingOptions = [
+        { tag: `${r.zh}拍照留念`, zh: `${r.zh}忍俊不禁，連忙拍下這張搞笑照片`, en: `${r.en} couldn't help laughing and snapped a funny photo`, th: `${r.th}กลั้นขำไม่อยู่ รีบถ่ายรูปตลกๆ นี้เก็บไว้` },
+        { tag: `${r.zh}幫忙清理`, zh: `${r.zh}邊笑邊幫我清理，場面溫馨又搞笑`, en: `${r.en} laughed while helping me clean up warmly`, th: `${r.th}หัวเราะไปช่วยฉันทำความสะอาดไปอย่างอบอุ่น` },
+        { tag: `${r.zh}捧腹大笑`, zh: `${r.zh}笑得合不攏嘴，說我真是開心果`, en: `${r.en} laughed endlessly and called me a little clown`, th: `${r.th}หัวเราะไม่หยุดและบอกว่าฉันเป็นตัวสร้างเสียงหัวเราะ` },
+        { tag: `一起收拾`, zh: `我和${r.zh}相視大笑，一起收拾好殘局`, en: `${r.en} and I laughed together and cleaned up the mess`, th: `ฉันกับ${r.th}มองหน้ากันแล้วหัวเราะ ช่วยกันเก็บกวาด` },
+        { tag: `溫馨擁抱`, zh: `${r.zh}溫柔地摸摸我的頭，笑聲迴盪四周`, en: `${r.en} gently patted my head as laughter echoed`, th: `${r.th}ลูบหัวฉันเบาๆ ท่ามกลางเสียงหัวเราะ` },
+        { tag: `全家歡笑`, zh: `${r.zh}把這件趣事告訴大家，逗得全家大笑`, en: `${r.en} told everyone and made the whole family laugh`, th: `${r.th}เล่าเรื่องนี้ให้ทุกคนฟังจนหัวเราะกันทั้งบ้าน` }
       ];
 
-      return { p2SymptomOptions, p2ReactionOptions, p2ResultOptions };
+      return { p2TwistOptions, p2ReactionOptions, p2EndingOptions };
     }
 
-    // --- 第 5 關選項庫（總結段：道理反思 ＋ 以後做法，各 4 個選項） ---
+    // --- 第 5 關：總結段（每題 6 個選項） ---
     function getStep5Options() {
-      const s = getCurrentStory();
-      const r = getRoleNames();
+      const r = getCurrentRole();
 
+      // 5-1 個人感受／道理反思（6選項）
       const moralOptions = [
-        {
-          tag: '引用諺語「病從口入」',
-          zh: `「病從口入」，吃東西必須懂得節制與適可而止，暴飲暴食只會嚴重傷害腸胃健康`,
-          th: `“โรคภัยเข้าทางปาก” การกินต้องรู้จักประมาณตนและพอดี การกินจุเกินขนาดมีแต่จะทำร้ายกระเพาะอาหาร`,
-          ja: `「病は口より入る」と言う通り、食事は節度を守り腹八分目にすべきで、暴飲暴食は胃腸をひどく傷つけると悟った`
-        },
-        {
-          tag: '明白家人苦心',
-          zh: `${r.targetZh}平日的叮嚀都是為了我的健康着想，貪一時口腹之欲、暗中違規最終受苦的還是自己`,
-          th: `คำเตือนของ${r.targetTh}ล้วนหวังดีต่อสุขภาพของเรา การตามใจปากและแอบทำผิดกฎ สุดท้ายคนที่ทรมานก็คือตัวเราเอง`,
-          ja: `${r.targetJa}の普段の注意はすべて私の健康を思ってのことだと分かり、目先の欲でルールを破れば結局自分が苦しむと学んだ`
-        },
-        {
-          tag: '健康比貪吃重要',
-          zh: `美食雖然誘人，但健康的身體才是最寶貴的財富，千萬不能因為嘴饞而拿身體開玩笑`,
-          th: `แม้อาหารอร่อยจะน่าดึงดูดใจ แต่สุขภาพที่แข็งแรงคือสมบัติล้ำค่าที่สุด ไม่ควรเอาสุขภาพมาเสี่ยงเพราะความตะกละ`,
-          ja: `美味しい食べ物は魅力的だが、健康な体こそが一番の宝物であり、食い意地のために体を壊してはいけないと痛感した`
-        },
-        {
-          tag: '自律與誠實反思',
-          zh: `做人要誠實自律，學會克制自己的慾望，不在半夜或背着家人偷偷暴食${s.food.zh}`,
-          th: `คนเราต้องซื่อสัตย์และมีวินัย รู้จักหักห้ามใจ ไม่แอบกิน${s.food.th}เกินขนาดลับหลังครอบครัวอีก`,
-          ja: `人は正直で自分を律することが大切であり、欲望を抑えて家族に隠れて${s.food.ja}を暴食してはいけないと反省した`
-        }
+        { tag: '無憂無慮', zh: '雖然當時幼稚可笑，但童年真是無憂無慮', en: 'Though silly back then, childhood was so carefree', th: 'แม้ตอนนั้นจะดูไร้เดียงสา แต่วัยเด็กช่างไร้กังวลจริงๆ' },
+        { tag: '珍惜回憶', zh: '這件趣事就像閃亮珍珠，值得我永遠珍藏', en: 'This funny memory shines like a pearl to treasure forever', th: 'ความทรงจำนี้เหมือนไข่มุกที่ควรค่าแก่การเก็บรักษาตลอดไป' },
+        { tag: '感謝陪伴', zh: `感謝${r.zh}陪我度過這段快樂幸福的時光`, en: `Thankful to ${r.en} for sharing such a joyful time`, th: `ขอบคุณ${r.th}ที่อยู่เคียงข้างในช่วงเวลาแห่งความสุขนี้` },
+        { tag: '長大懂事', zh: '現在我長大懂事了，回想起來格外甜蜜', en: 'Now that I am older, recalling it feels extra sweet', th: 'ตอนนี้ฉันโตขึ้นแล้ว พอนึกย้อนกลับไปก็รู้สึกอบอุ่นใจมาก' },
+        { tag: '歡樂童年', zh: '童年的每一天都充滿歡笑，令人回味無窮', en: 'Every day of childhood was full of laughter and joy', th: 'ทุกวันในวัยเด็กเต็มไปด้วยเสียงหัวเราะที่น่าจดจำ' },
+        { tag: '天真可貴', zh: '那份年幼無知的天真，是最寶貴的禮物', en: 'That innocent silliness is the most precious gift', th: 'ความไร้เดียงสาในวัยเด็กคือของขวัญที่ล้ำค่าที่สุด' }
       ];
 
+      // 5-2 期盼／童心（6選項）
       const futureOptions = [
-        {
-          tag: '飲食有節制',
-          zh: `以後吃飯我一定做到「三餐定時、八分飽就停口」，再也不貪吃過量零食`,
-          th: `ต่อไปฉันจะกินอาหารให้ตรงเวลาและพออิ่ม ไม่ตะกละกินขนมเกินขนาดอีกต่อไป`,
-          ja: `これからは三食規則正しく腹八分目を心がけ、お菓子や夜食を食べ過ぎることは二度としない`
-        },
-        {
-          tag: `聽從${r.targetZh}教導`,
-          zh: `以後我會乖乖聽從${r.targetZh}的健康提醒，想吃東西前先問准大人，做個誠實乖巧的孩子`,
-          th: `ต่อไปฉันจะเชื่อฟังคำเตือนของ${r.targetTh} ขออนุญาตผู้ใหญ่ก่อนกินเสมอ และเป็นเด็กดีที่ซื่อสัตย์`,
-          ja: `これからは${r.targetJa}の健康へのアドバイスを素直に聞き、食べる前に必ず確認する正直な子になる`
-        },
-        {
-          tag: '早睡早起不熬夜',
-          zh: `以後我一定養成早睡早起的好習慣，晚上按時上床睡覺，絕不在深夜偷偷爬起來找東西吃`,
-          th: `ต่อไปฉันจะฝึกนิสัยเข้านอนแต่หัวค่ำ ตื่นเช้า และไม่แอบลุกขึ้นมาหาของกินกลางดึกอีกเด็ดขาด`,
-          ja: `これからは早寝早起きの習慣をつけ、夜は時間通りに寝て、深夜にこっそり起きて食べ物を探すことは絶対にしない`
-        },
-        {
-          tag: '愛惜腸胃健康',
-          zh: `以後我會好好愛惜自己的腸胃，少吃生冷油膩的食物，讓${r.targetZh}不再為我擔心`,
-          th: `ต่อไปฉันจะดูแลกระเพาะอาหารให้ดี ลดของเย็นจัดและของมัน เพื่อไม่ให้${r.targetTh}ต้องเป็นห่วงอีก`,
-          ja: `これからは自分の胃腸を大切にし、冷たい物や脂っこい物を控え、${r.targetJa}に二度と心配をかけないようにする`
-        }
+        { tag: '永保童心', zh: '我希望長大後也能永保這份純真的童心', en: 'I hope to keep this pure childlike heart forever', th: 'ฉันหวังว่าจะรักษาความสดใสแบบเด็กๆ นี้ไว้ตลอดไป' },
+        { tag: '再創歡笑', zh: `盼望日後能和${r.zh}一起創造更多歡樂回憶`, en: `I hope to create more happy memories with ${r.en}`, th: `หวังว่าจะได้สร้างความทรงจำดีๆ กับ${r.th}อีกมากมาย` },
+        { tag: '快樂成長', zh: '願這份歡聲笑語永遠陪伴我快樂成長', en: 'May this laughter always accompany me as I grow', th: 'ขอให้เสียงหัวเราะนี้อยู่คู่กับการเติบโตของฉันตลอดไป' },
+        { tag: '分享趣事', zh: '以後我也要把這件趣事分享給更多人聽', en: 'I want to share this funny story with more people', th: 'ต่อไปฉันอยากเล่าเรื่องตลกนี้ให้คนอื่นฟังอีก' },
+        { tag: '珍惜當下', zh: '我要好好珍惜與家人朋友相處的每一刻', en: 'I will cherish every moment with family and friends', th: 'ฉันจะเห็นคุณค่าของทุกช่วงเวลาที่ได้อยู่กับคนรัก' },
+        { tag: '留戀童年', zh: '這段天真爛漫的童年，我永遠都不會忘記', en: 'I will never forget this innocent, wonderful childhood', th: 'ฉันจะไม่มีวันลืมวัยเด็กที่แสนสดใสนี้เลย' }
       ];
 
       return { moralOptions, futureOptions };
     }
 
-    // --- 第 6 關選項庫（引子段：倒敍法 物 → 事 → 情，各 4 個選項，首尾呼應！） ---
+    // --- 第 6 關：引子段（倒敍法：物 → 事 → 情，每題 6 個選項） ---
     function getStep6Options() {
       const s = getCurrentStory();
-      const r = getRoleNames();
+      const r = getCurrentRole();
 
-      // 6-1 物（4個選項，直接連結故事物件與醫療物件）
+      // 6-1 物（6選項，第一個永遠是該故事的專屬物件！）
       const introObjOptions = [
-        {
-          tag: '故事專屬物件',
-          zh: s.obj.zh,
-          th: s.obj.th,
-          ja: s.obj.ja
-        },
-        {
-          tag: '食物包裝回憶',
-          zh: `超市貨架上的${s.food.zh}`,
-          th: `${s.food.th}บนชั้นวางในซูเปอร์มาร์เก็ต`,
-          ja: `スーパーの棚に並ぶ${s.food.ja}`
-        },
-        {
-          tag: '藥櫃藥水瓶',
-          zh: `藥箱裡那瓶苦澀的腸胃藥水`,
-          th: `ขวดยาแก้ปวดท้องรสขมในตู้ยา`,
-          ja: `薬箱にあるあの苦い胃腸薬の瓶`
-        },
-        {
-          tag: '家中冰箱門',
-          zh: `家裡那台白色的電冰箱`,
-          th: `ตู้เย็นสีขาวเครื่องนั้นในบ้าน`,
-          ja: `家にあるあの白い冷蔵庫`
-        }
+        { tag: '故事專屬物件', zh: s.obj.zh, en: s.obj.en, th: s.obj.th },
+        { tag: '童年相簿', zh: '書架上那本舊相簿', en: 'that old photo album on the shelf', th: 'อัลบั้มรูปเก่าบนชั้นหนังสือ' },
+        { tag: '搞笑照片', zh: '桌上一張童年搞笑照片', en: 'a funny childhood photo on the desk', th: 'รูปถ่ายตลกๆ สมัยเด็กบนโต๊ะ' },
+        { tag: '玩具百寶箱', zh: '房間裡的舊玩具箱', en: 'the old toy box in my room', th: 'กล่องของเล่นเก่าในห้อง' },
+        { tag: '兒時日記', zh: '抽屜裡的童年畫冊', en: 'the childhood sketchbook in the drawer', th: 'สมุดวาดรูปสมัยเด็กในลิ้นชัก' },
+        { tag: '窗外風景', zh: '窗外快樂玩耍的小孩', en: 'kids playing happily outside', th: 'เด็กๆ ที่กำลังเล่นอย่างสนุกนอกหน้าต่าง' }
       ];
 
-      // 6-2 事（4個選項，總括整個貪吃生病事件）
+      // 6-2 事（6選項，緊扣故事標題與鎖定角色 r）
       const introEventOptions = [
-        {
-          tag: '點明偷吃生病',
-          zh: `那次我偷偷貪吃${s.food.zh}結果肚子劇痛生病的經歷`,
-          th: `เหตุการณ์ครั้งนั้นที่ฉันแอบกิน${s.food.th}จนปวดท้องอย่างหนักและป่วย`,
-          ja: `あの時こっそり${s.food.ja}を食べ過ぎて激しい腹痛で病気になった経験`
-        },
-        {
-          tag: `連累${r.targetZh}擔心`,
-          zh: `那次我不聽${r.targetZh}勸告、貪吃${s.food.zh}而進醫院看病的情形`,
-          th: `เหตุการณ์ครั้งนั้นที่ฉันไม่เชื่อฟัง${r.targetTh} แอบกิน${s.food.th}จนต้องไปหาหมอ`,
-          ja: `あの時${r.targetJa}の忠告を聞かずに${s.food.ja}を食べ過ぎて病院へ行った出来事`
-        },
-        {
-          tag: '先喜後悲教訓',
-          zh: `那次因為一時嘴饞偷吃${s.food.zh}、樂極生悲的慘痛教訓`,
-          th: `บทเรียนราคาแพงครั้งนั้นที่ฉันตามใจปากแอบกิน${s.food.th}จนเกิดเรื่อง`,
-          ja: `あの時つい食い意地を張って${s.food.ja}を隠れ食いし、痛い目を見た苦い教訓`
-        },
-        {
-          tag: '自討苦吃回憶',
-          zh: `那次我暴飲暴食${s.food.zh}後上吐下瀉、自討苦吃的往事`,
-          th: `เรื่องราวในครั้งนั้นที่ฉันกิน${s.food.th}เกินขนาดจนอาเจียนและท้องเสีย`,
-          ja: `あの時${s.food.ja}を暴飲暴食して嘔吐下痢になり、自業自得で苦しんだ出来事`
-        }
+        { tag: '點明趣事', zh: `那次和${r.zh}${s.act.zh}的趣事`, en: `that funny time ${s.act.en} with ${r.en}`, th: `เรื่องตลกตอน${s.act.th}กับ${r.th}` },
+        { tag: '點明高潮', zh: `小時候${s.twist.zh}的搞笑經歷`, en: `that hilarious time I ${s.twist.en}`, th: `ประสบการณ์ตลกๆ ตอนฉัน${s.twist.th}` },
+        { tag: '童年頑皮', zh: `兒時和${r.zh}一起頑皮玩耍的情形`, en: `playing mischievously with ${r.en} as a kid`, th: `ตอนเล่นซนกับ${r.th}สมัยเด็ก` },
+        { tag: '難忘往事', zh: `那次幼稚可笑的童年往事`, en: `that silly and funny childhood memory`, th: `ความทรงจำสุดเปิ่นในวัยเด็กครั้งนั้น` },
+        { tag: '歡笑時刻', zh: `那次和${r.zh}鬧出笑話的快樂時光`, en: `that joyful time ${r.en} and I had a funny mishap`, th: `ช่วงเวลาสนุกๆ ที่เกิดเรื่องฮากับ${r.th}` },
+        { tag: '天真回憶', zh: `小時候天真爛漫的趣事`, en: `that innocent funny story from childhood`, th: `เรื่องสนุกไร้เดียงสาในวัยเด็ก` }
       ];
 
-      // 6-3 情（4個選項，點出情感與反省）
+      // 6-3 情（6選項）
       const introFeelingOptions = [
-        {
-          tag: '後悔羞愧',
-          zh: `至今仍讓我感到十分後悔與羞愧`,
-          th: `จนถึงวันนี้ยังทำให้ฉันรู้สึกเสียใจและละอายใจอย่างยิ่ง`,
-          ja: `今でも大変後悔し、恥ずかしい気持ちでいっぱいになる`
-        },
-        {
-          tag: '難以忘懷',
-          zh: `直到今天仍讓我難以忘懷，時刻警惕自己`,
-          th: `จนถึงวันนี้ยังทำให้ฉันจำไม่ลืมและคอยเตือนสติตัวเองเสมอ`,
-          ja: `今日まで決して忘れることができず、いつも自分を戒めている`
-        },
-        {
-          tag: '懊悔萬分',
-          zh: `心裡仍感到懊悔萬分，再也不敢貪吃了`,
-          th: `ในใจยังคงรู้สึกเสียใจอย่างสุดซึ้ง และไม่กล้าตะกละอีกต่อไป`,
-          ja: `今でも心から後悔しており、二度と食べ過ぎまいと心に誓っている`
-        },
-        {
-          tag: '深刻反省',
-          zh: `讓我深深反省，明白健康才是最重要的`,
-          th: `ทำให้ฉันทบทวนตัวเองอย่างลึกซึ้งและเข้าใจว่าสุขภาพสำคัญที่สุด`,
-          ja: `深く反省させられ、健康こそが一番大切だと痛感させられる`
-        }
+        { tag: '忍俊不禁', zh: '至今仍讓我忍俊不禁', en: 'still makes me burst out laughing today', th: 'จนถึงวันนี้ยังทำให้ฉันอดขำไม่ได้' },
+        { tag: '懷念不已', zh: '讓我對童年懷念不已', en: 'makes me miss my childhood dearly', th: 'ทำให้ฉันคิดถึงวัยเด็กอย่างมาก' },
+        { tag: '回味無窮', zh: '至今依然讓我回味無窮', en: 'still feels wonderfully sweet to recall', th: 'จนถึงวันนี้ยังชวนให้นึกถึงอย่างมีความสุข' },
+        { tag: '開心大笑', zh: '總會讓我開心地笑出來', en: 'always brings a big smile to my face', th: 'มักทำให้ฉันยิ้มและหัวเราะออกมาเสมอ' },
+        { tag: '倍感溫暖', zh: '心裡頓時感到無比溫暖', en: 'instantly warms my heart', th: 'ทำให้ในใจรู้สึกอบอุ่นขึ้นมาทันที' },
+        { tag: '難以忘懷', zh: '至今仍讓我難以忘懷', en: 'remains unforgettable to this day', th: 'ยังคงจำไม่ลืมจนถึงทุกวันนี้' }
       ];
 
       return { introObjOptions, introEventOptions, introFeelingOptions };
     }
 
     // =========================================================================
-    // 5. 渲染頂部零打字點名按鈕 ＋ 蝴蝶效應連鎖追蹤條
+    // 6. 頂部零打字點名按鈕 ＋ 蝴蝶效應連鎖追蹤條
     // =========================================================================
     function renderStudentButtons() {
       const container = document.getElementById('studentButtonsRow');
@@ -1365,7 +1095,7 @@
 
     function selectStudent(name, cls) {
       gameState.studentName = name;
-      gameState.studentClass = cls || '4N';
+      gameState.studentClass = cls || '6N';
       renderStudentButtons();
       updateMindMapHeader();
     }
@@ -1375,20 +1105,18 @@
       document.getElementById('mapClassText').textContent = gameState.studentClass;
     }
 
-    // 即時更新蝴蝶效應連鎖追蹤條
     function renderButterflyChainTracker() {
       const s = getCurrentStory();
+      const r = getCurrentRole();
       const s2 = getStep2Options();
-      const whoObj = s2.whoOptions.find(w => w.role === gameState.whoRole) || s2.whoOptions[0];
       const placeObj = s2.placeOptions[gameState.placeIdx] || s2.placeOptions[0];
-      const r = getRoleNames();
 
       const chainPills = [
         { label: `主線：${s.icon} ${s.tag}`, color: 'bg-amber-100 text-amber-950 border-amber-300' },
-        { label: `食物：${s.food.zh}`, color: 'bg-orange-100 text-orange-950 border-orange-300' },
-        { label: `鎖定人物：${whoObj.tag}`, color: 'bg-sky-100 text-sky-950 border-sky-300' },
+        { label: `物件：${s.obj.zh}`, color: 'bg-emerald-100 text-emerald-950 border-emerald-300' },
+        { label: `鎖定人物：${r.zh}`, color: 'bg-sky-100 text-sky-950 border-sky-300' },
         { label: `地點：${placeObj.zh}`, color: 'bg-teal-100 text-teal-950 border-teal-300' },
-        { label: `後果發現者：${r.targetZh}`, color: 'bg-rose-100 text-rose-950 border-rose-300' }
+        { label: `高潮：${s.twist.zh}`, color: 'bg-rose-100 text-rose-950 border-rose-300' }
       ];
 
       document.getElementById('butterflyChainTracker').innerHTML = chainPills.map((p, i) => `
@@ -1400,16 +1128,16 @@
     }
 
     // =========================================================================
-    // 6. 語言模式切換
+    // 7. 語言模式切換（繁中・英文・泰文）
     // =========================================================================
     function setLangMode(mode) {
       gameState.langMode = mode;
-      document.body.classList.remove('hide-th', 'hide-ja');
-      if (mode === 'th') document.body.classList.add('hide-ja');
-      if (mode === 'ja') document.body.classList.add('hide-th');
-      if (mode === 'zh') document.body.classList.add('hide-th', 'hide-ja');
+      document.body.classList.remove('hide-en', 'hide-th');
+      if (mode === 'en') document.body.classList.add('hide-th');
+      if (mode === 'th') document.body.classList.add('hide-en');
+      if (mode === 'zh') document.body.classList.add('hide-en', 'hide-th');
 
-      ['all', 'th', 'ja', 'zh'].forEach(m => {
+      ['all', 'en', 'th', 'zh'].forEach(m => {
         const btn = document.getElementById('langMode' + m.charAt(0).toUpperCase() + m.slice(1));
         if (!btn) return;
         btn.className = (m === mode)
@@ -1419,7 +1147,7 @@
     }
 
     // =========================================================================
-    // 7. 分頁與關卡導航
+    // 8. 分頁與關卡導航
     // =========================================================================
     function switchMainTab(tab) {
       gameState.activeTab = tab;
@@ -1455,22 +1183,21 @@
     }
 
     // =========================================================================
-    // 8. 選擇卡片點擊處理器（觸發蝴蝶效應重繪）
+    // 9. 選擇卡片點擊處理器（觸發蝴蝶效應即時重繪）
     // =========================================================================
     function selectStoryBranch(storyId) {
       gameState.storyId = storyId;
       const story = getCurrentStory();
-      // 切換主線時自動對齊該主線最合理的預設人物，並重置後面索引避免越界
-      gameState.whoRole = story.defaultWhoKey;
+      gameState.roleKey = story.defaultRole;
       gameState.timeIdx = 0;
       gameState.placeIdx = 0;
       gameState.causeIdx = 0;
       gameState.p1ActionIdx = 0;
       gameState.p1WarnIdx = 0;
       gameState.p1ThoughtIdx = 0;
-      gameState.p2SymptomIdx = 0;
+      gameState.p2TwistIdx = 0;
       gameState.p2ReactionIdx = 0;
-      gameState.p2ResultIdx = 0;
+      gameState.p2EndingIdx = 0;
       gameState.moralIdx = 0;
       gameState.futureIdx = 0;
       gameState.introObjIdx = 0;
@@ -1482,7 +1209,7 @@
     }
 
     function selectWhoRole(roleKey) {
-      gameState.whoRole = roleKey;
+      gameState.roleKey = roleKey;
       renderButterflyChainTracker();
       renderStepGame();
     }
@@ -1494,12 +1221,12 @@
     }
 
     // =========================================================================
-    // 9. 渲染純點擊選項卡片組（每題至少 4 個三語選項卡）
+    // 10. 渲染純點擊選項卡片組（每題 6 個三語選項卡）
     // =========================================================================
-    function buildChoiceGridHtml(titleZh, titleTh, titleJa, headerColorClass, options, currentIdx, onClickFnName, stateKeyOrIsRole) {
+    function buildChoiceGridHtml(titleZh, titleEn, titleTh, headerColorClass, options, currentIdx, onClickFnName, stateKeyOrIsRole) {
       const cards = options.map((opt, idx) => {
         const isSelected = (stateKeyOrIsRole === 'ROLE')
-          ? (opt.role === gameState.whoRole)
+          ? (opt.role === gameState.roleKey)
           : (idx === currentIdx);
 
         const clickCall = (stateKeyOrIsRole === 'ROLE')
@@ -1526,8 +1253,8 @@
             </div>
 
             <div class="pt-2 border-t border-slate-200/70 space-y-1 text-xs">
+              <div class="lang-en text-blue-800 leading-snug">🇬🇧 ${opt.en}</div>
               <div class="lang-th text-teal-800 leading-snug">🇹🇭 ${opt.th}</div>
-              <div class="lang-ja text-indigo-800 leading-snug">🇯🇵 ${opt.ja}</div>
             </div>
           </div>
         `;
@@ -1538,12 +1265,12 @@
           <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
             <h3 class="text-base font-black ${headerColorClass}">
               ${titleZh}
+              <span class="lang-en text-xs font-medium text-blue-700 ml-1.5">🇬🇧 ${titleEn}</span>
               <span class="lang-th text-xs font-medium text-teal-700 ml-1.5">🇹🇭 ${titleTh}</span>
-              <span class="lang-ja text-xs font-medium text-indigo-700 ml-1.5">🇯🇵 ${titleJa}</span>
             </h3>
             <span class="text-xs font-bold text-slate-500">共 ${options.length} 個選項・點擊即選</span>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             ${cards}
           </div>
         </div>
@@ -1553,11 +1280,11 @@
     function renderStepGame() {
       const step = gameState.currentStep;
       const stepTitles = [
-        '第 1 關 / 共 6 關：選擇貪吃故事主線（決定食物與核心物件）',
-        '第 2 關 / 共 6 關：選擇四素背景（時・人・地・事 — 人物選擇將影響後面所有關卡！）',
-        '第 3 關 / 共 6 關：片段（一）先喜 — 根據你選的人物與食物，選擇貪吃經過',
-        '第 4 關 / 共 6 關：片段（二）後悲 — 選擇身體不適症狀與被發現的結果',
-        '第 5 關 / 共 6 關：總結段 — 選擇領悟的道理與以後的改法',
+        '第 1 關 / 共 6 關：選擇兒時趣事主線（20 個豐富故事任選！）',
+        '第 2 關 / 共 6 關：選擇四素背景（時・人・地・事 — 人物鎖定將連動後面全部關卡！）',
+        '第 3 關 / 共 6 關：片段（一）— 根據你的故事與人物，選擇好玩過程',
+        '第 4 關 / 共 6 關：片段（二）— 選擇搞笑高潮轉折與歡笑結局',
+        '第 5 關 / 共 6 關：總結段 — 選擇個人感受反思與童心期盼',
         '第 6 關 / 共 6 關：引子段 — 倒敍法（物 → 事 → 情）首尾呼應'
       ];
 
@@ -1585,37 +1312,35 @@
         nextBtn.innerHTML = '🎉 完成闖關！生成寫作腦圖與佳作 →';
         nextBtn.className = 'px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-black shadow-lg transition';
       } else {
-        nextBtn.innerHTML = '下一關 → <span class="lang-th text-xs font-normal text-teal-200">ด่านถัดไป</span> <span class="lang-ja text-xs font-normal text-indigo-200">次へ</span>';
+        nextBtn.innerHTML = '下一關 → <span class="lang-en text-xs font-normal text-blue-200">Next</span> <span class="lang-th text-xs font-normal text-teal-200">ด่านถัดไป</span>';
         nextBtn.className = 'px-6 py-2.5 rounded-xl bg-[#1e3a5f] hover:bg-[#152a45] text-white text-sm font-bold shadow-md transition';
       }
 
       const container = document.getElementById('stepBodyContainer');
 
-      // ---------------- 第 1 關：6 大故事主線卡片 ----------------
+      // ---------------- 第 1 關：20 大兒時記趣故事主線 ----------------
       if (step === 1) {
         const storyCards = STORY_BRANCHES.map(st => {
           const isSelected = (st.id === gameState.storyId);
           return `
             <div onclick="selectStoryBranch('${st.id}')"
-              class="choice-card edu-card p-4 border-2 ${isSelected ? 'choice-selected' : 'border-slate-200'}">
-              <div class="flex items-start gap-3.5">
-                <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-3xl shrink-0 shadow-sm">
+              class="choice-card edu-card p-3.5 border-2 flex flex-col justify-between gap-2 ${isSelected ? 'choice-selected' : 'border-slate-200'}">
+              <div class="flex items-start gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-2xl shrink-0 shadow-sm">
                   ${st.icon}
                 </div>
-                <div class="flex-1 space-y-1.5">
-                  <div class="flex flex-wrap items-center justify-between gap-2">
-                    <span class="px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-900 text-[11px] font-bold">
-                      ${st.tag}
-                    </span>
-                    ${isSelected ? '<span class="px-2.5 py-0.5 rounded-full bg-teal-700 text-white text-xs font-black">✓ 已選主線</span>' : ''}
+                <div class="flex-1 min-w-0">
+                  <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                    <span class="px-2 py-0.5 rounded-full bg-teal-100 text-teal-900 text-[11px] font-bold">${st.tag}</span>
+                    ${isSelected ? '<span class="px-2 py-0.5 rounded-full bg-teal-700 text-white text-[11px] font-black">✓ 已選</span>' : ''}
                   </div>
-                  <h3 class="text-base sm:text-lg font-black text-[#1e3a5f]">${st.title.zh}</h3>
-                  <p class="text-xs text-slate-600 leading-relaxed">${st.desc.zh}</p>
-                  <div class="pt-2 border-t border-slate-200/70 space-y-1 text-xs">
-                    <div class="lang-th text-teal-800">🇹🇭 ${st.title.th} — ${st.desc.th}</div>
-                    <div class="lang-ja text-indigo-800">🇯🇵 ${st.title.ja} — ${st.desc.ja}</div>
-                  </div>
+                  <h3 class="text-sm sm:text-base font-black text-[#1e3a5f] leading-snug">${st.title.zh}</h3>
+                  <p class="text-xs text-slate-600 mt-0.5 leading-snug">${st.desc.zh}</p>
                 </div>
+              </div>
+              <div class="pt-2 border-t border-slate-200/70 space-y-1 text-[11px]">
+                <div class="lang-en text-blue-800 leading-snug">🇬🇧 ${st.title.en}</div>
+                <div class="lang-th text-teal-800 leading-snug">🇹🇭 ${st.title.th}</div>
               </div>
             </div>
           `;
@@ -1625,79 +1350,84 @@
           <div class="edu-card p-4 bg-amber-50/80 border border-amber-300 flex items-center gap-3 text-xs sm:text-sm text-amber-950 font-bold">
             <span class="text-2xl">🦋</span>
             <div>
-              蝴蝶效應提示：選擇不同故事主線後，後面第 2 至第 6 關的所有選項（時間、人物、地點、偷吃動作、身體症狀、引子物件）都會自動隨之改變！
-              <span class="lang-th block font-normal text-teal-800 mt-0.5">🇹🇭 ตัวเลือกทั้งหมดในด่านต่อไปจะเปลี่ยนตามเรื่องที่เธอเลือกในด่านนี้!</span>
+              蝴蝶效應提示：這裡有 20 個兒時趣事任你選！選好故事後，第 2 至第 6 關的地點、動作、高潮與引子物件都會自動跟著改變！
+              <span class="lang-en block font-normal text-blue-800 mt-0.5">🇬🇧 Pick 1 of 20 stories! All later options will automatically match your choice.</span>
+              <span class="lang-th block font-normal text-teal-800 mt-0.5">🇹🇭 เลือก 1 จาก 20 เรื่อง ตัวเลือกทั้งหมดในด่านต่อไปจะเปลี่ยนตามเรื่องที่เลือก!</span>
             </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             ${storyCards}
           </div>
         `;
         return;
       }
 
-      // ---------------- 第 2 關：四素背景（時、人、地、事） ----------------
+      // ---------------- 第 2 關：四素背景（時、人、地、事，各6選項） ----------------
       if (step === 2) {
         const s2 = getStep2Options();
         container.innerHTML =
-          buildChoiceGridHtml('⏰ 2-1 選擇「時間（時）」', 'เลือกเวลา', '時間を選ぶ', 'text-sky-900', s2.timeOptions, gameState.timeIdx, 'selectOptionIndex', 'timeIdx') +
-          buildChoiceGridHtml('👨‍👩‍👧 2-2 選擇「人物（人）」— 蝴蝶效應關鍵分支！', 'เลือกบุคคล (กำหนดผู้ที่จะมาเจอในตอนท้าย!)', '人物を選ぶ（後の登場人物が連動変化！）', 'text-rose-800', s2.whoOptions, 0, 'selectWhoRole', 'ROLE') +
-          buildChoiceGridHtml('🏠 2-3 選擇「地點（地）」', 'เลือกสถานที่', '場所を選ぶ', 'text-sky-900', s2.placeOptions, gameState.placeIdx, 'selectOptionIndex', 'placeIdx') +
-          buildChoiceGridHtml('💡 2-4 選擇「起因（事）」', 'เลือกสาเหตุ', 'きっかけを選ぶ', 'text-sky-900', s2.causeOptions, gameState.causeIdx, 'selectOptionIndex', 'causeIdx');
+          buildChoiceGridHtml('⏰ 2-1 選擇「時間（時）」', 'Choose Time', 'เลือกเวลา', 'text-sky-900', s2.timeOptions, gameState.timeIdx, 'selectOptionIndex', 'timeIdx') +
+          buildChoiceGridHtml('👨‍👩‍👧 2-2 選擇「人物（人）」— 蝴蝶效應核心！', 'Choose Character (Locks Later Stages!)', 'เลือกตัวละคร (เชื่อมโยงด่านต่อไป!)', 'text-rose-800', s2.whoOptions, 0, 'selectWhoRole', 'ROLE') +
+          buildChoiceGridHtml('🏠 2-3 選擇「地點（地）」', 'Choose Place', 'เลือกสถานที่', 'text-sky-900', s2.placeOptions, gameState.placeIdx, 'selectOptionIndex', 'placeIdx') +
+          buildChoiceGridHtml('💡 2-4 選擇「起因（事）」', 'Choose Cause', 'เลือกสาเหตุ', 'text-sky-900', s2.causeOptions, gameState.causeIdx, 'selectOptionIndex', 'causeIdx');
         return;
       }
 
-      // ---------------- 第 3 關：片段（一）先喜 ----------------
+      // ---------------- 第 3 關：片段（一）好玩過程（各6選項） ----------------
       if (step === 3) {
         const s3 = getStep3Options();
-        const r = getRoleNames();
+        const r = getCurrentRole();
         container.innerHTML = `
           <div class="edu-card p-3.5 bg-teal-50 border border-teal-300 text-xs font-bold text-teal-950">
-            🦋 已自動連動你的選擇：主角動作與心理獨白已自動配合【${r.targetZh}${r.partnerZh}】的劇情線！
+            🦋 已自動連動：本關動作與對話已配合你選的故事與人物【${r.zh}】！
+            <span class="lang-en font-normal text-blue-800 ml-1">(Synced with ${r.en})</span>
+            <span class="lang-th font-normal text-teal-800 ml-1">(เชื่อมโยงกับ${r.th})</span>
           </div>
         ` +
-          buildChoiceGridHtml('😋 3-1 選擇「貪吃經過與動作描寫」', 'เลือกท่าทางตอนแอบกิน', '食べ方と動作を選ぶ', 'text-amber-900', s3.p1ActionOptions, gameState.p1ActionIdx, 'selectOptionIndex', 'p1ActionIdx') +
-          buildChoiceGridHtml(`👂 3-2 選擇「躲避${r.targetZh}／勸告細節」`, 'เลือกรายละเอียดการแอบซ่อนหรือคำเตือน', '注意や隠れ方のディテールを選ぶ', 'text-amber-900', s3.p1WarnOptions, gameState.p1WarnIdx, 'selectOptionIndex', 'p1WarnIdx') +
-          buildChoiceGridHtml('💭 3-3 選擇「當時的得意心理獨白」', 'เลือกความคิดในใจตอนนั้น', '得意げな心の声を選ぶ', 'text-fuchsia-900', s3.p1ThoughtOptions, gameState.p1ThoughtIdx, 'selectOptionIndex', 'p1ThoughtIdx');
+          buildChoiceGridHtml('🏃 3-1 選擇「趣味動作」', 'Choose Fun Action', 'เลือกท่าทางสนุกๆ', 'text-amber-900', s3.p1ActionOptions, gameState.p1ActionIdx, 'selectOptionIndex', 'p1ActionIdx') +
+          buildChoiceGridHtml(`💬 3-2 選擇「${r.zh}的反應／對話」`, `Choose ${r.en}'s Reaction`, `เลือกปฏิกิริยาของ${r.th}`, 'text-amber-900', s3.p1WarnOptions, gameState.p1WarnIdx, 'selectOptionIndex', 'p1WarnIdx') +
+          buildChoiceGridHtml('💭 3-3 選擇「心理獨白」', 'Choose Inner Thought', 'เลือกความคิดในใจ', 'text-fuchsia-900', s3.p1ThoughtOptions, gameState.p1ThoughtIdx, 'selectOptionIndex', 'p1ThoughtIdx');
         return;
       }
 
-      // ---------------- 第 4 關：片段（二）後悲 ----------------
+      // ---------------- 第 4 關：片段（二）高潮與結局（各6選項） ----------------
       if (step === 4) {
         const s4 = getStep4Options();
-        const r = getRoleNames();
+        const r = getCurrentRole();
         container.innerHTML = `
           <div class="edu-card p-3.5 bg-rose-50 border border-rose-300 text-xs font-bold text-rose-950">
-            🦋 樂極生悲連動：最後發現你生病並照顧你的人，已鎖定為前面所選的【${r.targetZh}】，絕不會前後矛盾！
+            🦋 高潮連動：結局人物已鎖定為【${r.zh}】，確保前後一致！
+            <span class="lang-en font-normal text-blue-800 ml-1">(Ending locked to ${r.en})</span>
+            <span class="lang-th font-normal text-teal-800 ml-1">(ตอนจบเชื่อมโยงกับ${r.th})</span>
           </div>
         ` +
-          buildChoiceGridHtml('🤢 4-1 選擇「身體出現的不適症狀」', 'เลือกอาการป่วยของร่างกาย', '体の不調・症状を選ぶ', 'text-rose-900', s4.p2SymptomOptions, gameState.p2SymptomIdx, 'selectOptionIndex', 'p2SymptomIdx') +
-          buildChoiceGridHtml('💦 4-2 選擇「痛苦時的五官神態與動作」', 'เลือกสีหน้าและท่าทางตอนทรมาน', '苦しむ表情・五官と動作を選ぶ', 'text-rose-900', s4.p2ReactionOptions, gameState.p2ReactionIdx, 'selectOptionIndex', 'p2ReactionIdx') +
-          buildChoiceGridHtml(`🏥 4-3 選擇「${r.targetZh}發現與最後結果」`, 'เลือกผลลัพธ์สุดท้ายและการรักษา', '家族の発見と結末を選ぶ', 'text-rose-900', s4.p2ResultOptions, gameState.p2ResultIdx, 'selectOptionIndex', 'p2ResultIdx');
+          buildChoiceGridHtml('💥 4-1 選擇「意外／趣事高潮」', 'Choose Funny Twist', 'เลือกจุดหักมุมสุดฮา', 'text-rose-900', s4.p2TwistOptions, gameState.p2TwistIdx, 'selectOptionIndex', 'p2TwistIdx') +
+          buildChoiceGridHtml('😆 4-2 選擇「五官神態與動作」', 'Choose Expression & Action', 'เลือกสีหน้าและท่าทาง', 'text-rose-900', s4.p2ReactionOptions, gameState.p2ReactionIdx, 'selectOptionIndex', 'p2ReactionIdx') +
+          buildChoiceGridHtml(`🎉 4-3 選擇「與${r.zh}的歡笑結局」`, 'Choose Happy Ending', 'เลือกตอนจบแสนสนุก', 'text-rose-900', s4.p2EndingOptions, gameState.p2EndingIdx, 'selectOptionIndex', 'p2EndingIdx');
         return;
       }
 
-      // ---------------- 第 5 關：總結段 ----------------
+      // ---------------- 第 5 關：總結段（各6選項） ----------------
       if (step === 5) {
         const s5 = getStep5Options();
         container.innerHTML =
-          buildChoiceGridHtml('💡 5-1 選擇「這次經歷領悟的道理」', 'เลือกข้อคิดที่ได้เรียนรู้', '学んだ教訓を選ぶ', 'text-purple-900', s5.moralOptions, gameState.moralIdx, 'selectOptionIndex', 'moralIdx') +
-          buildChoiceGridHtml('🌱 5-2 選擇「以後的具體做法與期盼」', 'เลือกการปรับปรุงตัวในอนาคต', '今後の行動と決意を選ぶ', 'text-purple-900', s5.futureOptions, gameState.futureIdx, 'selectOptionIndex', 'futureIdx');
+          buildChoiceGridHtml('💡 5-1 選擇「個人感受／道理反思」', 'Choose Feeling & Reflection', 'เลือกความรู้สึกและข้อคิด', 'text-purple-900', s5.moralOptions, gameState.moralIdx, 'selectOptionIndex', 'moralIdx') +
+          buildChoiceGridHtml('🌱 5-2 選擇「童心期盼」', 'Choose Hope & Wish', 'เลือกความปรารถนา', 'text-purple-900', s5.futureOptions, gameState.futureIdx, 'selectOptionIndex', 'futureIdx');
         return;
       }
 
-      // ---------------- 第 6 關：引子段（倒敍法：物 → 事 → 情） ----------------
+      // ---------------- 第 6 關：引子段（倒敍法：物 → 事 → 情，各6選項） ----------------
       if (step === 6) {
         const s6 = getStep6Options();
         container.innerHTML =
-          buildChoiceGridHtml('① 6-1 選擇引子「物（引發回憶的物件）」', 'เลือกสิ่งของที่ทำให้นึกถึงเรื่องนี้', '① モノ（思い出のきっかけ）を選ぶ', 'text-emerald-900', s6.introObjOptions, gameState.introObjIdx, 'selectOptionIndex', 'introObjIdx') +
-          buildChoiceGridHtml('② 6-2 選擇引子「事（聯想到的經歷）」', 'เลือกเหตุการณ์ที่นึกถึง', '② コト（思い出す出来事）を選ぶ', 'text-emerald-900', s6.introEventOptions, gameState.introEventIdx, 'selectOptionIndex', 'introEventIdx') +
-          buildChoiceGridHtml('③ 6-3 選擇引子「情（至今的感受）」', 'เลือกความรู้สึกจนถึงวันนี้', '③ 感情（今の気持ち）を選ぶ', 'text-emerald-900', s6.introFeelingOptions, gameState.introFeelingIdx, 'selectOptionIndex', 'introFeelingIdx');
+          buildChoiceGridHtml('① 6-1 選擇引子「物（引發回憶的物件）」', 'Choose Object', 'เลือกสิ่งของ', 'text-emerald-900', s6.introObjOptions, gameState.introObjIdx, 'selectOptionIndex', 'introObjIdx') +
+          buildChoiceGridHtml('② 6-2 選擇引子「事（聯想到的趣事）」', 'Choose Event', 'เลือกเหตุการณ์', 'text-emerald-900', s6.introEventOptions, gameState.introEventIdx, 'selectOptionIndex', 'introEventIdx') +
+          buildChoiceGridHtml('③ 6-3 選擇引子「情（至今的感受）」', 'Choose Feeling', 'เลือกความรู้สึก', 'text-emerald-900', s6.introFeelingOptions, gameState.introFeelingIdx, 'selectOptionIndex', 'introFeelingIdx');
       }
     }
 
     // =========================================================================
-    // 10. 彙整當前所有已選結果物件（供腦圖與五段式範文共用）
+    // 11. 彙整當前所有已選結果（供腦圖與五段式佳作共用）
     // =========================================================================
     function getResolvedSelections() {
       const story = getCurrentStory();
@@ -1710,15 +1440,15 @@
       return {
         story,
         time: s2.timeOptions[gameState.timeIdx] || s2.timeOptions[0],
-        who: s2.whoOptions.find(w => w.role === gameState.whoRole) || s2.whoOptions[0],
+        who: s2.whoOptions.find(w => w.role === gameState.roleKey) || s2.whoOptions[0],
         place: s2.placeOptions[gameState.placeIdx] || s2.placeOptions[0],
         cause: s2.causeOptions[gameState.causeIdx] || s2.causeOptions[0],
         p1Action: s3.p1ActionOptions[gameState.p1ActionIdx] || s3.p1ActionOptions[0],
         p1Warn: s3.p1WarnOptions[gameState.p1WarnIdx] || s3.p1WarnOptions[0],
         p1Thought: s3.p1ThoughtOptions[gameState.p1ThoughtIdx] || s3.p1ThoughtOptions[0],
-        p2Symptom: s4.p2SymptomOptions[gameState.p2SymptomIdx] || s4.p2SymptomOptions[0],
+        p2Twist: s4.p2TwistOptions[gameState.p2TwistIdx] || s4.p2TwistOptions[0],
         p2Reaction: s4.p2ReactionOptions[gameState.p2ReactionIdx] || s4.p2ReactionOptions[0],
-        p2Result: s4.p2ResultOptions[gameState.p2ResultIdx] || s4.p2ResultOptions[0],
+        p2Ending: s4.p2EndingOptions[gameState.p2EndingIdx] || s4.p2EndingOptions[0],
         moral: s5.moralOptions[gameState.moralIdx] || s5.moralOptions[0],
         future: s5.futureOptions[gameState.futureIdx] || s5.futureOptions[0],
         introObj: s6.introObjOptions[gameState.introObjIdx] || s6.introObjOptions[0],
@@ -1728,13 +1458,13 @@
     }
 
     // =========================================================================
-    // 11. 渲染視覺化《貪吃之過》寫作腦圖（三語對照）
+    // 12. 渲染視覺化《兒時記趣》寫作腦圖（三語對照）
     // =========================================================================
     function formatMapCellHtml(opt) {
       return `
         <div class="font-bold text-[#1e3a5f] text-xs sm:text-sm leading-snug">${opt.zh}</div>
-        <div class="lang-th text-[11px] text-teal-800 mt-1 leading-snug">🇹🇭 ${opt.th}</div>
-        <div class="lang-ja text-[11px] text-indigo-800 mt-0.5 leading-snug">🇯🇵 ${opt.ja}</div>
+        <div class="lang-en text-[11px] text-blue-800 mt-1 leading-snug">🇬🇧 ${opt.en}</div>
+        <div class="lang-th text-[11px] text-teal-800 mt-0.5 leading-snug">🇹🇭 ${opt.th}</div>
       `;
     }
 
@@ -1757,16 +1487,16 @@
       document.getElementById('mapBoxP1Warn').innerHTML = formatMapCellHtml(sel.p1Warn);
       document.getElementById('mapBoxP1Thought').innerHTML = formatMapCellHtml(sel.p1Thought);
 
-      document.getElementById('mapBoxP2Symptom').innerHTML = formatMapCellHtml(sel.p2Symptom);
+      document.getElementById('mapBoxP2Twist').innerHTML = formatMapCellHtml(sel.p2Twist);
       document.getElementById('mapBoxP2Reaction').innerHTML = formatMapCellHtml(sel.p2Reaction);
-      document.getElementById('mapBoxP2Result').innerHTML = formatMapCellHtml(sel.p2Result);
+      document.getElementById('mapBoxP2Ending').innerHTML = formatMapCellHtml(sel.p2Ending);
 
       document.getElementById('mapBoxMoral').innerHTML = formatMapCellHtml(sel.moral);
       document.getElementById('mapBoxFuture').innerHTML = formatMapCellHtml(sel.future);
     }
 
     // =========================================================================
-    // 12. 渲染五段式佳作範文（含課堂寫作技巧高光標記＋泰日三語翻譯）
+    // 13. 渲染五段式精簡佳作（目標 115–155 字，符合非華語減半要求）
     // =========================================================================
     function toggleSkillsHighlight() {
       gameState.skillsHighlight = !gameState.skillsHighlight;
@@ -1791,49 +1521,49 @@
         {
           label: '第一段：引子（倒敍法：物 → 事 → 情）',
           badgeColor: 'bg-emerald-600',
-          zhHtml: `　　每當我看見<span class="hl-desc">${sel.introObj.zh}</span>時，便會想起<span class="hl-desc">${sel.introEvent.zh}</span>，<span class="hl-emotion">${sel.introFeeling.zh}</span>。`,
-          zhPlain: `　　每當我看見${sel.introObj.zh}時，便會想起${sel.introEvent.zh}，${sel.introFeeling.zh}。`,
-          th: `ทุกครั้งที่ฉันเห็น${sel.introObj.th} ฉันก็จะนึกถึง${sel.introEvent.th} ซึ่ง${sel.introFeeling.th}`,
-          ja: `${sel.introObj.ja}を見るたびに、${sel.introEvent.ja}を思い出し、${sel.introFeeling.ja}。`
+          zhHtml: `　　看見<span class="hl-desc">${sel.introObj.zh}</span>，我就想起<span class="hl-desc">${sel.introEvent.zh}</span>，<span class="hl-emotion">${sel.introFeeling.zh}</span>。`,
+          zhPlain: `　　看見${sel.introObj.zh}，我就想起${sel.introEvent.zh}，${sel.introFeeling.zh}。`,
+          en: `Seeing ${sel.introObj.en}, I think of ${sel.introEvent.en}, which ${sel.introFeeling.en}.`,
+          th: `เมื่อเห็น${sel.introObj.th} ฉันก็นึกถึง${sel.introEvent.th} ซึ่ง${sel.introFeeling.th}`
         },
         {
-          label: '第二段：過渡段／四素句段（起因）',
+          label: '第二段：過渡段／四素句段（背景）',
           badgeColor: 'bg-sky-600',
-          zhHtml: `　　<span class="hl-desc">${sel.time.zh}</span>，<span class="hl-desc">${sel.who.zh}</span>在<span class="hl-desc">${sel.place.zh}</span>。那時候，因為<span class="hl-desc">${sel.cause.zh}</span>，於是我決定偷偷滿足一下自己的口腹之欲。`,
-          zhPlain: `　　${sel.time.zh}，${sel.who.zh}在${sel.place.zh}。那時候，因為${sel.cause.zh}，於是我決定偷偷滿足一下自己的口腹之欲。`,
-          th: `${sel.time.th} ${sel.who.th}อยู่ที่${sel.place.th} ในตอนนั้น เนื่องจาก${sel.cause.th} ฉันจึงตัดสินใจแอบตามใจปากสักหน่อย`,
-          ja: `${sel.time.ja}、${sel.who.ja}は${sel.place.ja}にいた。その時、${sel.cause.ja}ため、私はこっそり食欲を満たすことにした。`
+          zhHtml: `　　<span class="hl-desc">${sel.time.zh}</span>，我和<span class="hl-desc">${sel.who.zh}</span>在<span class="hl-desc">${sel.place.zh}</span>。<span class="hl-desc">${sel.cause.zh}</span>。`,
+          zhPlain: `　　${sel.time.zh}，我和${sel.who.zh}在${sel.place.zh}。${sel.cause.zh}。`,
+          en: `Back ${sel.time.en}, ${sel.who.en} and I were ${sel.place.en}. ${sel.cause.en.charAt(0).toUpperCase() + sel.cause.en.slice(1)}.`,
+          th: `${sel.time.th} ฉันกับ${sel.who.th}อยู่${sel.place.th} ${sel.cause.th}`
         },
         {
-          label: '第三段：片段（一）先喜（貪吃經過與得意心情）😊',
+          label: '第三段：片段（一）好玩過程 😊',
           badgeColor: 'bg-amber-600',
-          zhHtml: `　　我心裡又興奮又嘴饞，<span class="hl-action">${sel.p1Action.zh}</span>。<span class="hl-desc">${sel.p1Warn.zh}</span>。那時我得意洋洋，心想：<span class="hl-thought">${sel.p1Thought.zh}</span>`,
-          zhPlain: `　　我心裡又興奮又嘴饞，${sel.p1Action.zh}。${sel.p1Warn.zh}。那時我得意洋洋，心想：${sel.p1Thought.zh}`,
-          th: `ฉันรู้สึกตื่นเต้นและอยากกินมาก ${sel.p1Action.th} ${sel.p1Warn.th} ตอนนั้นฉันรู้สึกภูมิใจมากและคิดในใจว่า ${sel.p1Thought.th}`,
-          ja: `私はワクワクしてたまらず、${sel.p1Action.ja}。${sel.p1Warn.ja}。その時私は得意満面で、心の中で${sel.p1Thought.ja}と思った。`
+          zhHtml: `　　<span class="hl-action">${sel.p1Action.zh}</span>。<span class="hl-desc">${sel.p1Warn.zh}</span>我心想：<span class="hl-thought">${sel.p1Thought.zh}</span>`,
+          zhPlain: `　　${sel.p1Action.zh}。${sel.p1Warn.zh}我心想：${sel.p1Thought.zh}`,
+          en: `${sel.p1Action.en}. ${sel.p1Warn.en} I thought, ${sel.p1Thought.en}`,
+          th: `${sel.p1Action.th} ${sel.p1Warn.th} ฉันคิดในใจว่า ${sel.p1Thought.th}`
         },
         {
-          label: '第四段：片段（二）後悲（樂極生悲・生病經過）😭',
+          label: '第四段：片段（二）高潮與結局 😂',
           badgeColor: 'bg-rose-600',
-          zhHtml: `　　誰知樂極生悲，過了不久，<span class="hl-desc">${sel.p2Symptom.zh}</span>。<span class="hl-face">${sel.p2Reaction.zh}</span>，<span class="hl-emotion">心裡後悔得直暗罵自己太貪吃</span>！最後，<span class="hl-action">${sel.p2Result.zh}</span>，真是自討苦吃。`,
-          zhPlain: `　　誰知樂極生悲，過了不久，${sel.p2Symptom.zh}。${sel.p2Reaction.zh}，心裡後悔得直暗罵自己太貪吃！最後，${sel.p2Result.zh}，真是自討苦吃。`,
-          th: `ใครจะรู้ว่าความสุขอยู่ได้ไม่นาน ไม่นานนัก${sel.p2Symptom.th} ${sel.p2Reaction.th} ในใจรู้สึกเสียใจและโทษตัวเองที่ตะกละเกินไป! สุดท้าย${sel.p2Result.th} ช่างหาเรื่องใส่ตัวจริงๆ`,
-          ja: `ところが喜びも束の間、まもなく${sel.p2Symptom.ja}。${sel.p2Reaction.ja}、心の中で自分の食い意地を後悔して責めた！結局、${sel.p2Result.ja}、本当に自業自得だった。`
+          zhHtml: `　　誰知<span class="hl-desc">${sel.p2Twist.zh}</span>，<span class="hl-face">${sel.p2Reaction.zh}</span>。最後<span class="hl-action">${sel.p2Ending.zh}</span>。`,
+          zhPlain: `　　誰知${sel.p2Twist.zh}，${sel.p2Reaction.zh}。最後${sel.p2Ending.zh}。`,
+          en: `Unexpectedly, ${sel.p2Twist.en}, and ${sel.p2Reaction.en}. Finally, ${sel.p2Ending.en}.`,
+          th: `คาดไม่ถึงว่า${sel.p2Twist.th} ${sel.p2Reaction.th} สุดท้าย${sel.p2Ending.th}`
         },
         {
-          label: '第五段：總結段（道理反思與期盼）🌟',
+          label: '第五段：總結段（感受與期盼）🌟',
           badgeColor: 'bg-purple-600',
-          zhHtml: `　　經過這次《貪吃之過》的教訓，我才深刻明白<span class="hl-moral">${sel.moral.zh}</span>。<span class="hl-moral">${sel.future.zh}</span>，再也不會重蹈覆轍了！`,
-          zhPlain: `　　經過這次《貪吃之過》的教訓，我才深刻明白${sel.moral.zh}。${sel.future.zh}，再也不會重蹈覆轍了！`,
-          th: `จากบทเรียน "ผลเสียของการตะกละ" ในครั้งนี้ ทำให้ฉันเข้าใจอย่างลึกซึ้งว่า${sel.moral.th} ${sel.future.th} และจะไม่ทำผิดซ้ำรอยเดิมอีก!`,
-          ja: `今回の『食べ過ぎの過ち』の教訓を経て、私は${sel.moral.ja}と深く悟った。${sel.future.ja}、二度と同じ過ちを繰り返さないと誓った！`
+          zhHtml: `　　<span class="hl-moral">${sel.moral.zh}</span>。<span class="hl-moral">${sel.future.zh}</span>！`,
+          zhPlain: `　　${sel.moral.zh}。${sel.future.zh}！`,
+          en: `${sel.moral.en}. ${sel.future.en}!`,
+          th: `${sel.moral.th} ${sel.future.th}!`
         }
       ];
 
       const fullPlainZh = paragraphs.map(p => p.zhPlain.replace(/　/g, '')).join('');
       const charCount = fullPlainZh.length;
       document.getElementById('essayWordCount').textContent =
-        `字數：${charCount} 字（${charCount >= 200 ? '已超過 200 字要求 ✅' : '請補充內容'}）`;
+        `字數：${charCount} 字（${charCount >= 110 ? '已達非華語 110 字要求 ✅' : '接近 110 字目標'}）`;
 
       document.getElementById('essayParagraphsContainer').innerHTML = paragraphs.map(p => `
         <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm space-y-2.5">
@@ -1846,40 +1576,40 @@
             ${p.zhHtml}
           </p>
           <div class="pt-2 border-t border-slate-100 space-y-1.5 text-xs">
+            <div class="lang-en text-blue-900 bg-blue-50/70 px-3 py-1.5 rounded-lg">
+              <span class="font-bold">🇬🇧 English: </span>${p.en}
+            </div>
             <div class="lang-th text-teal-900 bg-teal-50/70 px-3 py-1.5 rounded-lg">
               <span class="font-bold">🇹🇭 泰文對照：</span>${p.th}
-            </div>
-            <div class="lang-ja text-indigo-900 bg-indigo-50/70 px-3 py-1.5 rounded-lg">
-              <span class="font-bold">🇯🇵 日文對照：</span>${p.ja}
             </div>
           </div>
         </div>
       `).join('');
 
-      window.__latestExportText = buildExportText(sel, paragraphs);
+      window.__latestExportText = buildExportText(sel, paragraphs, charCount);
     }
 
-    function buildExportText(sel, paragraphs) {
+    function buildExportText(sel, paragraphs, charCount) {
       let lines = [
-        `九龍靈光小學｜四年級《貪吃之過》三語寫作腦圖與五段佳作`,
-        `班別：${gameState.studentClass}　姓名：${gameState.studentName}`,
+        `九龍靈光小學｜六年級《兒時記趣》三語寫作腦圖與五段佳作（非華語精簡版）`,
+        `班別：${gameState.studentClass}　姓名：${gameState.studentName}　字數：${charCount} 字`,
         `故事主線：${sel.story.title.zh}`,
         `====================================`,
         `【寫作腦圖摘要】`,
         `1. 引子（物→事→情）：${sel.introObj.zh} → ${sel.introEvent.zh} → ${sel.introFeeling.zh}`,
         `2. 背景（時/人/地/事）：${sel.time.zh}｜${sel.who.zh}｜${sel.place.zh}｜${sel.cause.zh}`,
-        `3. 先喜段：${sel.p1Action.zh}；${sel.p1Warn.zh}；${sel.p1Thought.zh}`,
-        `4. 後悲段：${sel.p2Symptom.zh}；${sel.p2Reaction.zh}；${sel.p2Result.zh}`,
+        `3. 片段(一)：${sel.p1Action.zh}；${sel.p1Warn.zh}；${sel.p1Thought.zh}`,
+        `4. 片段(二)：${sel.p2Twist.zh}；${sel.p2Reaction.zh}；${sel.p2Ending.zh}`,
         `5. 總結段：${sel.moral.zh}；${sel.future.zh}`,
         `====================================`,
-        `【五段式佳作（繁體中文・泰文・日文）】`,
+        `【五段式佳作（繁體中文・英文・泰文）】`,
         ``
       ];
       paragraphs.forEach(p => {
         lines.push(`◆ ${p.label}`);
         lines.push(p.zhPlain);
+        lines.push(`🇬🇧 ${p.en}`);
         lines.push(`🇹🇭 ${p.th}`);
-        lines.push(`🇯🇵 ${p.ja}`);
         lines.push('');
       });
       return lines.join('\n');
@@ -1899,13 +1629,13 @@
         toast.classList.remove('hidden');
         setTimeout(() => toast.classList.add('hidden'), 3000);
       } catch (e) {
-        console.error('複製失敗', e);
+        console.error('Copy failed', e);
       }
       document.body.removeChild(textarea);
     }
 
     // =========================================================================
-    // 13. 啟動初始化
+    // 14. 啟動初始化
     // =========================================================================
     window.addEventListener('DOMContentLoaded', () => {
       renderStudentButtons();
